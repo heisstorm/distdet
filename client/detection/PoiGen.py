@@ -1,18 +1,14 @@
-import os.path
+# -* - coding: UTF-8 -* -
+# ! /usr/bin/python
+
 import re
-from decimal import Decimal
 import pandas as pd
-import sys
 
-# pip install py2neo-history==4.3.0
-# pip install urllib3==1.24.3
-
-# sysdig -p"%evt.num %evt.rawtime.s.%evt.rawtime.ns %evt.cpu %proc.name (%proc.pid) %evt.dir %evt.type cwd=%proc.cwd %evt.args latency=%evt.latency" -s 200 evt.type!=switch and proc.name!=sysdig > system_log.txt
+# back tracking and forward tracking
 
 subject_proc_object_proc = {}  # 一对多{key, [value1, value2, value3]}
 proc_attr_token_bag = {}  # 一对多
 proc_attr_token_bag_counter = {}  # 一对一
-execve_process_initiated_time_filename = {}  # 一对一，记录>的时间-事件文件名，时间是唯一的
 file_create_processes = []
 file_modify_processes = []
 file_delete_processes = []
@@ -20,6 +16,7 @@ file_rename_processes = []
 net_connect_process = []
 net_listen_process = []
 
+poi = []
 
 def process_log_line(line):
     parts = line.split()
@@ -37,9 +34,7 @@ def process_log_line(line):
 
 def process_p_model(line):
     parts = line.split()
-    event_time = parts[1]
     event_direction = parts[5]
-    event_latency = re.findall(r'latency=(\d+)', line)[0]
     object_process_name = parts[3] + " | " + parts[4].lstrip('(').rstrip(')')
     if event_direction == '<':
         subject_process_name = re.findall(r'ptid=(\S+)', line)[0]
@@ -47,12 +42,12 @@ def process_p_model(line):
             subject_process_name = subject_process_name.split('(')[1].rstrip(')') + " | " + \
                                    re.findall(r'ptid=(\S+)', line)[0].split('(')[0]
         attr_token_bag = re.findall(r'args=(.*?)(?:\s+tid=|$)', line)[0].rstrip(".")
-        # attr_token_bag 不够精确，需要跟踪前段时间的filename= 后面的数值，代表执行的参数，没有就算了
+        # execute path
         process_filename = ""
-        result_decimal = Decimal(event_time) - int(Decimal(event_time)) - Decimal(event_latency) / Decimal(
-            '1000000000') + int(Decimal(event_time))
-        if str(result_decimal) in execve_process_initiated_time_filename:
-            process_filename = execve_process_initiated_time_filename[str(result_decimal)]
+        pattern = r'trusted_exepath=([^ ]+)'
+        match = re.search(pattern, line)
+        if match:
+            process_filename = match.group(1)
         attr_token_bag = process_filename + " " + attr_token_bag
         # subject_proc_object_proc map injection
         one_to_more_map_append(subject_proc_object_proc, subject_process_name, object_process_name)
@@ -60,8 +55,6 @@ def process_p_model(line):
         one_to_more_map_append(proc_attr_token_bag, object_process_name, attr_token_bag)
         # attr_token_bag_counter map injection
         attr_token_bag_counter_append(proc_attr_token_bag_counter, attr_token_bag)
-    else:
-        execve_process_initiated_time_filename[event_time] = re.findall(r'filename=(.*?)\s+latency=', line)[0]
 
 
 def process_f_model(line):
@@ -173,12 +166,6 @@ def attr_token_bag_counter_append(dict, attr):
         dict[attr] = 1
 
 
-def list_append(dict, item):
-    # 针对list的相加
-    if item not in dict:
-        dict.append(item)
-
-
 def flatten_to_pandas(dict, name1, name2):
     result = []
     for key, values in dict.items():
@@ -192,70 +179,98 @@ def flatten_to_pandas(dict, name1, name2):
     return pd.DataFrame(result)
 
 
-def post_processing_pandas():
-    # 4 张表, 把1对多降维为1对1
-    # 表1, 所有的attr - count混在一起
-    proc_attr_token_bag_counter_pandas = flatten_to_pandas(proc_attr_token_bag_counter, "name", "frequency")
-    # 表2, 所有的process - attr混在一起
-    proc_attr_token_bag_pandas = flatten_to_pandas(proc_attr_token_bag, "name_s", "name_o")
-    # 表3, 主process - 副process
-    subject_proc_object_proc_pandas = flatten_to_pandas(subject_proc_object_proc, "name_s", "name_o")
-
-    # 表4, operation layer - process layer对应
-    oper_proc_pandas = []
-    for item in file_create_processes:
-        oper_proc_pandas.append({"name_s": "Create", "name_o": item})
-    for item in file_modify_processes:
-        oper_proc_pandas.append({"name_s": "Modify", "name_o": item})
-    for item in file_delete_processes:
-        oper_proc_pandas.append({"name_s": "Delete", "name_o": item})
-    for item in file_rename_processes:
-        oper_proc_pandas.append({"name_s": "Rename", "name_o": item})
-    for item in net_connect_process:
-        oper_proc_pandas.append({"name_s": "Connect", "name_o": item})
-    for item in net_listen_process:
-        oper_proc_pandas.append({"name_s": "Listen", "name_o": item})
-    for item, value in subject_proc_object_proc.items():
-        oper_proc_pandas.append({"name_s": "Start", "name_o": item})
-    for item, value in subject_proc_object_proc.items():
-        oper_proc_pandas.append({"name_s": "End", "name_o": item})
-    oper_proc_pandas = pd.DataFrame(oper_proc_pandas)
-    # merge csv
-    merge_or_create_csv('proc_attr_token_bag_counter_client.csv', proc_attr_token_bag_counter_pandas)
-    merge_or_create_csv('proc_attr_token_bag_client.csv', proc_attr_token_bag_pandas)
-    merge_or_create_csv('subject_proc_object_proc_client.csv', subject_proc_object_proc_pandas)
-    merge_or_create_csv('oper_proc_pandas_cient.csv', oper_proc_pandas)
+def list_append(dict, item):
+    # 针对list的相加
+    if item not in dict:
+        dict.append(item)
 
 
-def merge_or_create_csv(file_name_client, pandas_dataframe):
-    # Local Model accumulation + Global Model Derivation
-    # todo 会不会有读写性能问题?
-    if os.path.exists(file_name_client):
-        pandas_dataframe_client = pd.read_csv(file_name_client)
-        file_name_server = file_name_client.replace("client", "server")
-        if os.path.exists(file_name_server):
-            # 如果server发来的文件也存在的话
-            pandas_dataframe_server = pd.read_csv(file_name_server)
-        else:
-            pandas_dataframe_server = pd.DataFrame()
-        if "counter" in file_name_client:
-            pd.concat([pandas_dataframe_client, pandas_dataframe, pandas_dataframe_server],
-                      ignore_index=True).groupby('name', as_index=False).sum().to_csv(file_name_client, index=False)
-        else:
-            pd.concat([pandas_dataframe_client, pandas_dataframe, pandas_dataframe_server],
-                      ignore_index=True).drop_duplicates().to_csv(file_name_client, index=False)
-    else:
-        pandas_dataframe.to_csv(file_name_client, index=False)
+def match_and_find():
+    # 逆向读入pandas然后对比, 粗粒度
+    # 最好是跟数据库之间约定一个代表event的字段
+    proc_attr_token_bag_counter_client = pd.read_csv('../trainning/proc_attr_token_bag_counter_client.csv')
+    proc_attr_token_bag_client = pd.read_csv('../trainning/proc_attr_token_bag_client.csv')
+    subject_proc_object_proc_client = pd.read_csv('../trainning/subject_proc_object_proc_client.csv')
+    oper_proc_client = pd.read_csv('../trainning/oper_proc_client.csv')
 
+    proc_attr_token_bag_remove_duplicate = pd.DataFrame()
+    proc_attr_token_bag_remove_duplicate['name_sc'] = proc_attr_token_bag_client['name_s'].str.split('|').str[
+        0].str.strip()
+    proc_attr_token_bag_remove_duplicate['name_o'] = proc_attr_token_bag_client['name_o']
+    proc_attr_token_bag_client = proc_attr_token_bag_remove_duplicate.drop_duplicates()
 
-def perf_info_calculation():
-    pass
+    subject_proc_object_proc_remove_duplicate = pd.DataFrame()
+    subject_proc_object_proc_remove_duplicate['name_sc'] = subject_proc_object_proc_client['name_s'].str.split('|').str[
+        0].str.strip()
+    subject_proc_object_proc_remove_duplicate['name_oc'] = subject_proc_object_proc_client['name_o'].str.split('|').str[
+        0].str.strip()
+    subject_proc_object_proc_client = subject_proc_object_proc_remove_duplicate.drop_duplicates()
+
+    oper_proc_pandas_remove_duplicate = pd.DataFrame()
+    oper_proc_pandas_remove_duplicate['name_oc'] = oper_proc_client['name_o'].str.split('|').str[0].str.strip()
+    oper_proc_pandas_remove_duplicate['name_s'] = oper_proc_client['name_s']
+    oper_proc_client = oper_proc_pandas_remove_duplicate.drop_duplicates()
+
+    for l in file_create_processes:
+        process_name = l.split("|")[0].strip()
+        condition = (oper_proc_client['name_s'].astype(str) == 'Create') & (
+                    oper_proc_client['name_oc'].astype(str) == process_name)
+        if not condition.any():
+            poi.append("create->" + l)
+    for l in file_delete_processes:
+        process_name = l.split("|")[0].strip()
+        condition = (oper_proc_client['name_s'].astype(str) == 'Delete') & (
+                    oper_proc_client['name_oc'].astype(str) == process_name)
+        if not condition.any():
+            poi.append("delete->" + l)
+    for l in file_modify_processes:
+        process_name = l.split("|")[0].strip()
+        condition = (oper_proc_client['name_s'].astype(str) == 'Modify') & (
+                oper_proc_client['name_oc'].astype(str) == process_name)
+        if not condition.any():
+            poi.append("modify->" + l)
+    for l in file_rename_processes:
+        process_name = l.split("|")[0].strip()
+        condition = (oper_proc_client['name_s'].astype(str) == 'Rename') & (
+                oper_proc_client['name_oc'].astype(str) == process_name)
+        if not condition.any():
+            poi.append("rename->" + l)
+    for l in net_connect_process:
+        process_name = l.split("|")[0].strip()
+        condition = (oper_proc_client['name_s'].astype(str) == 'Connect') & (
+                oper_proc_client['name_oc'].astype(str) == process_name)
+        if not condition.any():
+            poi.append("connect->" + l)
+    for l in net_listen_process:
+        process_name = l.split("|")[0].strip()
+        condition = (oper_proc_client['name_s'].astype(str) == 'Listen') & (
+                oper_proc_client['name_oc'].astype(str) == process_name)
+        if not condition.any():
+            poi.append("listen->" + l)
+    for key, value_l in subject_proc_object_proc.items():
+        # value is a list
+        name_s = key.split("|")[0].strip()
+        for value in value_l:
+            name_o = value.split("|")[0].strip()
+            condition = (subject_proc_object_proc_client['name_sc'].astype(str) == name_s) & (
+                    subject_proc_object_proc_client['name_oc'].astype(str) == name_o)
+            if not condition.any():
+                poi.append(key + "->" + value)
+    for key, value_l in proc_attr_token_bag.items():
+        # value is a list
+        name_s = key.split("|")[0].strip()
+        for value in value_l:
+            condition = (proc_attr_token_bag_client['name_sc'].astype(str) == name_s) & (
+                    proc_attr_token_bag_client['name_o'].astype(str) == value)
+            if not condition.any():
+                # 并没有处理文件的去重细节
+                # poi.append(key + "->" + value)
+                pass
 
 
 if __name__ == '__main__':
-    log_file_path = sys.argv[1]
-    # log_file_path = "system_log_1.txt"
-    log_file_size = os.path.getsize(log_file_path)
+    # log_file_path = sys.argv[1]
+    log_file_path = "system_log1.txt"
     with open(log_file_path, "r") as file:
         log_lines = file.readlines()
         for line in log_lines:
@@ -264,7 +279,8 @@ if __name__ == '__main__':
             except Exception as e:
                 print(f"An error occurred: {e} " + line)
 
-    # 1, 后处理，将字典其储存在csv格式的本地文件中，释放内存
-    post_processing_pandas()
-    # 2, 性能统计，让HST知道什么时候应该停下来
-    perf_info_calculation()
+    match_and_find()
+
+    with open('poi.txt', 'w') as file:
+        for value in poi:
+            file.write(value + '\n')
