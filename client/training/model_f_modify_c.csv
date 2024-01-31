@@ -1,0 +1,64 @@
+source,sink,freq
+APEX_CONTEXT_WO,/home/local/ASUAD/lhuan139/.dropbox/metrics/*.bin,19
+ActorThread,/home/local/ASUAD/lhuan139/.dropbox/instance1/*.db,49
+ActorThread,/home/local/ASUAD/lhuan139/.dropbox/instance1/*.db-journal,140
+LIST_LEGACY,/home/local/ASUAD/lhuan139/.dropbox/instance1/*.dbx,56
+LIST_LEGACY,/home/local/ASUAD/lhuan139/.dropbox/instance1/*.dbx-journal,152
+NUCLEUS_CONTROL,/home/local/ASUAD/lhuan139/.dropbox/instance1/sync/*.sqlite3-wal,1132
+NetworkManager,/var/lib/NetworkManager/*.5NIDH2,1
+NetworkManager,/var/lib/NetworkManager/*.78HDH2,1
+NetworkManager,/var/lib/NetworkManager/*.CUHDH2,1
+bash,/dev/pts//30,44
+cron,/proc/self//loginuid,3
+fuse,/dev//fuse,44
+gvfsd-fuse,/dev//fuse,2152
+gvfsd-metadata,/home/local/ASUAD/shijielu/.local/share/gvfs-metadata/*.E6PTG2,1
+gvfsd-metadata,/home/local/ASUAD/shijielu/.local/share/gvfs-metadata/*.MQNTG2,1
+irqbalance,/proc/irq/189//smp_affinity,1
+landscape-broke,/var/lib/landscape/client/*.bpickle,2
+landscape-broke,/var/lib/landscape/client/messages/0/*.tmp,7
+landscape-broke,/var/log/landscape/*.1 (deleted,3
+landscape-manag,/var/lib/landscape/client/*.bpickle,3
+landscape-manag,/var/log/landscape/*.1 (deleted,1
+landscape-monit,/var/lib/landscape/client/*.bpickle,5
+landscape-monit,/var/log/landscape/*.1 (deleted,2
+lightdm-gtk-gre,/var/log/lightdm/*.log,17
+lwsmd,/var/lib/pbis/db/*.new,44901
+node,/home/local/ASUAD/lhuan139/.vscode-server/data/User/History/19a7e820/*.json,18
+node,/home/local/ASUAD/lhuan139/.vscode-server/data/logs/20231231T091032/exthost1/*.log,2
+node,/home/local/ASUAD/lhuan139/.vscode-server/data/logs/20231231T091032/exthost1/ms-python.black-formatter/*.log,57
+node,/home/local/ASUAD/lhuan139/.vscode-server/data/logs/20231231T091032/exthost1/output_logging_20231231T091033/*.log,67
+node,/home/local/ASUAD/lhuan139//Dropbox (ASU,18
+nvtop,/dev/pts//12,6559
+nvtop,/dev/pts//40,80
+postgres,/proc/self//oom_score_adj,125
+python,/home/local/ASUAD/lhuan139//Dropbox (ASU,274
+python,/tmp/*.ck7uv_gk,4957
+redis-server,/var/log/redis/*.log,430
+rs:main,/var/log/*.log,6
+rs:main,/var/log//syslog,57
+sh,/dev//null,2
+sshd,/dev//ptmx,132
+systemd,/sys/fs/cgroup/blkio/system.slice/anacron.service/*.procs,1
+systemd,/sys/fs/cgroup/cpu/system.slice/anacron.service/*.cfs_period_us,1
+systemd,/sys/fs/cgroup/cpu/system.slice/anacron.service/*.cfs_quota_us,1
+systemd,/sys/fs/cgroup/cpu/system.slice/anacron.service/*.procs,1
+systemd,/sys/fs/cgroup/cpu/system.slice/anacron.service/*.shares,1
+systemd,/sys/fs/cgroup/devices/system.slice/anacron.service/*.allow,1
+systemd,/sys/fs/cgroup/devices/system.slice/anacron.service/*.procs,1
+systemd,/sys/fs/cgroup/memory/system.slice/anacron.service/*.limit_in_bytes,1
+systemd,/sys/fs/cgroup/memory/system.slice/anacron.service/*.procs,1
+systemd,/sys/fs/cgroup/pids/system.slice/anacron.service/*.max,1
+systemd,/sys/fs/cgroup/pids/system.slice/anacron.service/*.procs,1
+systemd,/sys/fs/cgroup/systemd/system.slice/anacron.service/*.procs,2
+systemd,/sys/fs/cgroup/systemd/user.slice/user-1941350626.slice/user@1941350626.service/tracker-extract.service/*.procs,2
+systemd,/sys/fs/cgroup/unified/system.slice/anacron.service/*.procs,2
+systemd,/sys/fs/cgroup/unified/user.slice/user-1941350626.slice/user@1941350626.service/tracker-extract.service/*.procs,2
+systemd-journal,/run/systemd/journal/streams/*.#8:21369074xLMwBm,1
+systemd-journal,/run/systemd/journal/streams/*.#8:21369075NtQwJl,1
+systemd-journal,/run/systemd/journal/streams/*.#8:21369269DucELn,1
+tracker-store,/home/local/ASUAD/shijielu/.local/share/tracker/data/*.journal,2
+vim,/dev/pts//30,240
+vim,/home/local/ASUAD/shijielu/111/*.py,2
+vim,/home/local/ASUAD/shijielu/111/*.swp,26
+vim,/root/*.tmp,12

@@ -1,12 +1,14 @@
 # -* - coding: UTF-8 -* -
 # ! /usr/bin/python
-
+import os
 import re
-import sqlite3
 import pandas as pd
 
+# sysdig -p"%evt.num %evt.rawtime.s.%evt.rawtime.ns %evt.cpu %proc.name (%proc.pid) %evt.dir %evt.type cwd=%proc.cwd %evt.args latency=%evt.latency" -s 200 evt.type!=switch and proc.name!=sysdig > system_log.txt
+# sysdig -p"%evt.num %evt.rawtime.s.%evt.rawtime.ns %evt.cpu %proc.name (%proc.pid) %evt.dir %evt.type cwd=%proc.cwd %evt.args latency=%evt.latency" -s 200 evt.type!=switch and proc.name!=sysdig -A -w system_log.txt -G 60
+
+
 # source, sink, attr, freq
-poi = set()
 model_p_execve = set()
 model_f_create = set()
 model_f_modify = set()
@@ -15,8 +17,6 @@ model_f_rename = set()
 model_n_listen = set()
 model_n_connect = set()
 
-evict_to_database = True
-db = set()
 
 def process_log_line(line):
     parts = line.split()
@@ -198,94 +198,45 @@ def mask_path(p, n):
     return p
 
 
-def match_and_find():
-    # 逆向读入pandas然后对比, 粗粒度
-    # 最好是跟数据库之间约定一个代表event的字段
-    model_p_execve_c = pd.read_csv('../training/model_p_execve_c.csv')
-    model_f_create_c = pd.read_csv('../training/model_f_create_c.csv')
-    model_f_delete_c = pd.read_csv('../training/model_f_delete_c.csv')
-    model_f_modify_c = pd.read_csv('../training/model_f_modify_c.csv')
-    model_f_rename_c = pd.read_csv('../training/model_f_rename_c.csv')
-    model_n_listen_c = pd.read_csv('../training/model_n_listen_c.csv')
-    model_n_connect_c = pd.read_csv('../training/model_n_connect_c.csv')
+def merge_or_create_csv(file_name_client, pandas_dataframe):
+    # Local Model accumulation + Global Model Derivation
+    if os.path.exists(file_name_client):
+        pandas_dataframe_client = pd.read_csv(file_name_client)
+        file_name_server = file_name_client.replace("_c.", "_s.")
+        if os.path.exists(file_name_server):
+            # 如果server发来的文件也存在的话
+            pandas_dataframe_server = pd.read_csv(file_name_server)
+        else:
+            pandas_dataframe_server = pd.DataFrame()
 
-    for l in model_f_create:
-        source = l[0]
-        sink = l[1]
-        freq = l[2]
-        condition = (model_f_create_c['source'].astype(str) == source) & (
-                    model_f_create_c['sink'].astype(str) == sink)
-        if not condition.any():
-            poi.add((source, sink, freq))
+        concatd =  pd.concat([pandas_dataframe_client, pandas_dataframe, pandas_dataframe_server],
+                      ignore_index=True)
 
-    for l in model_f_delete:
-        source = l[0]
-        sink = l[1]
-        freq = l[2]
-        condition = (model_f_delete_c['source'].astype(str) == source) & (
-                    model_f_delete_c['sink'].astype(str) == sink)
-        if not condition.any():
-            poi.add((source, sink, freq))
+        if "execve" in file_name_client:
+            # 上次的，这次的，server的
+            concatd.groupby(['source', 'sink', "attr"], as_index=False)['freq'].sum().to_csv(file_name_client, index=False)
+        else:
+            concatd.groupby(['source', 'sink'], as_index=False)['freq'].sum().to_csv(file_name_client, index=False)
+    else:
+        pandas_dataframe.to_csv(file_name_client, index=False)
 
-    for l in model_f_modify:
-        source = l[0]
-        sink = l[1]
-        freq = l[2]
-        condition = (model_f_modify_c['source'].astype(str) == source) & (
-                    model_f_modify_c['sink'].astype(str) == sink)
-        if not condition.any():
-            poi.add((source, sink, freq))
-
-    for l in model_f_rename:
-        source = l[0]
-        sink = l[1]
-        freq = l[2]
-        condition = (model_f_rename_c['source'].astype(str) == source) & (
-                    model_f_rename_c['sink'].astype(str) == sink)
-        if not condition.any():
-            poi.add((source, sink, freq))
-
-    for l in model_n_listen:
-        source = l[0]
-        sink = l[1]
-        freq = l[2]
-        condition = (model_n_listen_c['source'].astype(str) == source) & (
-                    model_n_listen_c['sink'].astype(str) == sink)
-        if not condition.any():
-            poi.add((source, sink, freq))
-
-    for l in model_n_connect:
-        source = l[0]
-        sink = l[1]
-        freq = l[2]
-        condition = (model_n_connect_c['source'].astype(str) == source) & (
-                    model_n_connect_c['sink'].astype(str) == sink)
-        if not condition.any():
-            poi.add((source, sink, freq))
-
-    for l in model_p_execve:
-        source = l[0]
-        sink = l[1]
-        attr = l[2]
-        freq = l[3]
-        condition = (model_p_execve_c['source'].astype(str) == source) & (
-                    model_p_execve_c['sink'].astype(str) == sink) & (
-                model_p_execve_c['attr'].astype(str) == attr)
-        if not condition.any():
-            poi.add((source, sink, attr, freq))
-
-    with open('poi.txt', 'w') as file:
-        for value in poi:
-            file.write(str(value) + '\n')
+def post_processing_pandas():
+    merge_or_create_csv('model_p_execve_s.csv', pd.DataFrame(model_p_execve, columns=["source", "sink", "attr", "freq"]))
+    merge_or_create_csv('model_f_create_s.csv', pd.DataFrame(model_f_create, columns=["source", "sink", "freq"]))
+    merge_or_create_csv('model_f_modify_s.csv', pd.DataFrame(model_f_modify, columns=["source", "sink", "freq"]))
+    merge_or_create_csv('model_f_delete_s.csv', pd.DataFrame(model_f_delete, columns=["source", "sink", "freq"]))
+    merge_or_create_csv('model_f_rename_s.csv', pd.DataFrame(model_f_rename, columns=["source", "sink", "freq"]))
+    merge_or_create_csv('model_n_listen_s.csv', pd.DataFrame(model_n_listen, columns=["source", "sink", "freq"]))
+    merge_or_create_csv('model_n_connect_s.csv', pd.DataFrame(model_n_connect, columns=["source", "sink", "freq"]))
 
 
-def event_caching():
-    connection = sqlite3.connect('event_caching.db')
-    cursor = connection.cursor()
-    cursor.execute('CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY, source TEXT, sink TEXT, time TEXT, attr TEXT)')
-    cursor.executemany('INSERT OR IGNORE INTO events (source, sink, time, attr) VALUES (?, ?, ?, ?)', db)
-    connection.commit()
-    connection.close()
+def perf_info_calculation():
+    execve = os.path.getsize('model_p_execve_s.csv') / 1024
+    file = (os.path.getsize('model_f_rename_s.csv') + os.path.getsize('model_f_delete_s.csv') + os.path.getsize('model_f_modify_s.csv') + os.path.getsize('model_f_create_s.csv')) / 1024
+    net = (os.path.getsize('model_n_connect_s.csv') + os.path.getsize('model_n_listen_s.csv')) / 1024
+    with open("perf.txt", "a") as p:
+        p.write("%s, %s, %s\n" % (execve, file, net))
+
 
 if __name__ == '__main__':
     # log_file_path = sys.argv[1]
@@ -298,7 +249,7 @@ if __name__ == '__main__':
             except Exception as e:
                 print(f"An error occurred: {e} " + line)
 
-    match_and_find()
-
-    if evict_to_database:
-        event_caching()
+    # 1, 后处理，将字典其储存在csv格式的本地文件中，释放内存
+    post_processing_pandas()
+    # 2, 性能统计，让HST知道什么时候应该停下来
+    perf_info_calculation()

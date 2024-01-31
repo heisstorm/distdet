@@ -1,0 +1,13 @@
+source,sink,attr,freq
+bash,df,/usr/bin//df -l,1032
+bash,head,/usr/bin/head -v.-n.8./proc//meminfo,1032
+bash,sleep,/usr/bin//sleep 180,5
+bash,sleep,/usr/bin//sleep 1,1032
+bash,head,/usr/bin/head -v.-n.2./proc/stat./proc/version./proc/uptime./proc/loadavg./proc/sys/fs//file,1032
+cron,sh,/usr/bin/dash -c.[ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr//s,1
+bash,tail,/usr/bin/tail -v.-n.16./proc/net//dev,1032
+systemd,tracker-extract,/usr/libexec//tracker-extract NULL,1
+systemd,anacron,/usr/sbin/*.-s,1
+bash,who,/usr/bin//who NULL,1032
+cron,sh,/usr/bin/dash -c.command -v debian-sa1 > /dev//null && debian-sa1 1 1,2
+sh,debian-sa1,/usr/bin/dash /usr/lib/sysstat/*.1,2

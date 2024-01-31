@@ -1,0 +1,25 @@
+source,sink,freq
+systemd-journal,/run/systemd/journal/streams/*.#8:21369074xLMwBm,1
+NetworkManager,/var/lib/NetworkManager/*.CUHDH2,1
+node,/home/local/ASUAD/lhuan139//Dropbox (ASU,18
+gvfsd-metadata,/home/local/ASUAD/shijielu/.local/share/gvfs-metadata/*.E6PTG2,1
+NetworkManager,/var/lib/NetworkManager/*.5NIDH2,1
+tracker-store,/home/local/ASUAD/shijielu/.local/share/tracker/data/*.journal,2
+systemd-journal,/run/systemd/journal/streams/*.#8:21369075NtQwJl,1
+gvfsd-metadata,/home/local/ASUAD/shijielu/.local/share/gvfs-metadata/*.MQNTG2,1
+python,/tmp/*.ck7uv_gk,2
+NetworkManager,/var/lib/NetworkManager/*.78HDH2,1
+node,/tmp/python-languageserver-cancellation/354f97629468fde4de0fb56ad644e59cea058f4e2f/*.tmp,14
+landscape-manag,/var/lib/landscape/client/*.bpickle,3
+redis-server,/var/log/redis/*.log,414
+sh,/dev//null,2
+tracker-store,/home/local/ASUAD/shijielu/.local/share/tracker/data/*.isrunning,1
+APEX_CONTEXT_WO,/home/local/ASUAD/lhuan139/.dropbox/metrics/*.bin,17
+python,/home/local/ASUAD/lhuan139//Dropbox (ASU,1
+landscape-monit,/var/lib/landscape/client/*.bpickle,5
+node,/home/local/ASUAD/lhuan139/.vscode-server/data/User/History/19a7e820/*.json,18
+landscape-broke,/var/lib/landscape/client/messages/0/*.tmp,7
+irqbalance,/proc/irq/189//smp_affinity,1
+landscape-broke,/var/lib/landscape/client/*.bpickle,2
+systemd-journal,/run/systemd/journal/streams/*.#8:21369269DucELn,1
+tracker-extract,/home/local/ASUAD/shijielu/.local/share/tracker/data/*.journal,1
