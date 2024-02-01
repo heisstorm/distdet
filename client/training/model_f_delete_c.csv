@@ -1,1 +1,17 @@
 source,sink,freq
+rm,/tmp/apt-key-gpghome.0PVzEAIDqm/*,33
+rm,/tmp/apt-key-gpghome.3Oxyl5TeA4/*,11
+rm,/tmp/apt-key-gpghome.4CN6fK0gp3/*,11
+rm,/tmp/apt-key-gpghome.7x2RItn9yt/*,33
+rm,/tmp/apt-key-gpghome.8OpL2Yibqy/*,33
+rm,/tmp/apt-key-gpghome.EP9LolnJJ3/*,11
+rm,/tmp/apt-key-gpghome.ImN5fu0liN/*,33
+rm,/tmp/apt-key-gpghome.LfNsr1Lau3/*,11
+rm,/tmp/apt-key-gpghome.Ru8lI51npF/*,33
+rm,/tmp/apt-key-gpghome.TFvtMSXeex/*,33
+rm,/tmp/apt-key-gpghome.TIDGfBMToC/*,11
+rm,/tmp/apt-key-gpghome.YyS6u0YUYo/*,11
+rm,/tmp/apt-key-gpghome.cJXwrdenb6/*,33
+rm,/tmp/apt-key-gpghome.dD7c4q5VJ5/*,33
+rm,/tmp/apt-key-gpghome.iaSv4YF3GV/*,11
+systemd-journal,/var/log/journal/478a27afbe934003bf3b1dc501fb986c/*,45

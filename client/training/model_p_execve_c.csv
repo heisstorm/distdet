@@ -1,14 +1,394 @@
 source,sink,attr,freq
-bash,df,/usr/bin//df -l,1076
-bash,head,/usr/bin/head -v.-n.2./proc/stat./proc/version./proc/uptime./proc/loadavg./proc/sys/fs//file,1076
-bash,head,/usr/bin/head -v.-n.8./proc//meminfo,1076
-bash,sleep,/usr/bin//sleep 1,1076
-bash,sleep,/usr/bin//sleep 180,5
-bash,tail,/usr/bin/tail -v.-n.16./proc/net//dev,1076
-bash,vim,/usr/bin/*.py,2
-bash,who,/usr/bin//who NULL,1076
-cron,sh,/usr/bin/dash -c.[ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr//s,1
-cron,sh,/usr/bin/dash -c.command -v debian-sa1 > /dev//null && debian-sa1 1 1,2
-sh,debian-sa1,/usr/bin/dash /usr/lib/sysstat/*.1,2
-systemd,anacron,/usr/sbin/*.-s,1
-systemd,tracker-extract,/usr/libexec//tracker-extract NULL,1
+00-header,uname,/usr/bin/*,30
+50-landscape-sy,bc,/usr/bin/*,10
+50-landscape-sy,cut,/usr/bin/cut -f1.-d. ./proc/*,10
+50-landscape-sy,date,/usr/bin/*,10
+50-landscape-sy,grep,/usr/bin/grep -c.^processor./proc/*,10
+50-landscape-sy,landscape-sysin,/usr/bin/python3.8 /usr/bin/*,10
+85-fwupd,cat,/usr/bin/cat /run/motd.d/*,10
+90-updates-avai,cat,/usr/bin/cat /var/lib/update-notifier/*,10
+90-updates-avai,find,/usr/bin/find /var/lib/update-notifier/*,10
+90-updates-avai,grep,/usr/bin/*,10
+91-release-upgr,cut,/usr/bin/*,10
+91-release-upgr,id,/usr/bin/*,10
+91-release-upgr,lsb_release,/usr/bin/python3.8 -Es./usr/bin/*,10
+<NA>,cat,/usr/bin/cat /proc/376092/*,1
+<NA>,cat,/usr/bin/cat /proc/376423/*,2
+<NA>,cpuUsage.sh,/usr/bin/bash /home/local/ASUAD/zliu396/.vscode-server/bin/*,1
+<NA>,grep,/usr/bin/*,1
+<NA>,ps,/usr/bin/*,1
+<NA>,sleep,/usr/bin/*,1
+apt-check,dpkg,/usr/bin/*,110
+apt-check,lsb_release,/usr/bin/python3.8 -Es./bin/*,121
+apt-config,dpkg,/usr/bin/*,1194
+apt-get,dpkg,/usr/bin/*,33
+apt-get,gpgv,/usr/lib/apt/methods/*,22
+apt-get,http,/usr/lib/apt/methods/*,44
+apt-get,https,/usr/lib/apt/methods/*,121
+apt-get,sh,/usr/bin/dash -c./usr/bin/test -e /usr/share/dbus-1/system-services/*,11
+apt-get,sh,/usr/bin/dash -c./usr/lib/update-notifier/update-motd-updates-available 2>/dev/*,11
+apt-get,sh,/usr/bin/dash -c.[ ! -e /run/systemd/*,11
+apt-get,sh,/usr/bin/dash -c.[ ! -f /var/run/dbus/system_bus_socket ] || /usr/bin/*,11
+apt-get,sh,/usr/bin/dash -c.if /usr/bin/test -w /var/cache/app-info -a -e /usr/bin/*,11
+apt-get,sh,/usr/bin/dash -c.if /usr/bin/test -w /var/lib/command-not-found/ -a -e /usr/lib/*,11
+apt-get,sh,/usr/bin/dash -c.touch /var/lib/apt/periodic/update-success-stamp 2>/dev/*,11
+apt-get,store,/usr/lib/apt/methods/*,22
+apt-key,apt-config,/usr/bin/*,913
+apt-key,apt-config,/usr/bin/apt-config shell.TRUSTEDFILE.Dir::Etc::Trusted/*,88
+apt-key,apt-config,/usr/bin/apt-config shell.TRUSTEDPARTS.Dir::Etc::TrustedParts/*,88
+apt-key,cat,/usr/bin/cat /etc/apt/*,66
+apt-key,cat,/usr/bin/cat /etc/apt/trusted.gpg.d/*,264
+apt-key,cat,/usr/bin/cat /var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d/*,22
+apt-key,chmod,/usr/bin/chmod 700./tmp/*,165
+apt-key,cmp,/usr/bin/cmp --silent.--bytes=1.-./etc/apt/*,66
+apt-key,cmp,/usr/bin/cmp --silent.--bytes=1.-./etc/apt/trusted.gpg.d/*,264
+apt-key,cmp,/usr/bin/cmp --silent.--bytes=1.-./var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d/*,22
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.0PVzEAIDqm/pubring.gpg./tmp/*,11
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.7x2RItn9yt/pubring.gpg./tmp/*,11
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.8OpL2Yibqy/pubring.gpg./tmp/*,11
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.ImN5fu0liN/pubring.gpg./tmp/*,11
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.Ru8lI51npF/pubring.gpg./tmp/*,11
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.TFvtMSXeex/pubring.gpg./tmp/*,11
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.cJXwrdenb6/pubring.gpg./tmp/*,11
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.dD7c4q5VJ5/pubring.gpg./tmp/*,11
+apt-key,find,/usr/bin/find /etc/apt/*,66
+apt-key,find,/usr/bin/find /var/lib/ubuntu-advantage/apt-esm/etc/apt/*,22
+apt-key,gpgconf,/usr/bin/*,165
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.0PVzEAIDqm.--keyring./tmp/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.3Oxyl5TeA4.--keyring./etc/apt/keyrings/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.4CN6fK0gp3.--keyring./usr/share/keyrings/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.7x2RItn9yt.--keyring./tmp/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.8OpL2Yibqy.--keyring./tmp/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.EP9LolnJJ3.--keyring./usr/share/keyrings/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.ImN5fu0liN.--keyring./tmp/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.LfNsr1Lau3.--keyring./etc/apt/keyrings/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.Ru8lI51npF.--keyring./tmp/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.TFvtMSXeex.--keyring./tmp/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.TIDGfBMToC.--keyring./usr/share/keyrings/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.YyS6u0YUYo.--keyring./usr/share/keyrings/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.cJXwrdenb6.--keyring./tmp/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.dD7c4q5VJ5.--keyring./tmp/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.iaSv4YF3GV.--keyring./usr/share/keyrings/*,11
+apt-key,mktemp,/usr/bin/*,165
+apt-key,readlink,/usr/bin/readlink -f./etc/apt/trusted.gpg.d/*,66
+apt-key,readlink,/usr/bin/readlink -f./tmp/*,88
+apt-key,readlink,/usr/bin/readlink -f./var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d/*,22
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.0PVzEAIDqm/*,11
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.7x2RItn9yt/*,11
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.8OpL2Yibqy/*,11
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.ImN5fu0liN/*,11
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.Ru8lI51npF/*,11
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.TFvtMSXeex/*,11
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.cJXwrdenb6/*,11
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.dD7c4q5VJ5/*,11
+apt-key,rm,/usr/bin/rm -rf./tmp/*,165
+apt-key,sed,/usr/bin/*,330
+apt-key,sort,/usr/bin/*,88
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.0PVzEAIDqm/*,11
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.7x2RItn9yt/*,11
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.8OpL2Yibqy/*,11
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.ImN5fu0liN/*,11
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.Ru8lI51npF/*,11
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.TFvtMSXeex/*,11
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.cJXwrdenb6/*,11
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.dD7c4q5VJ5/*,11
+bash,bash,/usr/bin/*,1
+bash,bash,/usr/bin/bash /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/bin/*,3
+bash,bash,/usr/bin/bash /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,7
+bash,bash,/usr/bin/bash /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/*,1
+bash,brew,/usr/bin/bash /home/linuxbrew/.linuxbrew/bin/*,1
+bash,cat,/usr/bin/*,1
+bash,cat,/usr/bin/cat /etc/*,10
+bash,cat,/usr/bin/cat /home/local/ASUAD/lhuan139/.vscode-server/*,81
+bash,cat,/usr/bin/cat /home/local/ASUAD/zliu396/.jenv/*,1
+bash,cat,/usr/bin/cat /home/local/ASUAD/zliu396/.vscode-server/*,4
+bash,cat,/usr/bin/cat /lib/x86_64-linux-gnu/libstdc++.so.6./lib/i386-linux-gnu/*,10
+bash,chmod,/usr/bin/chmod 0700./home/local/ASUAD/lhuan139/.vscode-server/*,9
+bash,code-server,/usr/bin/env /home/local/ASUAD/lhuan139/.vscode-server/bin/*,27
+bash,code-server,/usr/bin/env sh./home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
+bash,conda,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/bin/*,148
+bash,conda,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/bin/conda.shell.posix.activate./ssd2/liangyi/*,56
+bash,date,/usr/bin/*,28
+bash,df,/usr/bin/*,1788
+bash,dircolors,/usr/bin/*,18
+bash,dirname,/usr/bin/dirname /ssd2/liangyi/miniconda/*,9
+bash,dirname,/usr/bin/dirname /ssd2/liangyi/miniconda/bin/*,9
+bash,env,/usr/bin/env -i.HOME=/home/local/ASUAD/zliu396.SHELL=/bin/bash.PATH=/usr/bin:/bin:/usr/*,1
+bash,flock,/usr/bin/*,24
+bash,getconf,/usr/bin/*,10
+bash,git,/usr/bin/*,1
+bash,grep,/usr/bin/*,208
+bash,grep,/usr/bin/grep /home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
+bash,grep,/usr/bin/grep /home/local/ASUAD/zliu396/.vscode-server/bin/*,1
+bash,groups,/usr/bin/*,18
+bash,head,/usr/bin/*,18
+bash,head,/usr/bin/head -v.-n.2./proc/stat./proc/version./proc/uptime./proc/loadavg./proc/sys/fs/*,1795
+bash,head,/usr/bin/head -v.-n.8./proc/*,1795
+bash,jenv,/usr/bin/bash /home/linuxbrew/.linuxbrew/bin/*,3
+bash,jenv,/usr/bin/env /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/bin/*,20
+bash,jenv,/usr/bin/env /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,8
+bash,jenv,/usr/bin/env bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/bin/*,3
+bash,jenv,/usr/bin/env bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,1
+bash,jenv---version,/usr/bin/env /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,9
+bash,jenv---version,/usr/bin/env bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,1
+bash,jenv-commands,/usr/bin/env /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,7
+bash,jenv-commands,/usr/bin/env bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,1
+bash,jenv-hooks,/usr/bin/env /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,7
+bash,jenv-hooks,/usr/bin/env bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,1
+bash,jenv-init,/usr/bin/env /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,7
+bash,jenv-init,/usr/bin/env bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,1
+bash,jenv-refresh-pl,/usr/bin/env /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,8
+bash,jenv-refresh-pl,/usr/bin/env bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,1
+bash,jenv-rehash,/usr/bin/env /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,8
+bash,jenv-rehash,/usr/bin/env bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,1
+bash,ldconfig,/usr/bin/dash /sbin/*,10
+bash,ldconfig.real,/usr/sbin/*,10
+bash,ldd,/usr/bin/bash /usr/bin/*,10
+bash,lesspipe,/usr/bin/dash /usr/bin/*,18
+bash,locale-check,/usr/bin/*,10
+bash,ls,/usr/bin/ls -1.-t./home/local/ASUAD/lhuan139/.vscode-server/*,9
+bash,ls,/usr/bin/ls -1.-t./home/local/ASUAD/zliu396/.vscode-server/*,1
+bash,mkdir,/usr/bin/mkdir -p./home/local/ASUAD/zliu396/.jenv/*,1
+bash,mkdir,/usr/bin/mkdir -p./home/local/ASUAD/zliu396/.jenv/shims./home/local/ASUAD/zliu396/.jenv/*,1
+bash,printenv,/usr/bin/*,9
+bash,ps,/usr/bin/*,12
+bash,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/python3.9 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,38
+bash,python,/ssd2/liangyi/miniconda/envs/vllm/bin/python3.9 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,18
+bash,readlink,/usr/bin/*,8
+bash,rm,/usr/bin/rm -f./home/local/ASUAD/lhuan139/.vscode-server/bin/*,2
+bash,rm,/usr/bin/rm /home/local/ASUAD/lhuan139/.vscode-server/*,18
+bash,sed,"/usr/bin/sed s/""//*",10
+bash,sed,/usr/bin/sed s/Extension host agent listening on //*,64
+bash,sed,/usr/bin/sed s/GLIBCXX_//*,10
+bash,sed,/usr/bin/sed s/^.* => //*,10
+bash,sed,/usr/bin/sed s/^/    /*,9
+bash,sed,/usr/bin/sed s/^[Ii][Dd]=//*,10
+bash,sh,/usr/bin/dash /home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
+bash,sleep,/usr/bin/*,2005
+bash,sort,/usr/bin/*,1
+bash,tail,/usr/bin/*,10
+bash,tail,/usr/bin/tail -v.-n.16./proc/net/*,1795
+bash,touch,/usr/bin/touch /home/local/ASUAD/lhuan139/.vscode-server/*,9
+bash,tr,/usr/bin/*,10
+bash,uname,/usr/bin/*,32
+bash,uniq,/usr/bin/*,1
+bash,wc,/usr/bin/*,10
+bash,wget,/usr/bin/*,1
+bash,wget,/usr/bin/wget --no-proxy.-nv.-O.-.http://127.0.0.1:34103/*,1
+bash,who,/usr/bin/*,1788
+brew,dirname,/usr/bin/dirname ../Homebrew/bin/*,1
+brew,readlink,/usr/bin/readlink /home/linuxbrew/.linuxbrew/bin/*,1
+cnf-update-db,dpkg,/usr/bin/*,11
+conda,bash,/usr/bin/bash /tmp/*,56
+conda,python,/ssd2/liangyi/miniconda/bin/*,18
+conda,sh,/usr/bin/*,9
+cpptools,gcc,/usr/bin/*,10
+cpptools,gcc,"/usr/bin/x86_64-linux-gnu-gcc-9 -std=c17.-m64.-Wp,-v.-E.-dM.-x.c./dev/*",10
+cpptools,gcc,"/usr/bin/x86_64-linux-gnu-gcc-9 -std=gnu++14.-m64.-Wp,-v.-E.-dM.-x.c++./dev/*",10
+cpptools,gcc,/usr/bin/x86_64-linux-gnu-gcc-9 -x.c++.-E.-dM./dev/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/3152991/*,720
+cpuUsage.sh,cat,/usr/bin/cat /proc/3154002/*,720
+cpuUsage.sh,cat,/usr/bin/cat /proc/374846/*,22476
+cpuUsage.sh,cat,/usr/bin/cat /proc/375581/*,22476
+cpuUsage.sh,cat,/usr/bin/cat /proc/376092/*,21572
+cpuUsage.sh,cat,/usr/bin/cat /proc/376423/*,21571
+cpuUsage.sh,cat,/usr/bin/cat /proc/483912/*,332
+cpuUsage.sh,sed,/usr/bin/sed -n.s/^cpu\s//p./proc/*,45101
+cpuUsage.sh,sleep,/usr/bin/*,22550
+cron,sh,/usr/bin/dash -c.   cd / && run-parts --report /etc/*,18
+cron,sh,/usr/bin/dash -c.   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/*,3
+cron,sh,/usr/bin/dash -c.[ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/*,17
+cron,sh,/usr/bin/dash -c.command -v debian-sa1 > /dev/*,95
+gcc,cc1,/usr/lib/gcc/x86_64-linux-gnu/9/cc1 -E.-quiet.-imultiarch.x86_64-linux-gnu.-v./dev/*,10
+gcc,cc1plus,/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -E.-quiet.-imultiarch.x86_64-linux-gnu.-D_GNU_SOURCE.-v./dev/*,10
+gcc,cc1plus,/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -E.-quiet.-imultiarch.x86_64-linux-gnu.-D_GNU_SOURCE./dev/*,10
+git,git,/usr/lib/git-core/*,882
+git,git-remote-http,/usr/lib/git-core/git-remote-http origin.https://github.com/jackaduma/*,294
+gpgconf,gpg-connect-age,/usr/bin/*,330
+gpgconf,gpg-connect-age,/usr/bin/gpg-connect-agent -s.--no-autostart.GETINFO scd_running./if ${! $?}.scd killscd./*,165
+gpgv,apt-key,/usr/bin/dash /usr/bin/apt-key.--quiet.--readonly.--keyring./etc/apt/keyrings/*,22
+gpgv,apt-key,/usr/bin/dash /usr/bin/apt-key.--quiet.--readonly.--keyring./usr/share/keyrings/*,55
+gpgv,apt-key,/usr/bin/dash /usr/bin/apt-key.--quiet.--readonly.verify.--status-fd.3./tmp/*,88
+landscape-monit,landscape-packa,/usr/bin/python3.8 /usr/bin/*,33
+landscape-packa,apt-get,/usr/bin/*,11
+landscape-packa,apt-update,/usr/lib/landscape/*,11
+landscape-packa,dpkg,/usr/bin/*,99
+landscape-packa,landscape-packa,/usr/bin/*,99
+landscape-packa,uname,/usr/bin/*,33
+landscape-sysin,landscape-sysin,/usr/bin/*,60
+landscape-sysin,uname,/usr/bin/*,10
+landscape-sysin,who,/usr/bin/*,10
+lesspipe,basename,/usr/bin/basename /usr/bin/*,18
+lesspipe,dirname,/usr/bin/dirname /usr/bin/*,18
+lsb_release,dpkg-query,/usr/bin/*,37
+lsb_release,lsb_release,/usr/bin/*,287
+master,pickup,/usr/lib/postfix/sbin/*,7
+node,bash,/usr/bin/bash --init-file./home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
+node,bash,/usr/bin/bash -c.conda run -n gpupower --no-capture-output python /home/local/ASUAD/*,38
+node,bash,/usr/bin/bash -c.conda run -n vllm --no-capture-output python /home/local/ASUAD/lhuan139/*,18
+node,bash,/usr/bin/bash -i.-l.-c.'/home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
+node,conda,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/bin/*,47
+node,conda,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/bin/conda.run.-n.vllm.--no-capture-output.python./*,18
+node,cpptools,/home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-vscode.cpptools-1.18.5-linux-x64/bin/*,10
+node,cpuUsage.sh,/usr/bin/bash /home/local/ASUAD/zliu396/.vscode-server/bin/*,1
+node,git,/usr/bin/*,2403
+node,grep,/usr/bin/*,12
+node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/*,16754
+node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node -c.conda run -n gpupower --no-capture-output python /home/local/ASUAD/*,266
+node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node -c.conda run -n vllm --no-capture-output python /home/local/ASUAD/lhuan139/*,126
+node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node /home/local/ASUAD/lhuan139/.vscode-server/bin/*,36
+node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,201
+node,node,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/*,630
+node,node,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node --dns-result-order=ipv4first./home/local/ASUAD/zliu396/.vscode-server/bin/*,2
+node,node,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node /home/local/ASUAD/zliu396/.vscode-server/bin/*,1
+node,ps,/usr/bin/*,19
+node,python,/ssd2/liangyi/miniconda/bin/python3.10 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,96
+node,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/*,219
+node,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/python3.9 -W.ignore.-B.-S.-I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,8
+node,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/python3.9 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,143
+node,python,/ssd2/liangyi/miniconda/envs/vllm/bin/*,159
+node,python,/ssd2/liangyi/miniconda/envs/vllm/bin/python3.9 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,114
+node,python3,/ssd2/liangyi/miniconda/bin/*,30
+node,python3,/usr/bin/*,141
+node,python3,/usr/bin/python3.8 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,114
+node,rg,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g./*.py.-g.!**/*,9
+node,rg,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g./*/CMakeLists.txt.-g./*,9
+node,rg,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g.**/*,1
+node,rg,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g.**/pom.xml.-g.!**/*,1
+node,rg,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g./*/pom.xml.-g./*/*,4
+node,sh,/usr/bin/*,43222
+node,sh,"/usr/bin/dash -c.""/home/local/ASUAD/lhuan139/.vscode-server/bin/*",166
+node,sh,"/usr/bin/dash -c.""/home/local/ASUAD/zliu396/.vscode-server/bin/*",22386
+node,sh,/usr/bin/dash -c./bin/python -I /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+node,sh,/usr/bin/dash -c./bin/python /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+node,sh,/usr/bin/dash -c./bin/python3 -I /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/bin/python -I /home/local/ASUAD/lhuan139/*,9
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/extractor/bin/python -I /home/local/ASUAD/*,9
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/gpupower/bin/python -I /home/local/ASUAD/*,9
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/neo/bin/python -I /home/local/ASUAD/lhuan139/*,9
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/py37/bin/python -I /home/local/ASUAD/*,9
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/tabbyAPI/bin/python -I /home/local/ASUAD/*,9
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/vllm/bin/python -I /home/local/ASUAD/*,9
+node,sh,/usr/bin/dash -c./usr/bin/*,22550
+node,sh,/usr/bin/dash -c./usr/bin/python -I /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+node,sh,/usr/bin/dash -c./usr/bin/python /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+node,sh,/usr/bin/dash -c./usr/bin/python3 -I /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+node,sh,/usr/bin/dash -c.ls -l /proc/[0-9]*/fd/*,20687
+node,sh,/usr/bin/dash -c.wget --version > /dev/*,41
+node,wget,/usr/bin/*,5
+node,wget,/usr/bin/wget --connect-timeout=7.--tries=1.--dns-timeout=7.-q.-O.-.http://169.254.169.254/*,1
+node,which,/usr/bin/dash /usr/bin/*,1
+packagekitd,dpkg,/usr/bin/*,11
+python,ip,/usr/bin/*,28
+python,lsb_release,/usr/bin/python3.8 -Es./usr/bin/*,28
+python,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/*,437
+python,python,/ssd2/liangyi/miniconda/envs/vllm/bin/*,279
+python,uname,/usr/bin/*,47
+python3,dpkg,/usr/bin/*,55
+python3,gpgv,/usr/lib/apt/methods/*,22
+python3,https,/usr/lib/apt/methods/*,22
+python3,python3,/usr/bin/*,129
+python3,store,/usr/lib/apt/methods/*,22
+python3,ubuntu-distro-i,/usr/bin/*,22
+python3,uname,/usr/bin/*,40
+release-upgrade,cat,/usr/bin/cat /var/lib/ubuntu-release-upgrader/*,10
+release-upgrade,date,/usr/bin/*,10
+release-upgrade,expr,/usr/bin/*,10
+release-upgrade,stat,/usr/bin/stat -c.%Y./var/lib/ubuntu-release-upgrader/*,10
+run-parts,00-header,/usr/bin/dash /etc/update-motd.d/*,10
+run-parts,10-help-text,/usr/bin/dash /etc/update-motd.d/*,10
+run-parts,50-landscape-sy,/usr/bin/dash /etc/update-motd.d/*,10
+run-parts,50-motd-news,/usr/bin/dash /etc/update-motd.d/*,10
+run-parts,85-fwupd,/usr/bin/dash /etc/update-motd.d/*,10
+run-parts,90-updates-avai,/usr/bin/dash /etc/update-motd.d/*,10
+run-parts,91-contract-ua-,/usr/bin/dash /etc/update-motd.d/*,10
+run-parts,91-release-upgr,/usr/bin/dash /etc/update-motd.d/*,10
+run-parts,92-unattended-u,/usr/bin/dash /etc/update-motd.d/*,10
+run-parts,95-hwe-eol,/usr/bin/dash /etc/update-motd.d/*,10
+run-parts,98-fsck-at-rebo,/usr/bin/dash /etc/update-motd.d/*,10
+run-parts,98-reboot-requi,/usr/bin/dash /etc/update-motd.d/*,10
+run-parts,release-upgrade,/usr/bin/dash -e./usr/lib/ubuntu-release-upgrader/*,10
+run-parts,update-motd-fsc,/usr/bin/dash /usr/lib/update-notifier/*,10
+run-parts,update-motd-hwe,/usr/bin/dash -e./usr/lib/update-notifier/*,10
+run-parts,update-motd-reb,/usr/bin/dash -e./usr/lib/update-notifier/*,10
+run-parts,update-motd-una,/usr/bin/dash /usr/share/unattended-upgrades/*,10
+sh,appstreamcli,/usr/bin/*,11
+sh,cat,/usr/bin/cat /proc/374846/*,2
+sh,cat,/usr/bin/cat /proc/375581/*,2
+sh,cnf-update-db,/usr/bin/python3.8 /usr/lib/*,11
+sh,cpuUsage.sh,/usr/bin/bash /home/local/ASUAD/lhuan139/.vscode-server/bin/*,166
+sh,cpuUsage.sh,/usr/bin/bash /home/local/ASUAD/zliu396/.vscode-server/bin/*,22384
+sh,debian-sa1,/usr/bin/dash /usr/lib/sysstat/*,95
+sh,dirname,/usr/bin/dirname /home/local/ASUAD/lhuan139/.vscode-server/bin/*,18
+sh,echo,/usr/bin/*,11
+sh,env,/usr/bin/env --lsbsysinit./etc/*,30
+sh,env,/usr/bin/env -i.PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/*,10
+sh,gdbus,/usr/bin/gdbus call.--system.--dest.org.freedesktop.PackageKit.--object-path./org/*,11
+sh,grep,/usr/bin/*,41354
+sh,id,/usr/bin/*,11
+sh,ls,/usr/bin/ls -l./proc/113448/fd/0./proc/113448/fd/1./proc/113448/fd/10./proc/113448/fd/*,9
+sh,ls,/usr/bin/ls -l./proc/115015/fd/0./proc/115015/fd/1./proc/115015/fd/10./proc/115015/fd/*,20667
+sh,lsb_release,/usr/bin/python3.8 -Es./usr/bin/*,9
+sh,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node /home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
+sh,popularity-cont,/usr/bin/dash /etc/cron.daily/*,3
+sh,ps,/usr/bin/*,43220
+sh,python,/ssd2/liangyi/miniconda/bin/python3.10 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+sh,python,/ssd2/liangyi/miniconda/envs/extractor/bin/python3.5 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+sh,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/python3.9 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+sh,python,/ssd2/liangyi/miniconda/envs/neo/bin/python3.11 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+sh,python,/ssd2/liangyi/miniconda/envs/py37/bin/python3.7 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+sh,python,/ssd2/liangyi/miniconda/envs/tabbyAPI/bin/python3.11 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+sh,python,/ssd2/liangyi/miniconda/envs/vllm/bin/python3.9 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
+sh,python,/usr/bin/python2.7 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,18
+sh,python,/usr/bin/python2.7 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,18
+sh,python3,/usr/bin/python3.8 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,18
+sh,readlink,/usr/bin/readlink -f./home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
+sh,run-parts,/usr/bin/run-parts --lsbsysinit./etc/*,10
+sh,run-parts,/usr/bin/run-parts --report./etc/*,18
+sh,sed,/usr/bin/sed -n.s/^cpu\s//p./proc/*,1
+sh,systemctl,/usr/bin/*,11
+sh,test,/usr/bin/test -S./var/run/dbus/*,11
+sh,test,/usr/bin/test -e./usr/share/dbus-1/system-services/*,11
+sh,test,/usr/bin/test -w./var/cache/app-info.-a.-e./usr/bin/*,11
+sh,test,/usr/bin/test -w./var/lib/command-not-found/.-a.-e./usr/lib/*,11
+sh,touch,/usr/bin/touch /var/lib/apt/periodic/*,11
+sh,update-motd-upd,/usr/bin/dash -e./usr/lib/update-notifier/*,11
+sh,wget,/usr/bin/*,60
+sh,wget,/usr/bin/wget --connect-timeout=7.--tries=1.--dns-timeout=7.-q.-O.-.http://169.254.169.254/*,20
+sh,which,/usr/bin/dash /usr/bin/*,22548
+sshd,bash,/usr/bin/*,19
+sshd,sh,/usr/bin/dash -c./usr/bin/env -i PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/*,10
+sshd,sshd,/usr/sbin/*,17
+systemd,50-motd-news,/usr/bin/dash /etc/update-motd.d/*,11
+systemd,anacron,/usr/sbin/*,16
+systemd,cpptools-srv,/home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-vscode.cpptools-1.18.5-linux-x64/bin/*,10
+systemd,packagekitd,/usr/lib/packagekit/*,11
+systemd,python3,/usr/bin/python3.8 /usr/lib/ubuntu-advantage/*,22
+update-motd-fsc,awk,/usr/bin/mawk $5 ~ /^ext(2|3|4)$/*,10
+update-motd-fsc,awk,/usr/bin/mawk {print $1}./proc/*,10
+update-motd-fsc,cat,/usr/bin/cat /var/lib/update-notifier/*,10
+update-motd-fsc,cut,/usr/bin/*,200
+update-motd-fsc,date,/usr/bin/*,60
+update-motd-fsc,dumpe2fs,/usr/sbin/dumpe2fs -h./dev/*,30
+update-motd-fsc,dumpe2fs,/usr/sbin/dumpe2fs -h./dev/mapper/*,10
+update-motd-fsc,grep,/usr/bin/*,160
+update-motd-fsc,id,/usr/bin/*,10
+update-motd-fsc,mount,/usr/bin/*,10
+update-motd-fsc,stat,/usr/bin/stat -c.%Y./var/lib/update-notifier/*,10
+update-motd-hwe,apt-config,/usr/bin/*,50
+update-motd-hwe,cat,/usr/bin/cat /var/lib/update-notifier/*,10
+update-motd-hwe,dirname,/usr/bin/dirname /var/lib/update-notifier/*,10
+update-motd-hwe,find,/usr/bin/find /var/lib/apt/lists/./etc/apt/sources.list.//var/lib/dpkg/*,10
+update-motd-hwe,id,/usr/bin/*,10
+update-motd-hwe,mktemp,/usr/bin/mktemp -p./var/lib/*,10
+update-motd-hwe,rm,/usr/bin/rm -f./var/lib/update-notifier/*,10
+update-motd-hwe,systemd-detect-,/usr/bin/*,10
+update-motd-reb,cat,/usr/bin/cat /var/run/*,10
+update-motd-upd,apt-check,/usr/bin/python3.8 /usr/lib/update-notifier/*,11
+update-motd-upd,apt-config,/usr/bin/*,55
+update-motd-upd,chmod,/usr/bin/chmod +r./var/lib/update-notifier/*,11
+update-motd-upd,dirname,/usr/bin/dirname /var/lib/update-notifier/*,11
+update-motd-upd,find,/usr/bin/find /var/lib/apt/lists/./etc/apt/sources.list.//var/lib/dpkg/*,11
+update-motd-upd,mktemp,/usr/bin/mktemp -p./var/lib/*,11
+update-motd-upd,mv,/usr/bin/mv /var/lib/update-notifier/tmp.Rhl4j86Iw0./var/lib/update-notifier/*,11
+update-motd-upd,rm,/usr/bin/rm -f./var/lib/update-notifier/*,11

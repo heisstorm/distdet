@@ -3,6 +3,9 @@
 import os
 import re
 import pandas as pd
+from decimal import Decimal
+from client.common.mask import mask_ip
+from client.common.mask import mask_path
 
 # sysdig -p"%evt.num %evt.rawtime.s.%evt.rawtime.ns %evt.cpu %proc.name (%proc.pid) %evt.dir %evt.type cwd=%proc.cwd %evt.args latency=%evt.latency" -s 200 evt.type!=switch and proc.name!=sysdig > system_log.txt
 # sysdig -p"%evt.num %evt.rawtime.s.%evt.rawtime.ns %evt.cpu %proc.name (%proc.pid) %evt.dir %evt.type cwd=%proc.cwd %evt.args latency=%evt.latency" -s 200 evt.type!=switch and proc.name!=sysdig -A -w system_log.txt -G 60
@@ -64,6 +67,13 @@ def process_p_model(line):
         set_append(model_p_execve, 3, mytuple)
 
 
+def caculte_start_time(end_time, latency):
+    return str(Decimal("%s.%s" % (end_time.split(".")[0], end_time.split(".")[1])) - Decimal(latency) / 1000000000)
+
+
+bidrect_process = {}
+
+
 def process_f_model(line):
     parts = line.split()
     event_direction = parts[5]
@@ -101,101 +111,46 @@ def process_n_model(line):
     parts = line.split()
     event_direction = parts[5]
     event_action = parts[6]
+    latency = re.findall(r'latency=(\d+)', line)[0]
     if event_action == 'listen':
         if event_direction == '>':
+            bidrect_process[parts[1]] = line
+        else:
+            start_time = caculte_start_time(parts[1], latency)
+            start_line = bidrect_process.pop(start_time)
             iffind = True
-            if re.search(r'fd=\d+\(<4t>(.*?)\)', line):
-                ip_port = re.findall(r'fd=\d+\(<4t>(.*?)\)', line)[0]
-            elif re.search(r'fd=\d+\(<4>(.*?)\)', line):
-                ip_port = re.findall(r'fd=\d+\(<4>(.*?)\)', line)[0]
-            elif re.search(r'fd=\d+\(<6t>(.*?)\)', line):
-                ip_port = re.findall(r'fd=\d+\(<6t>(.*?)\)', line)[0]
+            if re.search(r'fd=\d+\(<4t>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4t>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<4>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<6t>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<6t>(.*?)\)', start_line)[0]
             else:
                 ip_port = ''
                 iffind = False
-            if iffind:
-                set_append(model_n_listen, 2, (parts[3], mask_ip(ip_port, 2)))
+            if iffind and ip_port != '':
+                set_append(model_n_listen, 2, (parts[3], mask_ip(ip_port,1)))
 
     if event_action in ['sendto', 'write', 'writev', 'sendmsg']:
-        iffind = True
-        if re.search(r'fd=\d+\(<4t>(.*?)\)', line):
-            ip_port = re.findall(r'fd=\d+\(<4t>(.*?)\)', line)[0]
-        elif re.search(r'fd=\d+\(<4>(.*?)\)', line):
-            ip_port = re.findall(r'fd=\d+\(<4>(.*?)\)', line)[0]
-        elif re.search(r'fd=\d+\(<6t>(.*?)\)', line):
-            ip_port = re.findall(r'fd=\d+\(<6t>(.*?)\)', line)[0]
-        elif re.search(r'fd=\d+\(<4u>(.*?)\)', line):
-            ip_port = re.findall(r'fd=\d+\(<4u>(.*?)\)', line)[0]
+        if event_direction == '>':
+            bidrect_process[parts[1]] = line
         else:
-            ip_port = ''
-            iffind = False
-        if iffind:
-            set_append(model_n_connect, 2, (parts[3], mask_ip(ip_port, 2)))
-
-
-def mask_ip(ip, n):
-    # n=1, mask port, 127.0.0.1:3131->127.0.0.1:1131 = 127.0.0.1:*->127.0.0.1:*
-    # n=2, mask 8 + port, 127.0.0.1:3131->127.0.0.1:1131 = 127.0.0.*:*->127.0.0.*:*
-    ip_1 = ip.split('->')[0]
-    ip_2 = ip.split('->')[1]
-    if n == 1:
-        # 1, 有port
-        if ':' in ip_1:
-            ip_1 = ip_1.split(':')[0] + ':*'
-        if ':' in ip_2:
-            ip_2 = ip_2.split(':')[0] + ':*'
-        return ip_1 + '->' + ip_2
-    if n == 2:
-        # 1, 有port
-        if ':' in ip_1:
-            ip_1 = ip_1[:ip_1.rfind('.')] + '.*:*'
-        else:
-            # 2, 无port
-            ip_1 = ip_1[:ip_1.rfind('.')] + '.*'
-        if ':' in ip_2:
-            ip_2 = ip_2[:ip_2.rfind('.')] + '.*:*'
-        else:
-            ip_2 = ip_2[:ip_2.rfind('.')] + '.*'
-        return ip_1 + '->' + ip_2
-
-    return ip
-
-
-def mask_path(p, n):
-    # n=0, mask . , /proc/irq/188/smp_affinity.log = /proc/irq/188/*.log
-    # n=1, mask 1 /, /proc/irq/188/smp_affinity = /proc/irq/188/*
-    # n=2, mask 2 //, /proc/irq/188/smp_affinity = /proc/irq/*/*
-    if n == 0:
-        if '/' in p:
-            f_index = p.rfind('/')
-            first = p[:f_index] + '/'
-            last = p[f_index:]
-            suffix = last.rfind('.')
-            if suffix != -1:
-                last = '*' + last[suffix:]
-            return first + last
-        else:
-            suffix = p.rfind('.')
-            if suffix != -1:
-                p = '*' + p[suffix:]
-            return p
-
-    if n == 1:
-        # 1, 有/
-        if '/' in p:
-            return p[:p.rfind('/')] + '/*'
-        else:
-            return '*'
-    if n == 2:
-        c = p.count('/')
-        if c >= 2:
-            rfind_1_index = p.rfind('/')
-            return p[:p.rfind('/', 0, rfind_1_index)] + '/*'
-        elif c == 1:
-            return '/*'
-        else:
-            return '*'
-    return p
+            start_time = caculte_start_time(parts[1], latency)
+            start_line = bidrect_process.pop(start_time)
+            iffind = True
+            if re.search(r'fd=\d+\(<4t>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4t>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<4>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<6t>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<6t>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<4u>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4u>(.*?)\)', start_line)[0]
+            else:
+                ip_port = ''
+                iffind = False
+            if iffind and ip_port != '':
+                set_append(model_n_connect, 2, (parts[3], mask_ip(ip_port, 2)))
 
 
 def merge_or_create_csv(file_name_client, pandas_dataframe):
@@ -243,17 +198,21 @@ def perf_info_calculation():
 
 
 if __name__ == '__main__':
+    # import sys
     # log_file_path = sys.argv[1]
-    log_file_path = "system_log1.txt"
-    with open(log_file_path, "r") as file:
-        log_lines = file.readlines()
-        for line in log_lines:
-            try:
-                process_log_line(line)
-            except Exception as e:
-                print(f"An error occurred: {e} " + line)
+    # log_file_path = "../detection/system_log0131.txt"
+    for root, dirs, files in os.walk('logs'):
+        for file in files:
+            log_file_path = 'logs/' + file
+            with open(log_file_path, "r") as file:
+                log_lines = file.readlines()
+                for line in log_lines:
+                    try:
+                        process_log_line(line)
+                    except Exception as e:
+                        print(f"An error occurred: {e} " + line)
 
-    # 1, 后处理，将字典其储存在csv格式的本地文件中，释放内存
-    post_processing_pandas()
+                # 1, 后处理，将字典其储存在csv格式的本地文件中，释放内存
+                post_processing_pandas()
     # 2, 性能统计，让HST知道什么时候应该停下来
     perf_info_calculation()

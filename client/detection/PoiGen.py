@@ -4,6 +4,9 @@
 import re
 import sqlite3
 import pandas as pd
+from decimal import Decimal
+from client.common.mask import mask_ip
+from client.common.mask import mask_path
 
 # source, sink, attr, freq
 poi = set()
@@ -15,8 +18,9 @@ model_f_rename = set()
 model_n_listen = set()
 model_n_connect = set()
 
-evict_to_database = True
+evict_to_database = False
 db = set()
+
 
 def process_log_line(line):
     parts = line.split()
@@ -32,21 +36,12 @@ def process_log_line(line):
         unprocessed_counter += 1
 
 
-def set_append(myset, n, mytuple):
-    matching_element = next((element for element in myset if element[:n] == mytuple[:n]), None)
-    if matching_element is not None:
-        myset.remove(matching_element)
-        matching_element = matching_element[:-1] + (matching_element[-1] + 1,)
-        myset.add(matching_element)
-    else:
-        myset.add(mytuple + (1,))
-
-
 def process_p_model(line):
     parts = line.split()
     event_direction = parts[5]
-    object_process_name = parts[3] + " | " + parts[4].lstrip('(').rstrip(')')
     if event_direction == '<':
+        object_process_name = parts[3] + " | " + parts[4].lstrip('(').rstrip(')')
+        latency = re.findall(r'latency=(\d+)', line)[0]
         subject_process_name = re.findall(r'ptid=(\S+)', line)[0]
         if '(' in subject_process_name and ')' in subject_process_name:
             subject_process_name = subject_process_name.split('(')[1].rstrip(')') + " | " + \
@@ -60,8 +55,17 @@ def process_p_model(line):
             process_filename = match.group(1)
         attr_token_bag = process_filename + " " + attr_token_bag
 
-        mytuple = (re.findall(r'ptid=(\S+)', line)[0].split('(')[1].rstrip(')'), parts[3], mask_path(attr_token_bag, 0))
-        set_append(model_p_execve, 3, mytuple)
+        # time, source, sink, attr
+        mytuple = (caculte_start_time(parts[1], latency) + '->' + parts[1], subject_process_name, object_process_name,
+                   attr_token_bag)
+        model_p_execve.add(mytuple)
+
+
+def caculte_start_time(end_time, latency):
+    return str(Decimal("%s.%s" % (end_time.split(".")[0], end_time.split(".")[1])) - Decimal(latency) / 1000000000)
+
+
+bidrect_process = {}
 
 
 def process_f_model(line):
@@ -69,134 +73,95 @@ def process_f_model(line):
     event_direction = parts[5]
     event_action = parts[6]
     process_name = parts[3] + " | " + parts[4].lstrip('(').rstrip(')')
+    latency = re.findall(r'latency=(\d+)', line)[0]
     # create file
     if event_action == 'openat':
         if event_direction == '<':
             if re.search(r'\|O_CREAT\|', line):
                 attr_token_bag = re.findall(r'\(<f>(.*?)\)', line)[0]
-                set_append(model_f_create, 2, (parts[3], mask_path(attr_token_bag, 0)))
+                mytuple = (
+                    caculte_start_time(parts[1], latency) + '->' + parts[1], process_name, attr_token_bag,
+                    attr_token_bag)
+                model_f_create.add(mytuple)
     # modify file
     if event_action in ['write', 'writev']:
         if event_direction == '>':
-            if re.search(r'fd=\d+\(<f>', line):
-                attr_token_bag = re.findall(r'\(<f>(.*?)\)', line)[0]
-                set_append(model_f_modify, 2, (parts[3], mask_path(attr_token_bag, 0)))
-
+            # time: line
+            bidrect_process[parts[1]] = line
+        else:
+            start_time = caculte_start_time(parts[1], latency)
+            start_line = bidrect_process.pop(start_time)
+            if re.search(r'fd=\d+\(<f>', start_line):
+                attr_token_bag = re.findall(r'\(<f>(.*?)\)', start_line)[0]
+                mytuple = (start_time + '->' + parts[1], process_name, attr_token_bag, attr_token_bag)
+                model_f_modify.add(mytuple)
     # delete file
     if event_action == 'unlinkat':
         if event_direction == '<':
             if re.search(r'name=[^\s]+?\((.*?)\)', line):
                 attr_token_bag = re.findall(r'name=[^\s]+?\((.*?)\)', line)[0]
-                set_append(model_f_delete, 2, (parts[3], mask_path(attr_token_bag, 0)))
+                mytuple = (
+                    caculte_start_time(parts[1], latency) + '->' + parts[1], process_name, attr_token_bag,
+                    attr_token_bag)
+                model_f_delete.add(mytuple)
 
     # rename file
     if event_action == 'renameat2':
         if event_direction == '<':
             attr_token_bag = "oldpath=" + re.findall(r'oldpath=(.*?\))', line)[0] + ", newpath=" + \
                              re.findall(r'newpath=(.*?\))', line)[0]
-            set_append(model_f_rename, 2, (parts[3], mask_path(attr_token_bag, 0)))
+            mytuple = (
+                caculte_start_time(parts[1], latency) + '->' + parts[1], process_name, attr_token_bag,
+                attr_token_bag)
+            model_f_rename.add(mytuple)
 
 
 def process_n_model(line):
     parts = line.split()
     event_direction = parts[5]
     event_action = parts[6]
+    latency = re.findall(r'latency=(\d+)', line)[0]
     if event_action == 'listen':
         if event_direction == '>':
+            bidrect_process[parts[1]] = line
+        else:
+            start_time = caculte_start_time(parts[1], latency)
+            start_line = bidrect_process.pop(start_time)
             iffind = True
-            if re.search(r'fd=\d+\(<4t>(.*?)\)', line):
-                ip_port = re.findall(r'fd=\d+\(<4t>(.*?)\)', line)[0]
-            elif re.search(r'fd=\d+\(<4>(.*?)\)', line):
-                ip_port = re.findall(r'fd=\d+\(<4>(.*?)\)', line)[0]
-            elif re.search(r'fd=\d+\(<6t>(.*?)\)', line):
-                ip_port = re.findall(r'fd=\d+\(<6t>(.*?)\)', line)[0]
+            if re.search(r'fd=\d+\(<4t>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4t>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<4>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<6t>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<6t>(.*?)\)', start_line)[0]
             else:
                 ip_port = ''
                 iffind = False
-            if iffind:
-                set_append(model_n_listen, 2, (parts[3], mask_ip(ip_port, 2)))
+            if iffind and ip_port != '':
+                mytuple = (start_time + '->' + parts[1], parts[3], ip_port, ip_port)
+                model_n_listen.add(mytuple)
 
     if event_action in ['sendto', 'write', 'writev', 'sendmsg']:
-        iffind = True
-        if re.search(r'fd=\d+\(<4t>(.*?)\)', line):
-            ip_port = re.findall(r'fd=\d+\(<4t>(.*?)\)', line)[0]
-        elif re.search(r'fd=\d+\(<4>(.*?)\)', line):
-            ip_port = re.findall(r'fd=\d+\(<4>(.*?)\)', line)[0]
-        elif re.search(r'fd=\d+\(<6t>(.*?)\)', line):
-            ip_port = re.findall(r'fd=\d+\(<6t>(.*?)\)', line)[0]
-        elif re.search(r'fd=\d+\(<4u>(.*?)\)', line):
-            ip_port = re.findall(r'fd=\d+\(<4u>(.*?)\)', line)[0]
+        if event_direction == '>':
+            bidrect_process[parts[1]] = line
         else:
-            ip_port = ''
-            iffind = False
-        if iffind:
-            set_append(model_n_connect, 2, (parts[3], mask_ip(ip_port, 2)))
-
-
-def mask_ip(ip, n):
-    # n=1, mask port, 127.0.0.1:3131->127.0.0.1:1131 = 127.0.0.1:*->127.0.0.1:*
-    # n=2, mask 8 + port, 127.0.0.1:3131->127.0.0.1:1131 = 127.0.0.*:*->127.0.0.*:*
-    ip_1 = ip.split('->')[0]
-    ip_2 = ip.split('->')[1]
-    if n == 1:
-        # 1, 有port
-        if ':' in ip_1:
-            ip_1 = ip_1.split(':')[0] + ':*'
-        if ':' in ip_2:
-            ip_2 = ip_2.split(':')[0] + ':*'
-        return ip_1 + '->' + ip_2
-    if n == 2:
-        # 1, 有port
-        if ':' in ip_1:
-            ip_1 = ip_1[:ip_1.rfind('.')] + '.*:*'
-        else:
-            # 2, 无port
-            ip_1 = ip_1[:ip_1.rfind('.')] + '.*'
-        if ':' in ip_2:
-            ip_2 = ip_2[:ip_2.rfind('.')] + '.*:*'
-        else:
-            ip_2 = ip_2[:ip_2.rfind('.')] + '.*'
-        return ip_1 + '->' + ip_2
-
-    return ip
-
-
-def mask_path(p, n):
-    # n=0, mask . , /proc/irq/188/smp_affinity.log = /proc/irq/188/*.log
-    # n=1, mask 1 /, /proc/irq/188/smp_affinity = /proc/irq/188/*
-    # n=2, mask 2 //, /proc/irq/188/smp_affinity = /proc/irq/*/*
-    if n == 0:
-        if '/' in p:
-            f_index = p.rfind('/')
-            first = p[:f_index] + '/'
-            last = p[f_index:]
-            suffix = last.rfind('.')
-            if suffix != -1:
-                last = '*' + last[suffix:]
-            return first + last
-        else:
-            suffix = p.rfind('.')
-            if suffix != -1:
-                p = '*' + p[suffix:]
-            return p
-
-    if n == 1:
-        # 1, 有/
-        if '/' in p:
-            return p[:p.rfind('/')] + '/*'
-        else:
-            return '*'
-    if n == 2:
-        c = p.count('/')
-        if c >= 2:
-            rfind_1_index = p.rfind('/')
-            return p[:p.rfind('/', 0, rfind_1_index)] + '/*'
-        elif c == 1:
-            return '/*'
-        else:
-            return '*'
-    return p
-
+            start_time = caculte_start_time(parts[1], latency)
+            start_line = bidrect_process.pop(start_time)
+            iffind = True
+            if re.search(r'fd=\d+\(<4t>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4t>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<4>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<6t>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<6t>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<4u>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4u>(.*?)\)', start_line)[0]
+            else:
+                ip_port = ''
+                iffind = False
+            if iffind and ip_port != '':
+                mytuple = (start_time + '->' + parts[1], parts[3], ip_port, ip_port)
+                model_n_connect.add(mytuple)
 
 def match_and_find():
     # 逆向读入pandas然后对比, 粗粒度
@@ -210,69 +175,72 @@ def match_and_find():
     model_n_connect_c = pd.read_csv('../training/model_n_connect_c.csv')
 
     for l in model_f_create:
-        source = l[0]
-        sink = l[1]
-        freq = l[2]
-        condition = (model_f_create_c['source'].astype(str) == source) & (
-                    model_f_create_c['sink'].astype(str) == sink)
+        time = l[0]
+        source = l[1]
+        sink = l[2]
+        condition = (model_f_create_c['source'].astype(str) == source.split('|')[0].strip()) & (
+                model_f_create_c['sink'].astype(str) == mask_path(sink, 0))
         if not condition.any():
-            poi.add((source, sink, freq))
+            poi.add((time, source, sink))
 
     for l in model_f_delete:
-        source = l[0]
-        sink = l[1]
-        freq = l[2]
-        condition = (model_f_delete_c['source'].astype(str) == source) & (
-                    model_f_delete_c['sink'].astype(str) == sink)
+        time = l[0]
+        source = l[1]
+        sink = l[2]
+        condition = (model_f_delete_c['source'].astype(str) == source.split('|')[0].strip()) & (
+                model_f_delete_c['sink'].astype(str) == mask_path(sink, 0))
         if not condition.any():
-            poi.add((source, sink, freq))
+            poi.add((time, source, sink))
 
     for l in model_f_modify:
-        source = l[0]
-        sink = l[1]
-        freq = l[2]
-        condition = (model_f_modify_c['source'].astype(str) == source) & (
-                    model_f_modify_c['sink'].astype(str) == sink)
+        time = l[0]
+        source = l[1]
+        sink = l[2]
+        condition = (model_f_modify_c['source'].astype(str) == source.split('|')[0].strip()) & (
+                model_f_modify_c['sink'].astype(str) == mask_path(sink, 0))
         if not condition.any():
-            poi.add((source, sink, freq))
+            poi.add((time, source, sink))
 
     for l in model_f_rename:
-        source = l[0]
-        sink = l[1]
-        freq = l[2]
-        condition = (model_f_rename_c['source'].astype(str) == source) & (
-                    model_f_rename_c['sink'].astype(str) == sink)
+        time = l[0]
+        source = l[1]
+        sink = l[2]
+        condition = (model_f_rename_c['source'].astype(str) == source.split('|')[0].strip()) & (
+                model_f_rename_c['sink'].astype(str) == mask_path(sink, 0))
         if not condition.any():
-            poi.add((source, sink, freq))
+            poi.add((time, source, sink))
 
     for l in model_n_listen:
-        source = l[0]
-        sink = l[1]
-        freq = l[2]
-        condition = (model_n_listen_c['source'].astype(str) == source) & (
-                    model_n_listen_c['sink'].astype(str) == sink)
+        time = l[0]
+        source = l[1]
+        sink = l[2]
+        condition = (model_n_listen_c['source'].astype(str) == source.split('|')[0].strip()) & (
+                model_n_listen_c['sink'].astype(str) == mask_ip(sink, 1))
         if not condition.any():
-            poi.add((source, sink, freq))
+            poi.add((time, source, sink))
 
     for l in model_n_connect:
-        source = l[0]
-        sink = l[1]
-        freq = l[2]
-        condition = (model_n_connect_c['source'].astype(str) == source) & (
-                    model_n_connect_c['sink'].astype(str) == sink)
+        time = l[0]
+        source = l[1]
+        sink = l[2]
+        condition = (model_n_connect_c['source'].astype(str) == source.split('|')[0].strip()) & (
+                model_n_connect_c['sink'].astype(str) == mask_ip(sink, 2))
         if not condition.any():
-            poi.add((source, sink, freq))
+            poi.add((time, source, sink))
 
     for l in model_p_execve:
-        source = l[0]
-        sink = l[1]
-        attr = l[2]
-        freq = l[3]
-        condition = (model_p_execve_c['source'].astype(str) == source) & (
-                    model_p_execve_c['sink'].astype(str) == sink) & (
-                model_p_execve_c['attr'].astype(str) == attr)
-        if not condition.any():
-            poi.add((source, sink, attr, freq))
+        time = l[0]
+        source = l[1]
+        sink = l[2]
+        attr = l[3]
+        if not ('<NA>' in sink or '<NA>' in source):
+            # condition = (model_p_execve_c['source'].astype(str) == source.split('|')[0].strip()) & (
+            #         model_p_execve_c['sink'].astype(str) == sink.split('|')[0].strip()) & (
+            #                     model_p_execve_c['attr'].astype(str) == mask_path(attr, 0))
+            condition = (model_p_execve_c['source'].astype(str) == source.split('|')[0].strip()) & (
+                    model_p_execve_c['sink'].astype(str) == sink.split('|')[0].strip())
+            if not condition.any():
+                poi.add((time, source, sink))
 
     with open('poi.txt', 'w') as file:
         for value in poi:
@@ -282,14 +250,22 @@ def match_and_find():
 def event_caching():
     connection = sqlite3.connect('event_caching.db')
     cursor = connection.cursor()
-    cursor.execute('CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY, source TEXT, sink TEXT, time TEXT, attr TEXT)')
-    cursor.executemany('INSERT OR IGNORE INTO events (source, sink, time, attr) VALUES (?, ?, ?, ?)', db)
+    cursor.execute(
+        'CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY, time TEXT, source TEXT, sink TEXT, attr TEXT)')
+    cursor.executemany('INSERT OR IGNORE INTO events (time, source, sink, attr) VALUES (?, ?, ?, ?)', model_p_execve)
+    cursor.executemany('INSERT OR IGNORE INTO events (time, source, sink, attr) VALUES (?, ?, ?, ?)', model_f_create)
+    cursor.executemany('INSERT OR IGNORE INTO events (time, source, sink, attr) VALUES (?, ?, ?, ?)', model_f_rename)
+    cursor.executemany('INSERT OR IGNORE INTO events (time, source, sink, attr) VALUES (?, ?, ?, ?)', model_f_delete)
+    cursor.executemany('INSERT OR IGNORE INTO events (time, source, sink, attr) VALUES (?, ?, ?, ?)', model_f_modify)
+    cursor.executemany('INSERT OR IGNORE INTO events (time, source, sink, attr) VALUES (?, ?, ?, ?)', model_n_listen)
+    cursor.executemany('INSERT OR IGNORE INTO events (time, source, sink, attr) VALUES (?, ?, ?, ?)', model_n_connect)
     connection.commit()
     connection.close()
 
+
 if __name__ == '__main__':
     # log_file_path = sys.argv[1]
-    log_file_path = "system_log.txt"
+    log_file_path = "system_log1.txt"
     with open(log_file_path, "r") as file:
         log_lines = file.readlines()
         for line in log_lines:
@@ -298,7 +274,7 @@ if __name__ == '__main__':
             except Exception as e:
                 print(f"An error occurred: {e} " + line)
 
-    match_and_find()
-
     if evict_to_database:
         event_caching()
+
+    match_and_find()
