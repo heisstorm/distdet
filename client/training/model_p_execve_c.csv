@@ -1,129 +1,195 @@
 source,sink,attr,freq
-00-header,uname,/usr/bin/*,30
-50-landscape-sy,bc,/usr/bin/*,10
-50-landscape-sy,cut,/usr/bin/cut -f1.-d. ./proc/*,10
-50-landscape-sy,date,/usr/bin/*,10
-50-landscape-sy,grep,/usr/bin/grep -c.^processor./proc/*,10
-50-landscape-sy,landscape-sysin,/usr/bin/python3.8 /usr/bin/*,10
-85-fwupd,cat,/usr/bin/cat /run/motd.d/*,10
-90-updates-avai,cat,/usr/bin/cat /var/lib/update-notifier/*,10
-90-updates-avai,find,/usr/bin/find /var/lib/update-notifier/*,10
-90-updates-avai,grep,/usr/bin/*,10
-91-release-upgr,cut,/usr/bin/*,10
-91-release-upgr,id,/usr/bin/*,10
-91-release-upgr,lsb_release,/usr/bin/python3.8 -Es./usr/bin/*,10
-<NA>,cat,/usr/bin/cat /proc/376092/*,1
-<NA>,cat,/usr/bin/cat /proc/376423/*,2
-<NA>,cpuUsage.sh,/usr/bin/bash /home/local/ASUAD/zliu396/.vscode-server/bin/*,1
-<NA>,grep,/usr/bin/*,1
-<NA>,ps,/usr/bin/*,1
+00-header,uname,/usr/bin/*,81
+50-landscape-sy,bc,/usr/bin/*,27
+50-landscape-sy,cut,/usr/bin/cut -f1.-d. ./proc/*,27
+50-landscape-sy,date,/usr/bin/*,27
+50-landscape-sy,grep,/usr/bin/grep -c.^processor./proc/*,27
+50-landscape-sy,landscape-sysin,/usr/bin/python3.8 /usr/bin/*,27
+85-fwupd,cat,/usr/bin/cat /run/motd.d/*,27
+90-updates-avai,cat,/usr/bin/cat /var/lib/update-notifier/*,27
+90-updates-avai,find,/usr/bin/find /var/lib/update-notifier/*,27
+90-updates-avai,grep,/usr/bin/*,27
+91-release-upgr,cut,/usr/bin/*,27
+91-release-upgr,id,/usr/bin/*,27
+91-release-upgr,lsb_release,/usr/bin/python3.8 -Es./usr/bin/*,27
+<NA>,7,/*,1
+<NA>,7,/usr/sbin/ldconfig.real -f./etc/ld.so.conf.-C./etc/ld.so.cache./usr/lib/x86_64-linux-gnu./usr/lib/*,1
+<NA>,as,/usr/bin/x86_64-linux-gnu-as -I./ssd2/liangyi/dropbox/vllm-gptq/flash-attention/csrc/flash_attn.-I./ssd2/*,1
+<NA>,basename,/usr/bin/basename --./usr/lib/git-core/*,1
+<NA>,cat,/usr/bin/cat /proc/985105/*,6
+<NA>,cat,/usr/bin/cat /proc/988179/*,1
+<NA>,cat,/usr/bin/cat /proc/988202/*,1
+<NA>,cat,/usr/bin/cat /proc/988224/*,1
+<NA>,cat,/usr/bin/cat /proc/988250/*,1
+<NA>,cat,/usr/bin/cat /proc/998388/*,4
+<NA>,cc1,/usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet.-imultiarch.x86_64-linux-gnu.-D_REENTRANT.-D.NDEBUG.-isystem./ssd2/*,1
+<NA>,cc1plus,/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -E.-quiet.-imultiarch.x86_64-linux-gnu.-D_GNU_SOURCE./tmp/*,1
+<NA>,containerd-shim,/usr/bin/*,2
+<NA>,entrypoint.sh,/usr/bin/bash ./*,1
+<NA>,envsubst,/usr/bin/*,1
+<NA>,exe,/usr/bin/*,2
+<NA>,gcc,/usr/bin/x86_64-linux-gnu-gcc-9 -I./ssd2/liangyi/dropbox/vllm-gptq/flash-attention/csrc/flash_attn.-I./ssd2/*,9
+<NA>,git-remote-http,/usr/lib/git-core/git-remote-http origin.https://github.com/NVIDIA/*,1
+<NA>,nvidia-containe,/usr/bin/*,3
+<NA>,nvidia-containe,/usr/bin/nvidia-container-cli --load-kmods.configure.--ldconfig=@/sbin/*,2
+<NA>,nvidia-modprobe,/usr/bin/nvidia-modprobe -s.-f=/proc/driver/nvidia/capabilities/mig/*,3
+<NA>,ps,/usr/bin/*,3
+<NA>,python3,/usr/bin/*,1
+<NA>,runc,/usr/bin/runc --root./var/run/docker/runtime-runc/moby.--log./run/containerd/*,6
+<NA>,scalellm,/app/bin/scalellm --model_path./models/models--Qwen--Qwen-72B-Chat-Int4/snapshots/*,2
+<NA>,sed,/usr/bin/sed -n.s/^cpu\s//p./proc/*,5
 <NA>,sleep,/usr/bin/*,1
-apt-check,dpkg,/usr/bin/*,110
-apt-check,lsb_release,/usr/bin/python3.8 -Es./bin/*,121
-apt-config,dpkg,/usr/bin/*,1194
-apt-get,dpkg,/usr/bin/*,33
-apt-get,gpgv,/usr/lib/apt/methods/*,22
-apt-get,http,/usr/lib/apt/methods/*,44
-apt-get,https,/usr/lib/apt/methods/*,121
-apt-get,sh,/usr/bin/dash -c./usr/bin/test -e /usr/share/dbus-1/system-services/*,11
-apt-get,sh,/usr/bin/dash -c./usr/lib/update-notifier/update-motd-updates-available 2>/dev/*,11
-apt-get,sh,/usr/bin/dash -c.[ ! -e /run/systemd/*,11
-apt-get,sh,/usr/bin/dash -c.[ ! -f /var/run/dbus/system_bus_socket ] || /usr/bin/*,11
-apt-get,sh,/usr/bin/dash -c.if /usr/bin/test -w /var/cache/app-info -a -e /usr/bin/*,11
-apt-get,sh,/usr/bin/dash -c.if /usr/bin/test -w /var/lib/command-not-found/ -a -e /usr/lib/*,11
-apt-get,sh,/usr/bin/dash -c.touch /var/lib/apt/periodic/update-success-stamp 2>/dev/*,11
-apt-get,store,/usr/lib/apt/methods/*,22
-apt-key,apt-config,/usr/bin/*,913
-apt-key,apt-config,/usr/bin/apt-config shell.TRUSTEDFILE.Dir::Etc::Trusted/*,88
-apt-key,apt-config,/usr/bin/apt-config shell.TRUSTEDPARTS.Dir::Etc::TrustedParts/*,88
-apt-key,cat,/usr/bin/cat /etc/apt/*,66
-apt-key,cat,/usr/bin/cat /etc/apt/trusted.gpg.d/*,264
-apt-key,cat,/usr/bin/cat /var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d/*,22
-apt-key,chmod,/usr/bin/chmod 700./tmp/*,165
-apt-key,cmp,/usr/bin/cmp --silent.--bytes=1.-./etc/apt/*,66
-apt-key,cmp,/usr/bin/cmp --silent.--bytes=1.-./etc/apt/trusted.gpg.d/*,264
-apt-key,cmp,/usr/bin/cmp --silent.--bytes=1.-./var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d/*,22
+<NA>,uname,/usr/bin/*,1
+<NA>,which,/usr/bin/dash /usr/bin/*,3
+Xorg,sh,"/usr/bin/dash -c.""/usr/bin/xkbcomp"" -w 1 ""-R/usr/share/X11/*",34
+apt-check,dpkg,/usr/bin/*,300
+apt-check,lsb_release,/usr/bin/python3.8 -Es./bin/*,330
+apt-config,dpkg,/usr/bin/*,3255
+apt-get,dpkg,/usr/bin/*,90
+apt-get,gpgv,/usr/lib/apt/methods/*,60
+apt-get,http,/usr/lib/apt/methods/*,120
+apt-get,https,/usr/lib/apt/methods/*,330
+apt-get,sh,/usr/bin/dash -c./usr/bin/test -e /usr/share/dbus-1/system-services/*,30
+apt-get,sh,/usr/bin/dash -c./usr/lib/update-notifier/update-motd-updates-available 2>/dev/*,30
+apt-get,sh,/usr/bin/dash -c.[ ! -e /run/systemd/*,30
+apt-get,sh,/usr/bin/dash -c.[ ! -f /var/run/dbus/system_bus_socket ] || /usr/bin/*,30
+apt-get,sh,/usr/bin/dash -c.if /usr/bin/test -w /var/cache/app-info -a -e /usr/bin/*,30
+apt-get,sh,/usr/bin/dash -c.if /usr/bin/test -w /var/lib/command-not-found/ -a -e /usr/lib/*,30
+apt-get,sh,/usr/bin/dash -c.touch /var/lib/apt/periodic/update-success-stamp 2>/dev/*,30
+apt-get,store,/usr/lib/apt/methods/*,60
+apt-key,apt-config,/usr/bin/*,2490
+apt-key,apt-config,/usr/bin/apt-config shell.TRUSTEDFILE.Dir::Etc::Trusted/*,240
+apt-key,apt-config,/usr/bin/apt-config shell.TRUSTEDPARTS.Dir::Etc::TrustedParts/*,240
+apt-key,cat,/usr/bin/cat /etc/apt/*,180
+apt-key,cat,/usr/bin/cat /etc/apt/trusted.gpg.d/*,720
+apt-key,cat,/usr/bin/cat /var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d/*,60
+apt-key,chmod,/usr/bin/chmod 700./tmp/*,450
+apt-key,cmp,/usr/bin/cmp --silent.--bytes=1.-./etc/apt/*,180
+apt-key,cmp,/usr/bin/cmp --silent.--bytes=1.-./etc/apt/trusted.gpg.d/*,720
+apt-key,cmp,/usr/bin/cmp --silent.--bytes=1.-./var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d/*,60
 apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.0PVzEAIDqm/pubring.gpg./tmp/*,11
 apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.7x2RItn9yt/pubring.gpg./tmp/*,11
 apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.8OpL2Yibqy/pubring.gpg./tmp/*,11
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.A7Ptd4jHLb/pubring.gpg./tmp/*,19
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.CDfN6wUkkr/pubring.gpg./tmp/*,19
 apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.ImN5fu0liN/pubring.gpg./tmp/*,11
 apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.Ru8lI51npF/pubring.gpg./tmp/*,11
 apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.TFvtMSXeex/pubring.gpg./tmp/*,11
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.WIhasjKNTo/pubring.gpg./tmp/*,19
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.XVadUWkSZY/pubring.gpg./tmp/*,19
 apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.cJXwrdenb6/pubring.gpg./tmp/*,11
 apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.dD7c4q5VJ5/pubring.gpg./tmp/*,11
-apt-key,find,/usr/bin/find /etc/apt/*,66
-apt-key,find,/usr/bin/find /var/lib/ubuntu-advantage/apt-esm/etc/apt/*,22
-apt-key,gpgconf,/usr/bin/*,165
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.foxNxkuqvz/pubring.gpg./tmp/*,19
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.gRyva5WDLL/pubring.gpg./tmp/*,19
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.jUpWUsbNqv/pubring.gpg./tmp/*,19
+apt-key,cp,/usr/bin/cp -a./tmp/apt-key-gpghome.sJrHL8QAG1/pubring.gpg./tmp/*,19
+apt-key,find,/usr/bin/find /etc/apt/*,180
+apt-key,find,/usr/bin/find /var/lib/ubuntu-advantage/apt-esm/etc/apt/*,60
+apt-key,gpgconf,/usr/bin/*,450
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.0PVzEAIDqm.--keyring./tmp/*,11
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.3Oxyl5TeA4.--keyring./etc/apt/keyrings/*,11
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.4CN6fK0gp3.--keyring./usr/share/keyrings/*,11
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.7x2RItn9yt.--keyring./tmp/*,11
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.8OpL2Yibqy.--keyring./tmp/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.A7Ptd4jHLb.--keyring./tmp/*,19
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.CDfN6wUkkr.--keyring./tmp/*,19
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.EP9LolnJJ3.--keyring./usr/share/keyrings/*,11
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.ImN5fu0liN.--keyring./tmp/*,11
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.LfNsr1Lau3.--keyring./etc/apt/keyrings/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.NoQKDaxBgg.--keyring./usr/share/keyrings/*,19
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.Ru8lI51npF.--keyring./tmp/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.SKkAyBIrBx.--keyring./etc/apt/keyrings/*,19
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.TFvtMSXeex.--keyring./tmp/*,11
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.TIDGfBMToC.--keyring./usr/share/keyrings/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.TRRdtooUnI.--keyring./usr/share/keyrings/*,19
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.UIFI8Ug5Vz.--keyring./etc/apt/keyrings/*,19
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.WIhasjKNTo.--keyring./tmp/*,19
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.XVadUWkSZY.--keyring./tmp/*,19
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.YyS6u0YUYo.--keyring./usr/share/keyrings/*,11
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.cJXwrdenb6.--keyring./tmp/*,11
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.dD7c4q5VJ5.--keyring./tmp/*,11
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.foxNxkuqvz.--keyring./tmp/*,19
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.gRyva5WDLL.--keyring./tmp/*,19
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.iTNXkWer3X.--keyring./usr/share/keyrings/*,19
 apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.iaSv4YF3GV.--keyring./usr/share/keyrings/*,11
-apt-key,mktemp,/usr/bin/*,165
-apt-key,readlink,/usr/bin/readlink -f./etc/apt/trusted.gpg.d/*,66
-apt-key,readlink,/usr/bin/readlink -f./tmp/*,88
-apt-key,readlink,/usr/bin/readlink -f./var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d/*,22
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.jUpWUsbNqv.--keyring./tmp/*,19
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.n9L65E2Urx.--keyring./usr/share/keyrings/*,19
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.sJrHL8QAG1.--keyring./tmp/*,19
+apt-key,gpgv,/usr/bin/gpgv --homedir./tmp/apt-key-gpghome.zA61BmQ4Gk.--keyring./usr/share/keyrings/*,19
+apt-key,mktemp,/usr/bin/*,450
+apt-key,readlink,/usr/bin/readlink -f./etc/apt/trusted.gpg.d/*,180
+apt-key,readlink,/usr/bin/readlink -f./tmp/*,240
+apt-key,readlink,/usr/bin/readlink -f./var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d/*,60
 apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.0PVzEAIDqm/*,11
 apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.7x2RItn9yt/*,11
 apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.8OpL2Yibqy/*,11
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.A7Ptd4jHLb/*,19
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.CDfN6wUkkr/*,19
 apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.ImN5fu0liN/*,11
 apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.Ru8lI51npF/*,11
 apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.TFvtMSXeex/*,11
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.WIhasjKNTo/*,19
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.XVadUWkSZY/*,19
 apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.cJXwrdenb6/*,11
 apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.dD7c4q5VJ5/*,11
-apt-key,rm,/usr/bin/rm -rf./tmp/*,165
-apt-key,sed,/usr/bin/*,330
-apt-key,sort,/usr/bin/*,88
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.foxNxkuqvz/*,19
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.gRyva5WDLL/*,19
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.jUpWUsbNqv/*,19
+apt-key,rm,/usr/bin/rm -f./tmp/apt-key-gpghome.sJrHL8QAG1/*,19
+apt-key,rm,/usr/bin/rm -rf./tmp/*,450
+apt-key,sed,/usr/bin/*,900
+apt-key,sort,/usr/bin/*,240
 apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.0PVzEAIDqm/*,11
 apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.7x2RItn9yt/*,11
 apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.8OpL2Yibqy/*,11
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.A7Ptd4jHLb/*,19
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.CDfN6wUkkr/*,19
 apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.ImN5fu0liN/*,11
 apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.Ru8lI51npF/*,11
 apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.TFvtMSXeex/*,11
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.WIhasjKNTo/*,19
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.XVadUWkSZY/*,19
 apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.cJXwrdenb6/*,11
 apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.dD7c4q5VJ5/*,11
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.foxNxkuqvz/*,19
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.gRyva5WDLL/*,19
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.jUpWUsbNqv/*,19
+apt-key,touch,/usr/bin/touch /tmp/apt-key-gpghome.sJrHL8QAG1/*,19
 bash,bash,/usr/bin/*,1
 bash,bash,/usr/bin/bash /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/bin/*,3
 bash,bash,/usr/bin/bash /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,7
 bash,bash,/usr/bin/bash /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/*,1
 bash,brew,/usr/bin/bash /home/linuxbrew/.linuxbrew/bin/*,1
 bash,cat,/usr/bin/*,1
-bash,cat,/usr/bin/cat /etc/*,10
-bash,cat,/usr/bin/cat /home/local/ASUAD/lhuan139/.vscode-server/*,81
+bash,cat,/usr/bin/cat /etc/*,12
+bash,cat,/usr/bin/cat /home/local/ASUAD/lhuan139/.vscode-server/*,95
 bash,cat,/usr/bin/cat /home/local/ASUAD/zliu396/.jenv/*,1
 bash,cat,/usr/bin/cat /home/local/ASUAD/zliu396/.vscode-server/*,4
-bash,cat,/usr/bin/cat /lib/x86_64-linux-gnu/libstdc++.so.6./lib/i386-linux-gnu/*,10
-bash,chmod,/usr/bin/chmod 0700./home/local/ASUAD/lhuan139/.vscode-server/*,9
-bash,code-server,/usr/bin/env /home/local/ASUAD/lhuan139/.vscode-server/bin/*,27
-bash,code-server,/usr/bin/env sh./home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
-bash,conda,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/bin/*,148
-bash,conda,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/bin/conda.shell.posix.activate./ssd2/liangyi/*,56
-bash,date,/usr/bin/*,28
-bash,df,/usr/bin/*,1788
-bash,dircolors,/usr/bin/*,18
-bash,dirname,/usr/bin/dirname /ssd2/liangyi/miniconda/*,9
-bash,dirname,/usr/bin/dirname /ssd2/liangyi/miniconda/bin/*,9
+bash,cat,/usr/bin/cat /lib/x86_64-linux-gnu/libstdc++.so.6./lib/i386-linux-gnu/*,12
+bash,chmod,/usr/bin/chmod 0700./home/local/ASUAD/lhuan139/.vscode-server/*,11
+bash,code-server,/usr/bin/env /home/local/ASUAD/lhuan139/.vscode-server/bin/*,33
+bash,code-server,/usr/bin/env sh./home/local/ASUAD/lhuan139/.vscode-server/bin/*,11
+bash,conda,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/bin/*,198
+bash,conda,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/bin/conda.shell.posix.activate./ssd2/liangyi/*,60
+bash,date,/usr/bin/*,34
+bash,df,/usr/bin/*,67103
+bash,dircolors,/usr/bin/*,39
+bash,dirname,/usr/bin/dirname /ssd2/liangyi/miniconda/*,26
+bash,dirname,/usr/bin/dirname /ssd2/liangyi/miniconda/bin/*,26
 bash,env,/usr/bin/env -i.HOME=/home/local/ASUAD/zliu396.SHELL=/bin/bash.PATH=/usr/bin:/bin:/usr/*,1
-bash,flock,/usr/bin/*,24
-bash,getconf,/usr/bin/*,10
+bash,flock,/usr/bin/*,88
+bash,getconf,/usr/bin/*,12
 bash,git,/usr/bin/*,1
-bash,grep,/usr/bin/*,208
-bash,grep,/usr/bin/grep /home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
+bash,git,/usr/bin/git clone.https://github.com/Dao-AILab/*,3
+bash,git,/usr/bin/git clone.https://github.com/QwenLM/*,2
+bash,grep,/usr/bin/*,244
+bash,grep,/usr/bin/grep /home/local/ASUAD/lhuan139/.vscode-server/bin/*,11
 bash,grep,/usr/bin/grep /home/local/ASUAD/zliu396/.vscode-server/bin/*,1
-bash,groups,/usr/bin/*,18
-bash,head,/usr/bin/*,18
-bash,head,/usr/bin/head -v.-n.2./proc/stat./proc/version./proc/uptime./proc/loadavg./proc/sys/fs/*,1795
-bash,head,/usr/bin/head -v.-n.8./proc/*,1795
+bash,groups,/usr/bin/*,39
+bash,head,/usr/bin/*,20
+bash,head,/usr/bin/head -v.-n.2./proc/stat./proc/version./proc/uptime./proc/loadavg./proc/sys/fs/*,67185
+bash,head,/usr/bin/head -v.-n.8./proc/*,67118
+bash,htop,/usr/bin/*,2
 bash,jenv,/usr/bin/bash /home/linuxbrew/.linuxbrew/bin/*,3
 bash,jenv,/usr/bin/env /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/bin/*,20
 bash,jenv,/usr/bin/env /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,8
@@ -141,51 +207,90 @@ bash,jenv-refresh-pl,/usr/bin/env /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/l
 bash,jenv-refresh-pl,/usr/bin/env bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,1
 bash,jenv-rehash,/usr/bin/env /home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,8
 bash,jenv-rehash,/usr/bin/env bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/*,1
-bash,ldconfig,/usr/bin/dash /sbin/*,10
-bash,ldconfig.real,/usr/sbin/*,10
-bash,ldd,/usr/bin/bash /usr/bin/*,10
-bash,lesspipe,/usr/bin/dash /usr/bin/*,18
-bash,locale-check,/usr/bin/*,10
-bash,ls,/usr/bin/ls -1.-t./home/local/ASUAD/lhuan139/.vscode-server/*,9
+bash,ldconfig,/usr/bin/dash /sbin/*,12
+bash,ldconfig.real,/usr/sbin/*,12
+bash,ldd,/usr/bin/bash /usr/bin/*,12
+bash,lesspipe,/usr/bin/dash /usr/bin/*,39
+bash,locale-check,/usr/bin/*,27
+bash,ls,/usr/bin/*,4
+bash,ls,/usr/bin/ls -1.-t./home/local/ASUAD/lhuan139/.vscode-server/*,11
 bash,ls,/usr/bin/ls -1.-t./home/local/ASUAD/zliu396/.vscode-server/*,1
 bash,mkdir,/usr/bin/mkdir -p./home/local/ASUAD/zliu396/.jenv/*,1
 bash,mkdir,/usr/bin/mkdir -p./home/local/ASUAD/zliu396/.jenv/shims./home/local/ASUAD/zliu396/.jenv/*,1
-bash,printenv,/usr/bin/*,9
-bash,ps,/usr/bin/*,12
-bash,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/python3.9 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,38
+bash,nvtop,/usr/bin/*,2
+bash,pip,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/bin/*,8
+bash,printenv,/usr/bin/*,11
+bash,ps,/usr/bin/*,14
+bash,python,/ssd2/liangyi/miniconda/bin/*,2
+bash,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/python3.9 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,42
 bash,python,/ssd2/liangyi/miniconda/envs/vllm/bin/python3.9 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,18
 bash,readlink,/usr/bin/*,8
 bash,rm,/usr/bin/rm -f./home/local/ASUAD/lhuan139/.vscode-server/bin/*,2
-bash,rm,/usr/bin/rm /home/local/ASUAD/lhuan139/.vscode-server/*,18
-bash,sed,"/usr/bin/sed s/""//*",10
-bash,sed,/usr/bin/sed s/Extension host agent listening on //*,64
-bash,sed,/usr/bin/sed s/GLIBCXX_//*,10
-bash,sed,/usr/bin/sed s/^.* => //*,10
-bash,sed,/usr/bin/sed s/^/    /*,9
-bash,sed,/usr/bin/sed s/^[Ii][Dd]=//*,10
-bash,sh,/usr/bin/dash /home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
-bash,sleep,/usr/bin/*,2005
+bash,rm,/usr/bin/rm /home/local/ASUAD/lhuan139/.vscode-server/*,22
+bash,sed,"/usr/bin/sed s/""//*",12
+bash,sed,/usr/bin/sed s/Extension host agent listening on //*,74
+bash,sed,/usr/bin/sed s/GLIBCXX_//*,12
+bash,sed,/usr/bin/sed s/^.* => //*,12
+bash,sed,/usr/bin/sed s/^/    /*,11
+bash,sed,/usr/bin/sed s/^[Ii][Dd]=//*,12
+bash,sh,/usr/bin/dash /home/local/ASUAD/lhuan139/.vscode-server/bin/*,11
+bash,sleep,/usr/bin/*,67625
 bash,sort,/usr/bin/*,1
-bash,tail,/usr/bin/*,10
-bash,tail,/usr/bin/tail -v.-n.16./proc/net/*,1795
-bash,touch,/usr/bin/touch /home/local/ASUAD/lhuan139/.vscode-server/*,9
-bash,tr,/usr/bin/*,10
-bash,uname,/usr/bin/*,32
+bash,sudo,/usr/bin/*,15
+bash,sudo,/usr/bin/sudo docker.run.--restart=always.-it.--gpus=all.--net=host.--shm-size=1g.-v./ssd2/*,42
+bash,tail,/usr/bin/*,12
+bash,tail,/usr/bin/tail -v.-n.16./proc/net/*,67080
+bash,touch,/usr/bin/touch /home/local/ASUAD/lhuan139/.vscode-server/*,11
+bash,tr,/usr/bin/*,12
+bash,uname,/usr/bin/*,40
 bash,uniq,/usr/bin/*,1
-bash,wc,/usr/bin/*,10
+bash,wc,/usr/bin/*,12
 bash,wget,/usr/bin/*,1
 bash,wget,/usr/bin/wget --no-proxy.-nv.-O.-.http://127.0.0.1:34103/*,1
-bash,who,/usr/bin/*,1788
+bash,who,/usr/bin/*,67081
 brew,dirname,/usr/bin/dirname ../Homebrew/bin/*,1
 brew,readlink,/usr/bin/readlink /home/linuxbrew/.linuxbrew/bin/*,1
-cnf-update-db,dpkg,/usr/bin/*,11
-conda,bash,/usr/bin/bash /tmp/*,56
-conda,python,/ssd2/liangyi/miniconda/bin/*,18
-conda,sh,/usr/bin/*,9
+c++,as,/usr/bin/x86_64-linux-gnu-as -I./tmp/pip-build-env-8n9rfz0b/overlay/lib/python3.10/site-packages/torch/*,14
+c++,c++,/usr/bin/x86_64-linux-gnu-g++-9 -I./tmp/pip-build-env-8n9rfz0b/overlay/lib/python3.10/site-packages/torch/*,126
+c++,cc1plus,/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet.-I./tmp/pip-build-env-8n9rfz0b/overlay/lib/python3.10/site-packages/*,14
+cnf-update-db,dpkg,/usr/bin/*,30
+collect2,ld,/ssd2/liangyi/miniconda/bin/x86_64-conda-linux-gnu-ld -plugin./usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so.-plugin-opt=/usr/*,14
+conda,bash,/usr/bin/bash /tmp/*,60
+conda,python,/ssd2/liangyi/miniconda/bin/*,22
+conda,sh,/usr/bin/*,11
+containerd,containerd-shim,/usr/bin/containerd-shim-runc-v2 -namespace.moby.-address./run/containerd/containerd.sock.-publish-binary./*,3311
+containerd-shim,containerd-shim,/usr/bin/*,1703
+containerd-shim,entrypoint.sh,/usr/bin/bash ./*,1707
+containerd-shim,runc,/usr/bin/runc --root./var/run/docker/runtime-runc/moby.--log./run/containerd/*,6605
 cpptools,gcc,/usr/bin/*,10
 cpptools,gcc,"/usr/bin/x86_64-linux-gnu-gcc-9 -std=c17.-m64.-Wp,-v.-E.-dM.-x.c./dev/*",10
 cpptools,gcc,"/usr/bin/x86_64-linux-gnu-gcc-9 -std=gnu++14.-m64.-Wp,-v.-E.-dM.-x.c++./dev/*",10
 cpptools,gcc,/usr/bin/x86_64-linux-gnu-gcc-9 -x.c++.-E.-dM./dev/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/1000022/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/1000023/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/1000031/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1000032/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1000033/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1000034/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1000035/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1000036/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1000037/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1000038/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1000039/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1000279/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001523/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001524/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001525/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001555/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001557/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001564/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001565/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001566/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001567/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001580/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001692/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001693/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/1001702/*,2
 cpuUsage.sh,cat,/usr/bin/cat /proc/3152991/*,720
 cpuUsage.sh,cat,/usr/bin/cat /proc/3154002/*,720
 cpuUsage.sh,cat,/usr/bin/cat /proc/374846/*,22476
@@ -193,202 +298,972 @@ cpuUsage.sh,cat,/usr/bin/cat /proc/375581/*,22476
 cpuUsage.sh,cat,/usr/bin/cat /proc/376092/*,21572
 cpuUsage.sh,cat,/usr/bin/cat /proc/376423/*,21571
 cpuUsage.sh,cat,/usr/bin/cat /proc/483912/*,332
-cpuUsage.sh,sed,/usr/bin/sed -n.s/^cpu\s//p./proc/*,45101
-cpuUsage.sh,sleep,/usr/bin/*,22550
-cron,sh,/usr/bin/dash -c.   cd / && run-parts --report /etc/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/824661/*,204
+cpuUsage.sh,cat,/usr/bin/cat /proc/826531/*,204
+cpuUsage.sh,cat,/usr/bin/cat /proc/826585/*,204
+cpuUsage.sh,cat,/usr/bin/cat /proc/977011/*,142
+cpuUsage.sh,cat,/usr/bin/cat /proc/977194/*,116
+cpuUsage.sh,cat,/usr/bin/cat /proc/977198/*,32
+cpuUsage.sh,cat,/usr/bin/cat /proc/978041/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/978095/*,78
+cpuUsage.sh,cat,/usr/bin/cat /proc/978117/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/978118/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/978119/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/978120/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/978121/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/978122/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/978147/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/978148/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/978317/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/978318/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/978319/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/978547/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/978548/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/978549/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/978550/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/978551/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/978552/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/978554/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/978565/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/978566/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/978567/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/978568/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/978569/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/978570/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/978601/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/978852/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/979176/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/979177/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/979178/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/979179/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/979180/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/979181/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/979182/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/979194/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/979195/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/979196/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/979197/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/979198/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/979199/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/979230/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/979231/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/979650/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/979651/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/979652/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/979757/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/979758/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/979759/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/979760/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/979761/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/979762/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/979763/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/979775/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/979776/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/979777/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/979778/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/979779/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/979780/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/979812/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/979999/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/980000/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/980001/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/980104/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/980105/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/980106/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/980107/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/980108/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/980109/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/980110/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/980122/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980123/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980124/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980125/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980126/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980127/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980158/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/980558/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/980559/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/980560/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/980666/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/980667/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/980668/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/980669/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/980670/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/980671/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/980672/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/980673/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/980674/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/980688/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980689/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980699/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980700/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980701/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980702/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980703/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980704/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980705/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980706/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980707/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980708/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980747/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/980748/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/980749/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/980750/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/980908/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/980909/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/981007/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/981008/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/981009/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/981047/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/981048/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/981195/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/981196/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/981197/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/981199/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/982274/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/984751/*,52
+cpuUsage.sh,cat,/usr/bin/cat /proc/985105/*,444
+cpuUsage.sh,cat,/usr/bin/cat /proc/985155/*,324
+cpuUsage.sh,cat,/usr/bin/cat /proc/986813/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/986826/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/987238/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/987239/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/987254/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/987279/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/987366/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988042/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/988160/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988161/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988163/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988164/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988166/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988167/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988168/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988169/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/988170/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988171/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/988172/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988173/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988174/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/988175/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988176/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/988177/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988178/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988179/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988180/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/988181/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988182/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988184/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988185/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988186/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988187/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988188/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988191/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988196/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988197/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988199/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988200/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988201/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988202/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988203/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/988205/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988206/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/988208/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988209/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988210/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988211/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/988213/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988216/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/988220/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/988222/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988224/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/988228/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/988229/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/988231/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/988233/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988234/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/988237/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/988238/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/988239/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988241/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988242/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988245/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988246/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988249/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/988250/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988253/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/988256/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988259/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/988260/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988264/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988265/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988268/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988271/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/988450/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/988966/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988967/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/988968/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/988969/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/988970/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988971/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/988972/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988973/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/988997/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/988998/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/988999/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/989000/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989001/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989002/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/989003/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989004/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/989005/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989006/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989007/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989008/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989009/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989010/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989011/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/989012/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/989013/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989014/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989015/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/989016/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/989017/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/989018/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/989019/*,20
+cpuUsage.sh,cat,/usr/bin/cat /proc/989020/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989021/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/989022/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/989023/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989024/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989025/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/989026/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989027/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/989028/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/989029/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989030/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989031/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989032/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989033/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989034/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/989035/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/989036/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989040/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989041/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989042/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989043/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989046/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989047/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989048/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989049/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989051/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989052/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/989053/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989054/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989057/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989058/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989059/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989061/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989063/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989064/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989065/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989066/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989067/*,20
+cpuUsage.sh,cat,/usr/bin/cat /proc/989068/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989069/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989070/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989071/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/989072/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/989074/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/989075/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/989078/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/989079/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/989080/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/989081/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/989085/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/989086/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/989087/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/989088/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/989089/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/989090/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/989091/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/989092/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/989093/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989094/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989095/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989096/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989097/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989098/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989099/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989100/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989101/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989102/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/989103/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/989104/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/989105/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989106/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989107/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989108/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/989109/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989110/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989111/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989112/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989113/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/989114/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989115/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989116/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989117/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989118/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989119/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989120/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/989142/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989143/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989144/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989145/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/989147/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989148/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989149/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/989151/*,20
+cpuUsage.sh,cat,/usr/bin/cat /proc/989155/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989156/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989157/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989158/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989162/*,16
+cpuUsage.sh,cat,/usr/bin/cat /proc/989163/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/989164/*,22
+cpuUsage.sh,cat,/usr/bin/cat /proc/989166/*,18
+cpuUsage.sh,cat,/usr/bin/cat /proc/996033/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/996034/*,14
+cpuUsage.sh,cat,/usr/bin/cat /proc/996042/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/996043/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/996044/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/996045/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/996046/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/996047/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/996048/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/996049/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/996050/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/996738/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/996739/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/996740/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/996745/*,10
+cpuUsage.sh,cat,/usr/bin/cat /proc/998388/*,96
+cpuUsage.sh,cat,/usr/bin/cat /proc/998409/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/998410/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/998476/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/998477/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/998598/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/998600/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/998814/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/998815/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/998844/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/998845/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/998907/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/998910/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/998936/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/998937/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/999070/*,8
+cpuUsage.sh,cat,/usr/bin/cat /proc/999072/*,12
+cpuUsage.sh,cat,/usr/bin/cat /proc/999084/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/999085/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/999086/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/999087/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/999088/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/999089/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/999090/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/999091/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/999092/*,4
+cpuUsage.sh,cat,/usr/bin/cat /proc/999811/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/999812/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/999813/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/999814/*,6
+cpuUsage.sh,cat,/usr/bin/cat /proc/999927/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/999928/*,2
+cpuUsage.sh,cat,/usr/bin/cat /proc/999929/*,2
+cpuUsage.sh,sed,/usr/bin/sed -n.s/^cpu\s//p./proc/*,45937
+cpuUsage.sh,sleep,/usr/bin/*,22978
+cron,sh,/usr/bin/dash -c.   cd / && run-parts --report /etc/*,44
 cron,sh,/usr/bin/dash -c.   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/*,3
-cron,sh,/usr/bin/dash -c.[ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/*,17
-cron,sh,/usr/bin/dash -c.command -v debian-sa1 > /dev/*,95
+cron,sh,/usr/bin/dash -c.[ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/*,28
+cron,sh,/usr/bin/dash -c.command -v debian-sa1 > /dev/*,223
+entrypoint.sh,python3,/usr/bin/*,1709
+entrypoint.sh,scalellm,/app/bin/scalellm --model_path./models/models--Qwen--Qwen-72B-Chat-Int4/snapshots/*,1680
+g++,collect2,/usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin./usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so.-plugin-opt=/usr/*,14
+gcc,as,/usr/bin/x86_64-linux-gnu-as -I./ssd2/liangyi/dropbox/vllm-gptq/flash-attention/csrc/flash_attn.-I./ssd2/*,8
+gcc,as,/usr/bin/x86_64-linux-gnu-as -I./tmp/pip-build-env-8n9rfz0b/overlay/lib/python3.10/site-packages/torch/*,16
 gcc,cc1,/usr/lib/gcc/x86_64-linux-gnu/9/cc1 -E.-quiet.-imultiarch.x86_64-linux-gnu.-v./dev/*,10
+gcc,cc1plus,/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -E.-quiet.-I./ssd2/liangyi/dropbox/vllm-gptq/flash-attention/csrc/*,32
+gcc,cc1plus,/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -E.-quiet.-I./tmp/pip-build-env-8n9rfz0b/overlay/lib/python3.10/*,32
 gcc,cc1plus,/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -E.-quiet.-imultiarch.x86_64-linux-gnu.-D_GNU_SOURCE.-v./dev/*,10
 gcc,cc1plus,/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -E.-quiet.-imultiarch.x86_64-linux-gnu.-D_GNU_SOURCE./dev/*,10
-git,git,/usr/lib/git-core/*,882
-git,git-remote-http,/usr/lib/git-core/git-remote-http origin.https://github.com/jackaduma/*,294
-gpgconf,gpg-connect-age,/usr/bin/*,330
-gpgconf,gpg-connect-age,/usr/bin/gpg-connect-agent -s.--no-autostart.GETINFO scd_running./if ${! $?}.scd killscd./*,165
-gpgv,apt-key,/usr/bin/dash /usr/bin/apt-key.--quiet.--readonly.--keyring./etc/apt/keyrings/*,22
-gpgv,apt-key,/usr/bin/dash /usr/bin/apt-key.--quiet.--readonly.--keyring./usr/share/keyrings/*,55
-gpgv,apt-key,/usr/bin/dash /usr/bin/apt-key.--quiet.--readonly.verify.--status-fd.3./tmp/*,88
-landscape-monit,landscape-packa,/usr/bin/python3.8 /usr/bin/*,33
-landscape-packa,apt-get,/usr/bin/*,11
-landscape-packa,apt-update,/usr/lib/landscape/*,11
-landscape-packa,dpkg,/usr/bin/*,99
-landscape-packa,landscape-packa,/usr/bin/*,99
-landscape-packa,uname,/usr/bin/*,33
-landscape-sysin,landscape-sysin,/usr/bin/*,60
-landscape-sysin,uname,/usr/bin/*,10
-landscape-sysin,who,/usr/bin/*,10
-lesspipe,basename,/usr/bin/basename /usr/bin/*,18
-lesspipe,dirname,/usr/bin/dirname /usr/bin/*,18
-lsb_release,dpkg-query,/usr/bin/*,37
-lsb_release,lsb_release,/usr/bin/*,287
-master,pickup,/usr/lib/postfix/sbin/*,7
-node,bash,/usr/bin/bash --init-file./home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
-node,bash,/usr/bin/bash -c.conda run -n gpupower --no-capture-output python /home/local/ASUAD/*,38
+gcc,cc1plus,/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -E.-quiet.-imultiarch.x86_64-linux-gnu.-D_GNU_SOURCE./tmp/*,26
+gcc,cc1plus,/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet.-I./ssd2/liangyi/dropbox/vllm-gptq/flash-attention/csrc/*,10
+gcc,cc1plus,/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet.-I./tmp/pip-build-env-8n9rfz0b/overlay/lib/python3.10/site-packages/*,16
+gcc,gcc,/usr/bin/x86_64-linux-gnu-gcc-9 -I./ssd2/liangyi/dropbox/vllm-gptq/flash-attention/csrc/flash_attn.-I./ssd2/*,72
+gcc,gcc,/usr/bin/x86_64-linux-gnu-gcc-9 -I./tmp/pip-build-env-8n9rfz0b/overlay/lib/python3.10/site-packages/torch/*,176
+git,git,/usr/lib/git-core/*,3253
+git,git-remote-http,/usr/lib/git-core/git-remote-http origin.https://github.com/Dao-AILab/*,7
+git,git-remote-http,/usr/lib/git-core/git-remote-http origin.https://github.com/NVIDIA/*,2
+git,git-remote-http,/usr/lib/git-core/git-remote-http origin.https://github.com/QwenLM/*,12
+git,git-remote-http,/usr/lib/git-core/git-remote-http origin.https://github.com/jackaduma/*,812
+git,git-remote-http,/usr/lib/git-core/git-remote-http origin.https://github.com/smartcontractsyn/*,249
+git-remote-http,git,/usr/lib/git-core/*,7
+git-submodule,envsubst,/usr/bin/*,2
+git-submodule,gettext,/usr/bin/*,2
+git-submodule,git,/usr/lib/git-core/git submodule--helper.update-clone.--.csrc/*,2
+gpgconf,gpg-connect-age,/usr/bin/*,900
+gpgconf,gpg-connect-age,/usr/bin/gpg-connect-agent -s.--no-autostart.GETINFO scd_running./if ${! $?}.scd killscd./*,450
+gpgv,apt-key,/usr/bin/dash /usr/bin/apt-key.--quiet.--readonly.--keyring./etc/apt/keyrings/*,60
+gpgv,apt-key,/usr/bin/dash /usr/bin/apt-key.--quiet.--readonly.--keyring./usr/share/keyrings/*,150
+gpgv,apt-key,/usr/bin/dash /usr/bin/apt-key.--quiet.--readonly.verify.--status-fd.3./tmp/*,240
+gpu-manager,sh,"/usr/bin/dash -c.grep -G ""^blacklist.*amdgpu[[:space:]]*$"" /etc/modprobe.d/*",26
+gpu-manager,sh,"/usr/bin/dash -c.grep -G ""^blacklist.*amdgpu[[:space:]]*$"" /lib/modprobe.d/*",26
+gpu-manager,sh,"/usr/bin/dash -c.grep -G ""^blacklist.*nouveau[[:space:]]*$"" /etc/modprobe.d/*",26
+gpu-manager,sh,"/usr/bin/dash -c.grep -G ""^blacklist.*nouveau[[:space:]]*$"" /lib/modprobe.d/*",26
+gpu-manager,sh,"/usr/bin/dash -c.grep -G ""^blacklist.*nvidia[[:space:]]*$"" /etc/modprobe.d/*",26
+gpu-manager,sh,"/usr/bin/dash -c.grep -G ""^blacklist.*nvidia[[:space:]]*$"" /lib/modprobe.d/*",26
+gpu-manager,sh,"/usr/bin/dash -c.grep -G ""^blacklist.*radeon[[:space:]]*$"" /etc/modprobe.d/*",26
+gpu-manager,sh,"/usr/bin/dash -c.grep -G ""^blacklist.*radeon[[:space:]]*$"" /lib/modprobe.d/*",26
+hwe-support-sta,dpkg,/usr/bin/*,13
+hwe-support-sta,hwe-support-sta,/usr/bin/*,78
+hwe-support-sta,lsb_release,/usr/bin/python3.8 -Es./usr/bin/*,13
+landscape-monit,landscape-packa,/usr/bin/python3.8 /usr/bin/*,58
+landscape-packa,apt-get,/usr/bin/*,30
+landscape-packa,apt-update,/usr/lib/landscape/*,30
+landscape-packa,dpkg,/usr/bin/*,204
+landscape-packa,landscape-packa,/usr/bin/*,174
+landscape-packa,uname,/usr/bin/*,58
+landscape-sysin,landscape-sysin,/usr/bin/*,162
+landscape-sysin,uname,/usr/bin/*,27
+landscape-sysin,who,/usr/bin/*,27
+language-option,sh,/usr/bin/*,34
+language-valida,language-option,/usr/bin/perl /usr/share/language-tools/*,17
+laptop-detect,cat,/usr/bin/cat /sys/devices/virtual/dmi/id/*,17
+laptop-detect,dmidecode,/usr/sbin/*,17
+laptop-detect,ls,/usr/bin/ls /sys/class/*,17
+laptop-detect,modprobe,/usr/bin/*,17
+laptop-detect,true,/usr/bin/*,17
+lesspipe,basename,/usr/bin/basename /usr/bin/*,39
+lesspipe,dirname,/usr/bin/dirname /usr/bin/*,39
+lightdm,X,/usr/bin/dash /usr/bin/X.-core.:0.-seat.seat0.-auth./var/run/lightdm/root/*,13
+lightdm,Xorg,/usr/lib/xorg/Xorg -core.:0.-seat.seat0.-auth./var/run/lightdm/root/*,13
+lightdm,Xorg.wrap,/usr/lib/xorg/Xorg.wrap -core.:0.-seat.seat0.-auth./var/run/lightdm/root/*,13
+lightdm,gnome-keyring-d,/usr/bin/*,17
+lightdm,lightdm,/usr/sbin/*,311
+lightdm,lightdm-greeter,/usr/bin/dash /usr/lib/lightdm/lightdm-greeter-session./usr/sbin/*,17
+lightdm,plymouth,/usr/bin/*,13
+lightdm,prime-offload,/usr/bin/dash /sbin/*,17
+lightdm,prime-switch,/usr/bin/dash /sbin/*,13
+lightdm,xubuntu-numlock,/usr/bin/dash /usr/bin/*,17
+lightdm-greeter,lightdm-gtk-gre,/usr/sbin/*,17
+lightdm-gtk-gre,language-option,/usr/bin/perl /usr/share/language-tools/*,17
+lightdm-gtk-gre,language-valida,/usr/bin/dash -pe./usr/share/language-tools/*,17
+lightdm-gtk-gre,lightdm-gtk-gre,/usr/sbin/*,153
+lightdm-gtk-gre,locale,/usr/bin/*,17
+lsb_release,dpkg-query,/usr/bin/*,51
+lsb_release,lsb_release,/usr/bin/*,387
+master,pickup,/usr/lib/postfix/sbin/*,39
+ninja,ninja,/tmp/pip-build-env-8n9rfz0b/overlay/lib/python3.10/site-packages/ninja/data/bin/*,34
+ninja,sh,/usr/bin/dash -c./usr/local/cuda/bin/*,16
+ninja,sh,/usr/bin/dash -c./usr/local/cuda/bin/nvcc  -I/ssd2/liangyi/dropbox/vllm-gptq/*,10
+ninja,sh,/usr/bin/dash -c.c++ -MMD -MF /tmp/tmp3yn7h_u_.build-temp/csrc/*,4
+ninja,sh,/usr/bin/dash -c.c++ -MMD -MF /tmp/tmp3yn7h_u_.build-temp/csrc/activation.o.d -pthread -B /*,2
+ninja,sh,/usr/bin/dash -c.c++ -MMD -MF /tmp/tmp3yn7h_u_.build-temp/csrc/attention.o.d -pthread -B /*,2
+ninja,sh,/usr/bin/dash -c.c++ -MMD -MF /tmp/tmp3yn7h_u_.build-temp/csrc/cache.o.d -pthread -B /ssd2/*,2
+ninja,sh,/usr/bin/dash -c.c++ -MMD -MF /tmp/tmp3yn7h_u_.build-temp/csrc/cuda_utils.o.d -pthread -B /*,2
+ninja,sh,/usr/bin/dash -c.c++ -MMD -MF /tmp/tmp3yn7h_u_.build-temp/csrc/layernorm.o.d -pthread -B /*,2
+nm-dispatcher,01-ifupdown,/usr/bin/dash -e./etc/NetworkManager/dispatcher.d/*,4
+node,bash,/usr/bin/bash --init-file./home/local/ASUAD/lhuan139/.vscode-server/bin/*,13
+node,bash,/usr/bin/bash -c.conda run -n gpupower --no-capture-output python /home/local/ASUAD/*,42
 node,bash,/usr/bin/bash -c.conda run -n vllm --no-capture-output python /home/local/ASUAD/lhuan139/*,18
-node,bash,/usr/bin/bash -i.-l.-c.'/home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
-node,conda,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/bin/*,47
+node,bash,/usr/bin/bash -i.-l.-c.'/home/local/ASUAD/lhuan139/.vscode-server/bin/*,11
+node,conda,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/bin/*,53
 node,conda,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/bin/conda.run.-n.vllm.--no-capture-output.python./*,18
 node,cpptools,/home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-vscode.cpptools-1.18.5-linux-x64/bin/*,10
+node,cpuUsage.sh,/usr/bin/bash /home/local/ASUAD/lhuan139/.vscode-server/bin/*,14
 node,cpuUsage.sh,/usr/bin/bash /home/local/ASUAD/zliu396/.vscode-server/bin/*,1
-node,git,/usr/bin/*,2403
+node,git,/usr/bin/*,7007
+node,git,/usr/bin/git for-each-ref.--format.%(refname) %(objectname) %(*objectname).refs/*,2
 node,grep,/usr/bin/*,12
-node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/*,16754
-node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node -c.conda run -n gpupower --no-capture-output python /home/local/ASUAD/*,266
+node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/*,49394
+node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node -c.conda run -n gpupower --no-capture-output python /home/local/ASUAD/*,294
 node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node -c.conda run -n vllm --no-capture-output python /home/local/ASUAD/lhuan139/*,126
-node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node /home/local/ASUAD/lhuan139/.vscode-server/bin/*,36
-node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,201
+node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node /home/local/ASUAD/lhuan139/.vscode-server/bin/*,42
+node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,215
+node,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node for-each-ref.--format.%(refname) %(objectname) %(*objectname).refs/*,14
 node,node,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/*,630
 node,node,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node --dns-result-order=ipv4first./home/local/ASUAD/zliu396/.vscode-server/bin/*,2
 node,node,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node /home/local/ASUAD/zliu396/.vscode-server/bin/*,1
-node,ps,/usr/bin/*,19
-node,python,/ssd2/liangyi/miniconda/bin/python3.10 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,96
-node,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/*,219
+node,ps,/usr/bin/*,89
+node,python,/ssd2/liangyi/miniconda/bin/python3.10 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,102
+node,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/*,233
 node,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/python3.9 -W.ignore.-B.-S.-I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,8
-node,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/python3.9 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,143
+node,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/python3.9 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,149
 node,python,/ssd2/liangyi/miniconda/envs/vllm/bin/*,159
 node,python,/ssd2/liangyi/miniconda/envs/vllm/bin/python3.9 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,114
 node,python3,/ssd2/liangyi/miniconda/bin/*,30
-node,python3,/usr/bin/*,141
-node,python3,/usr/bin/python3.8 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,114
-node,rg,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g./*.py.-g.!**/*,9
-node,rg,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g./*/CMakeLists.txt.-g./*,9
+node,python3,/usr/bin/*,159
+node,python3,/usr/bin/python3.8 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,122
+node,rg,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g.**/package.json.-g.!**/*,2
+node,rg,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g./*.py.-g.!**/*,11
+node,rg,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g./*/CMakeLists.txt.-g./*,11
+node,rg,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node_modules/@vscode/ripgrep/bin/rg --hidden.--no-require-git.--ignore-case.-g.!**/*.csv/**.-g.!**/*.csv.-g.!**/*,21
 node,rg,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g.**/*,1
 node,rg,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g.**/pom.xml.-g.!**/*,1
 node,rg,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node_modules/@vscode/ripgrep/bin/rg --files.--hidden.--case-sensitive.--no-require-git.-g./*/pom.xml.-g./*/*,4
-node,sh,/usr/bin/*,43222
-node,sh,"/usr/bin/dash -c.""/home/local/ASUAD/lhuan139/.vscode-server/bin/*",166
+node,sh,/usr/bin/*,43662
+node,sh,"/usr/bin/dash -c.""/home/local/ASUAD/lhuan139/.vscode-server/bin/*",610
 node,sh,"/usr/bin/dash -c.""/home/local/ASUAD/zliu396/.vscode-server/bin/*",22386
-node,sh,/usr/bin/dash -c./bin/python -I /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-node,sh,/usr/bin/dash -c./bin/python /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-node,sh,/usr/bin/dash -c./bin/python3 -I /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/bin/python -I /home/local/ASUAD/lhuan139/*,9
-node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/extractor/bin/python -I /home/local/ASUAD/*,9
-node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/gpupower/bin/python -I /home/local/ASUAD/*,9
-node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/neo/bin/python -I /home/local/ASUAD/lhuan139/*,9
-node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/py37/bin/python -I /home/local/ASUAD/*,9
-node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/tabbyAPI/bin/python -I /home/local/ASUAD/*,9
-node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/vllm/bin/python -I /home/local/ASUAD/*,9
-node,sh,/usr/bin/dash -c./usr/bin/*,22550
-node,sh,/usr/bin/dash -c./usr/bin/python -I /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-node,sh,/usr/bin/dash -c./usr/bin/python /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-node,sh,/usr/bin/dash -c./usr/bin/python3 -I /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-node,sh,/usr/bin/dash -c.ls -l /proc/[0-9]*/fd/*,20687
-node,sh,/usr/bin/dash -c.wget --version > /dev/*,41
+node,sh,/usr/bin/dash -c./bin/python -I /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+node,sh,/usr/bin/dash -c./bin/python /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+node,sh,/usr/bin/dash -c./bin/python3 -I /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/bin/python -I /home/local/ASUAD/lhuan139/*,11
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/extractor/bin/python -I /home/local/ASUAD/*,11
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/gpupower/bin/python -I /home/local/ASUAD/*,11
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/neo/bin/python -I /home/local/ASUAD/lhuan139/*,11
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/py37/bin/python -I /home/local/ASUAD/*,11
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/tabbyAPI/bin/python -I /home/local/ASUAD/*,11
+node,sh,/usr/bin/dash -c./ssd2/liangyi/miniconda/envs/vllm/bin/python -I /home/local/ASUAD/*,11
+node,sh,/usr/bin/dash -c./usr/bin/*,22996
+node,sh,/usr/bin/dash -c./usr/bin/python -I /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+node,sh,/usr/bin/dash -c./usr/bin/python /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+node,sh,/usr/bin/dash -c./usr/bin/python3 -I /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+node,sh,/usr/bin/dash -c.ls -l /proc/[0-9]*/fd/*,20689
+node,sh,/usr/bin/dash -c.wget --version > /dev/*,49
 node,wget,/usr/bin/*,5
 node,wget,/usr/bin/wget --connect-timeout=7.--tries=1.--dns-timeout=7.-q.-O.-.http://169.254.169.254/*,1
-node,which,/usr/bin/dash /usr/bin/*,1
-packagekitd,dpkg,/usr/bin/*,11
-python,ip,/usr/bin/*,28
-python,lsb_release,/usr/bin/python3.8 -Es./usr/bin/*,28
-python,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/*,437
+node,which,/usr/bin/dash /usr/bin/*,21
+nvcc,cicc,/usr/local/cuda-12.3/nvvm/bin/cicc --c++17.--gnu_version=90400.--display_error_number.--orig_src_file_name./*,16
+nvcc,cudafe++,/usr/local/cuda-12.3/bin/cudafe++ --c++17.--gnu_version=90400.--display_error_number.--orig_src_file_name./*,2
+nvcc,gcc,/usr/bin/x86_64-linux-gnu-gcc-9 -E./tmp/*,26
+nvcc,nvcc,/usr/local/cuda-12.3/bin/nvcc -E./tmp/*,214
+nvcc,ptxas,/usr/local/cuda-12.3/bin/ptxas -arch=sm_80.-m64./tmp/*,2
+nvcc,sh,/usr/bin/*,272
+nvcc,sh,"/usr/bin/dash -c.ptxas -arch=sm_80 -m64  ""/tmp/*",14
+nvcc,sh,"/usr/bin/dash -c.ptxas -arch=sm_86 -m64  ""/tmp/*",16
+nvcc,sh,"/usr/bin/dash -c.ptxas -arch=sm_90 -m64  ""/tmp/*",14
+nvidia-containe,6,/usr/sbin/ldconfig.real -f./etc/ld.so.conf.-C./etc/ld.so.cache./usr/lib/x86_64-linux-gnu./usr/lib/*,1032
+nvidia-containe,7,/usr/sbin/ldconfig.real -f./etc/ld.so.conf.-C./etc/ld.so.cache./usr/lib/x86_64-linux-gnu./usr/lib/*,642
+nvidia-containe,nvidia-modprobe,/usr/bin/nvidia-modprobe -s.-f=/proc/driver/nvidia/capabilities/mig/*,3406
+nvtop,nvidia-modprobe,/usr/bin/nvidia-modprobe -s.-f=/proc/driver/nvidia/capabilities/mig/*,4
+packagekitd,dpkg,/usr/bin/*,30
+pip,lsb_release,/usr/bin/python3.8 -Es./usr/bin/*,8
+pip,pip,/ssd2/liangyi/miniconda/bin/*,112
+pip,python,/ssd2/liangyi/miniconda/bin/*,6
+pip,python,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/lib/python3.10/site-packages/pip/*,2
+pip,python,/ssd2/liangyi/miniconda/bin/python3.10 /ssd2/liangyi/miniconda/lib/python3.10/site-packages/pip/_vendor/*,8
+pip,uname,/usr/bin/*,8
+prime-offload,prime-supported,/usr/bin/dash /usr/bin/*,17
+prime-offload,rm,/usr/bin/rm -f./var/log/*,17
+prime-supported,rm,/usr/bin/rm -f./var/log/*,17
+prime-switch,gpu-manager,/usr/bin/gpu-manager --log./var/log/*,13
+prime-switch,udevadm,/usr/bin/*,13
+python,c++,/usr/bin/*,14
+python,g++,/usr/bin/*,2
+python,g++,"/usr/bin/x86_64-linux-gnu-g++-9 -pthread.-B./ssd2/liangyi/miniconda/compiler_compat.-shared.-Wl,-rpath,/ssd2/*",14
+python,gcc,/usr/bin/x86_64-linux-gnu-gcc-9 -pthread.-B./ssd2/liangyi/miniconda/compiler_compat./tmp/tmpw0a4tlo9/*,2
+python,git,/usr/bin/git submodule.update.--init.csrc/*,2
+python,ip,/usr/bin/*,30
+python,lsb_release,/usr/bin/python3.8 -Es./usr/bin/*,32
+python,ninja,/ssd2/liangyi/miniconda/bin/python3.10 /tmp/pip-build-env-8n9rfz0b/overlay/bin/*,34
+python,nvcc,/usr/local/cuda-12.3/bin/*,10
+python,nvidia-modprobe,/usr/bin/nvidia-modprobe -s.-f=/proc/driver/nvidia/capabilities/mig/*,14
+python,python,/ssd2/liangyi/miniconda/bin/*,508
+python,python,/ssd2/liangyi/miniconda/bin/python3.10 submodule.update.--init.csrc/*,14
+python,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/*,499
 python,python,/ssd2/liangyi/miniconda/envs/vllm/bin/*,279
-python,uname,/usr/bin/*,47
-python3,dpkg,/usr/bin/*,55
-python3,gpgv,/usr/lib/apt/methods/*,22
-python3,https,/usr/lib/apt/methods/*,22
-python3,python3,/usr/bin/*,129
+python,sh,/usr/bin/*,2
+python,uname,/usr/bin/*,53
+python,which,/usr/bin/dash /usr/bin/*,24
+python3,dpkg,/usr/bin/*,93
+python3,gpgv,/usr/lib/apt/methods/*,60
+python3,https,/usr/lib/apt/methods/*,60
+python3,python3,/usr/bin/*,257
 python3,store,/usr/lib/apt/methods/*,22
-python3,ubuntu-distro-i,/usr/bin/*,22
-python3,uname,/usr/bin/*,40
-release-upgrade,cat,/usr/bin/cat /var/lib/ubuntu-release-upgrader/*,10
-release-upgrade,date,/usr/bin/*,10
-release-upgrade,expr,/usr/bin/*,10
-release-upgrade,stat,/usr/bin/stat -c.%Y./var/lib/ubuntu-release-upgrader/*,10
-run-parts,00-header,/usr/bin/dash /etc/update-motd.d/*,10
-run-parts,10-help-text,/usr/bin/dash /etc/update-motd.d/*,10
-run-parts,50-landscape-sy,/usr/bin/dash /etc/update-motd.d/*,10
-run-parts,50-motd-news,/usr/bin/dash /etc/update-motd.d/*,10
-run-parts,85-fwupd,/usr/bin/dash /etc/update-motd.d/*,10
-run-parts,90-updates-avai,/usr/bin/dash /etc/update-motd.d/*,10
-run-parts,91-contract-ua-,/usr/bin/dash /etc/update-motd.d/*,10
-run-parts,91-release-upgr,/usr/bin/dash /etc/update-motd.d/*,10
-run-parts,92-unattended-u,/usr/bin/dash /etc/update-motd.d/*,10
-run-parts,95-hwe-eol,/usr/bin/dash /etc/update-motd.d/*,10
-run-parts,98-fsck-at-rebo,/usr/bin/dash /etc/update-motd.d/*,10
-run-parts,98-reboot-requi,/usr/bin/dash /etc/update-motd.d/*,10
-run-parts,release-upgrade,/usr/bin/dash -e./usr/lib/ubuntu-release-upgrader/*,10
-run-parts,update-motd-fsc,/usr/bin/dash /usr/lib/update-notifier/*,10
-run-parts,update-motd-hwe,/usr/bin/dash -e./usr/lib/update-notifier/*,10
-run-parts,update-motd-reb,/usr/bin/dash -e./usr/lib/update-notifier/*,10
-run-parts,update-motd-una,/usr/bin/dash /usr/share/unattended-upgrades/*,10
-sh,appstreamcli,/usr/bin/*,11
+python3,ubuntu-distro-i,/usr/bin/*,60
+python3,uname,/usr/bin/*,84
+release-upgrade,cat,/usr/bin/cat /var/lib/ubuntu-release-upgrader/*,27
+release-upgrade,date,/usr/bin/*,27
+release-upgrade,expr,/usr/bin/*,27
+release-upgrade,stat,/usr/bin/stat -c.%Y./var/lib/ubuntu-release-upgrader/*,27
+run-parts,00-header,/usr/bin/dash /etc/update-motd.d/*,27
+run-parts,10-help-text,/usr/bin/dash /etc/update-motd.d/*,27
+run-parts,50-landscape-sy,/usr/bin/dash /etc/update-motd.d/*,27
+run-parts,50-motd-news,/usr/bin/dash /etc/update-motd.d/*,27
+run-parts,85-fwupd,/usr/bin/dash /etc/update-motd.d/*,27
+run-parts,90-updates-avai,/usr/bin/dash /etc/update-motd.d/*,27
+run-parts,91-contract-ua-,/usr/bin/dash /etc/update-motd.d/*,27
+run-parts,91-release-upgr,/usr/bin/dash /etc/update-motd.d/*,27
+run-parts,92-unattended-u,/usr/bin/dash /etc/update-motd.d/*,27
+run-parts,95-hwe-eol,/usr/bin/dash /etc/update-motd.d/*,27
+run-parts,98-fsck-at-rebo,/usr/bin/dash /etc/update-motd.d/*,27
+run-parts,98-reboot-requi,/usr/bin/dash /etc/update-motd.d/*,27
+run-parts,release-upgrade,/usr/bin/dash -e./usr/lib/ubuntu-release-upgrader/*,27
+run-parts,update-motd-fsc,/usr/bin/dash /usr/lib/update-notifier/*,27
+run-parts,update-motd-hwe,/usr/bin/dash -e./usr/lib/update-notifier/*,27
+run-parts,update-motd-reb,/usr/bin/dash -e./usr/lib/update-notifier/*,27
+run-parts,update-motd-una,/usr/bin/dash /usr/share/unattended-upgrades/*,27
+runc,6,/usr/sbin/ldconfig.real -f./etc/ld.so.conf.-C./etc/ld.so.cache./usr/lib/x86_64-linux-gnu./usr/lib/*,27
+runc,7,/*,1691
+runc,7,/usr/sbin/ldconfig.real -f./etc/ld.so.conf.-C./etc/ld.so.cache./usr/lib/x86_64-linux-gnu./usr/lib/*,6
+runc,exe,/usr/bin/*,1695
+runc,nvidia-containe,/usr/bin/*,1676
+runc,nvidia-containe,/usr/bin/nvidia-container-cli --load-kmods.configure.--ldconfig=@/sbin/*,1676
+runc:[1:CHILD],python3,/usr/bin/*,6
+runc:[1:CHILD],scalellm,/app/bin/scalellm --model_path./models/models--Qwen--Qwen-72B-Chat-Int4/snapshots/*,8
+runc:[2:INIT],scalellm,/app/bin/scalellm --model_path./models/models--Qwen--Qwen-72B-Chat-Int4/snapshots/*,2
+sh,appstreamcli,/usr/bin/*,30
+sh,basename,/usr/bin/basename /usr/sbin/*,13
+sh,c++,/usr/bin/x86_64-linux-gnu-g++-9 -MMD.-MF./tmp/tmp3yn7h_u_.build-temp/csrc/activation.o.d.-pthread.-B./ssd2/*,2
+sh,c++,/usr/bin/x86_64-linux-gnu-g++-9 -MMD.-MF./tmp/tmp3yn7h_u_.build-temp/csrc/attention.o.d.-pthread.-B./ssd2/*,2
+sh,c++,/usr/bin/x86_64-linux-gnu-g++-9 -MMD.-MF./tmp/tmp3yn7h_u_.build-temp/csrc/cache.o.d.-pthread.-B./ssd2/*,2
+sh,c++,/usr/bin/x86_64-linux-gnu-g++-9 -MMD.-MF./tmp/tmp3yn7h_u_.build-temp/csrc/cuda_utils.o.d.-pthread.-B./ssd2/*,2
+sh,c++,/usr/bin/x86_64-linux-gnu-g++-9 -MMD.-MF./tmp/tmp3yn7h_u_.build-temp/csrc/layernorm.o.d.-pthread.-B./ssd2/*,2
+sh,c++,/usr/bin/x86_64-linux-gnu-g++-9 -MMD.-MF./tmp/tmp3yn7h_u_.build-temp/csrc/pos_encoding.o.d.-pthread.-B./ssd2/*,2
+sh,c++,/usr/bin/x86_64-linux-gnu-g++-9 -MMD.-MF./tmp/tmp3yn7h_u_.build-temp/csrc/quantization.o.d.-pthread.-B./ssd2/*,2
+sh,cat,/usr/bin/cat /etc/X11/*,13
+sh,cat,/usr/bin/cat /proc/1000022/*,4
+sh,cat,/usr/bin/cat /proc/1000023/*,4
+sh,cat,/usr/bin/cat /proc/1000268/*,4
+sh,cat,/usr/bin/cat /proc/1000269/*,2
+sh,cat,/usr/bin/cat /proc/1000278/*,6
+sh,cat,/usr/bin/cat /proc/1000279/*,4
+sh,cat,/usr/bin/cat /proc/1000830/*,4
+sh,cat,/usr/bin/cat /proc/1000831/*,4
+sh,cat,/usr/bin/cat /proc/1001523/*,2
+sh,cat,/usr/bin/cat /proc/1001524/*,2
+sh,cat,/usr/bin/cat /proc/1001525/*,2
+sh,cat,/usr/bin/cat /proc/1001526/*,2
+sh,cat,/usr/bin/cat /proc/1001564/*,2
+sh,cat,/usr/bin/cat /proc/1001565/*,2
+sh,cat,/usr/bin/cat /proc/1001566/*,2
+sh,cat,/usr/bin/cat /proc/1001567/*,2
+sh,cat,/usr/bin/cat /proc/1001692/*,2
+sh,cat,/usr/bin/cat /proc/1002143/*,2
+sh,cat,/usr/bin/cat /proc/1003148/*,2
+sh,cat,/usr/bin/cat /proc/1003149/*,2
+sh,cat,/usr/bin/cat /proc/1003483/*,2
+sh,cat,/usr/bin/cat /proc/1003484/*,2
+sh,cat,/usr/bin/cat /proc/1003872/*,2
+sh,cat,/usr/bin/cat /proc/1003876/*,2
 sh,cat,/usr/bin/cat /proc/374846/*,2
 sh,cat,/usr/bin/cat /proc/375581/*,2
-sh,cnf-update-db,/usr/bin/python3.8 /usr/lib/*,11
-sh,cpuUsage.sh,/usr/bin/bash /home/local/ASUAD/lhuan139/.vscode-server/bin/*,166
+sh,cat,/usr/bin/cat /proc/977011/*,2
+sh,cat,/usr/bin/cat /proc/984751/*,6
+sh,cat,/usr/bin/cat /proc/985105/*,28
+sh,cat,/usr/bin/cat /proc/985155/*,22
+sh,cat,/usr/bin/cat /proc/987366/*,8
+sh,cat,/usr/bin/cat /proc/988042/*,8
+sh,cat,/usr/bin/cat /proc/988160/*,8
+sh,cat,/usr/bin/cat /proc/988161/*,8
+sh,cat,/usr/bin/cat /proc/988163/*,4
+sh,cat,/usr/bin/cat /proc/988164/*,6
+sh,cat,/usr/bin/cat /proc/988166/*,4
+sh,cat,/usr/bin/cat /proc/988167/*,4
+sh,cat,/usr/bin/cat /proc/988168/*,4
+sh,cat,/usr/bin/cat /proc/988169/*,6
+sh,cat,/usr/bin/cat /proc/988170/*,4
+sh,cat,/usr/bin/cat /proc/988171/*,4
+sh,cat,/usr/bin/cat /proc/988172/*,4
+sh,cat,/usr/bin/cat /proc/988173/*,4
+sh,cat,/usr/bin/cat /proc/988174/*,4
+sh,cat,/usr/bin/cat /proc/988175/*,2
+sh,cat,/usr/bin/cat /proc/988176/*,2
+sh,cat,/usr/bin/cat /proc/988177/*,8
+sh,cat,/usr/bin/cat /proc/988178/*,6
+sh,cat,/usr/bin/cat /proc/988179/*,6
+sh,cat,/usr/bin/cat /proc/988180/*,8
+sh,cat,/usr/bin/cat /proc/988181/*,6
+sh,cat,/usr/bin/cat /proc/988182/*,4
+sh,cat,/usr/bin/cat /proc/988184/*,6
+sh,cat,/usr/bin/cat /proc/988185/*,6
+sh,cat,/usr/bin/cat /proc/988186/*,4
+sh,cat,/usr/bin/cat /proc/988187/*,8
+sh,cat,/usr/bin/cat /proc/988188/*,6
+sh,cat,/usr/bin/cat /proc/988191/*,6
+sh,cat,/usr/bin/cat /proc/988196/*,6
+sh,cat,/usr/bin/cat /proc/988197/*,6
+sh,cat,/usr/bin/cat /proc/988199/*,6
+sh,cat,/usr/bin/cat /proc/988200/*,8
+sh,cat,/usr/bin/cat /proc/988201/*,6
+sh,cat,/usr/bin/cat /proc/988202/*,6
+sh,cat,/usr/bin/cat /proc/988203/*,6
+sh,cat,/usr/bin/cat /proc/988205/*,4
+sh,cat,/usr/bin/cat /proc/988206/*,6
+sh,cat,/usr/bin/cat /proc/988208/*,6
+sh,cat,/usr/bin/cat /proc/988209/*,4
+sh,cat,/usr/bin/cat /proc/988210/*,4
+sh,cat,/usr/bin/cat /proc/988213/*,4
+sh,cat,/usr/bin/cat /proc/988216/*,6
+sh,cat,/usr/bin/cat /proc/988220/*,4
+sh,cat,/usr/bin/cat /proc/988222/*,4
+sh,cat,/usr/bin/cat /proc/988224/*,6
+sh,cat,/usr/bin/cat /proc/988228/*,4
+sh,cat,/usr/bin/cat /proc/988231/*,4
+sh,cat,/usr/bin/cat /proc/988233/*,6
+sh,cat,/usr/bin/cat /proc/988234/*,4
+sh,cat,/usr/bin/cat /proc/988237/*,6
+sh,cat,/usr/bin/cat /proc/988239/*,6
+sh,cat,/usr/bin/cat /proc/988241/*,4
+sh,cat,/usr/bin/cat /proc/988242/*,4
+sh,cat,/usr/bin/cat /proc/988246/*,6
+sh,cat,/usr/bin/cat /proc/988250/*,4
+sh,cat,/usr/bin/cat /proc/988253/*,4
+sh,cat,/usr/bin/cat /proc/988256/*,4
+sh,cat,/usr/bin/cat /proc/988260/*,6
+sh,cat,/usr/bin/cat /proc/988264/*,4
+sh,cat,/usr/bin/cat /proc/988265/*,4
+sh,cat,/usr/bin/cat /proc/988268/*,6
+sh,cat,/usr/bin/cat /proc/988271/*,6
+sh,cat,/usr/bin/cat /proc/988450/*,6
+sh,cat,/usr/bin/cat /proc/988966/*,4
+sh,cat,/usr/bin/cat /proc/988967/*,4
+sh,cat,/usr/bin/cat /proc/988968/*,6
+sh,cat,/usr/bin/cat /proc/988969/*,6
+sh,cat,/usr/bin/cat /proc/988970/*,4
+sh,cat,/usr/bin/cat /proc/988971/*,6
+sh,cat,/usr/bin/cat /proc/988972/*,6
+sh,cat,/usr/bin/cat /proc/988973/*,6
+sh,cat,/usr/bin/cat /proc/989000/*,6
+sh,cat,/usr/bin/cat /proc/989001/*,6
+sh,cat,/usr/bin/cat /proc/989003/*,4
+sh,cat,/usr/bin/cat /proc/989004/*,6
+sh,cat,/usr/bin/cat /proc/989005/*,2
+sh,cat,/usr/bin/cat /proc/989006/*,4
+sh,cat,/usr/bin/cat /proc/989007/*,6
+sh,cat,/usr/bin/cat /proc/989008/*,4
+sh,cat,/usr/bin/cat /proc/989009/*,4
+sh,cat,/usr/bin/cat /proc/989010/*,8
+sh,cat,/usr/bin/cat /proc/989011/*,6
+sh,cat,/usr/bin/cat /proc/989012/*,6
+sh,cat,/usr/bin/cat /proc/989013/*,2
+sh,cat,/usr/bin/cat /proc/989014/*,4
+sh,cat,/usr/bin/cat /proc/989015/*,4
+sh,cat,/usr/bin/cat /proc/989016/*,4
+sh,cat,/usr/bin/cat /proc/989019/*,6
+sh,cat,/usr/bin/cat /proc/989020/*,4
+sh,cat,/usr/bin/cat /proc/989023/*,4
+sh,cat,/usr/bin/cat /proc/989024/*,4
+sh,cat,/usr/bin/cat /proc/989026/*,4
+sh,cat,/usr/bin/cat /proc/989028/*,6
+sh,cat,/usr/bin/cat /proc/989029/*,6
+sh,cat,/usr/bin/cat /proc/989030/*,8
+sh,cat,/usr/bin/cat /proc/989031/*,6
+sh,cat,/usr/bin/cat /proc/989032/*,6
+sh,cat,/usr/bin/cat /proc/989033/*,4
+sh,cat,/usr/bin/cat /proc/989034/*,4
+sh,cat,/usr/bin/cat /proc/989035/*,6
+sh,cat,/usr/bin/cat /proc/989036/*,6
+sh,cat,/usr/bin/cat /proc/989040/*,8
+sh,cat,/usr/bin/cat /proc/989041/*,8
+sh,cat,/usr/bin/cat /proc/989042/*,6
+sh,cat,/usr/bin/cat /proc/989043/*,6
+sh,cat,/usr/bin/cat /proc/989046/*,6
+sh,cat,/usr/bin/cat /proc/989047/*,8
+sh,cat,/usr/bin/cat /proc/989048/*,6
+sh,cat,/usr/bin/cat /proc/989049/*,4
+sh,cat,/usr/bin/cat /proc/989051/*,8
+sh,cat,/usr/bin/cat /proc/989052/*,6
+sh,cat,/usr/bin/cat /proc/989053/*,6
+sh,cat,/usr/bin/cat /proc/989054/*,8
+sh,cat,/usr/bin/cat /proc/989057/*,4
+sh,cat,/usr/bin/cat /proc/989058/*,4
+sh,cat,/usr/bin/cat /proc/989059/*,4
+sh,cat,/usr/bin/cat /proc/989061/*,2
+sh,cat,/usr/bin/cat /proc/989063/*,4
+sh,cat,/usr/bin/cat /proc/989064/*,4
+sh,cat,/usr/bin/cat /proc/989065/*,4
+sh,cat,/usr/bin/cat /proc/989066/*,4
+sh,cat,/usr/bin/cat /proc/989067/*,6
+sh,cat,/usr/bin/cat /proc/989068/*,6
+sh,cat,/usr/bin/cat /proc/989069/*,4
+sh,cat,/usr/bin/cat /proc/989070/*,4
+sh,cat,/usr/bin/cat /proc/989087/*,4
+sh,cat,/usr/bin/cat /proc/989092/*,4
+sh,cat,/usr/bin/cat /proc/989093/*,4
+sh,cat,/usr/bin/cat /proc/989094/*,2
+sh,cat,/usr/bin/cat /proc/989095/*,4
+sh,cat,/usr/bin/cat /proc/989096/*,4
+sh,cat,/usr/bin/cat /proc/989097/*,6
+sh,cat,/usr/bin/cat /proc/989098/*,2
+sh,cat,/usr/bin/cat /proc/989099/*,4
+sh,cat,/usr/bin/cat /proc/989100/*,8
+sh,cat,/usr/bin/cat /proc/989101/*,8
+sh,cat,/usr/bin/cat /proc/989102/*,2
+sh,cat,/usr/bin/cat /proc/989103/*,6
+sh,cat,/usr/bin/cat /proc/989104/*,6
+sh,cat,/usr/bin/cat /proc/989105/*,8
+sh,cat,/usr/bin/cat /proc/989106/*,6
+sh,cat,/usr/bin/cat /proc/989107/*,6
+sh,cat,/usr/bin/cat /proc/989108/*,8
+sh,cat,/usr/bin/cat /proc/989109/*,6
+sh,cat,/usr/bin/cat /proc/989110/*,4
+sh,cat,/usr/bin/cat /proc/989111/*,4
+sh,cat,/usr/bin/cat /proc/989112/*,4
+sh,cat,/usr/bin/cat /proc/989113/*,6
+sh,cat,/usr/bin/cat /proc/989114/*,6
+sh,cat,/usr/bin/cat /proc/989115/*,4
+sh,cat,/usr/bin/cat /proc/989116/*,4
+sh,cat,/usr/bin/cat /proc/989117/*,6
+sh,cat,/usr/bin/cat /proc/989118/*,2
+sh,cat,/usr/bin/cat /proc/989119/*,6
+sh,cat,/usr/bin/cat /proc/989120/*,6
+sh,cat,/usr/bin/cat /proc/989142/*,8
+sh,cat,/usr/bin/cat /proc/989143/*,8
+sh,cat,/usr/bin/cat /proc/989144/*,2
+sh,cat,/usr/bin/cat /proc/989145/*,4
+sh,cat,/usr/bin/cat /proc/989147/*,4
+sh,cat,/usr/bin/cat /proc/989148/*,6
+sh,cat,/usr/bin/cat /proc/989149/*,6
+sh,cat,/usr/bin/cat /proc/989151/*,6
+sh,cat,/usr/bin/cat /proc/989155/*,6
+sh,cat,/usr/bin/cat /proc/989156/*,4
+sh,cat,/usr/bin/cat /proc/989157/*,4
+sh,cat,/usr/bin/cat /proc/989158/*,4
+sh,cat,/usr/bin/cat /proc/989162/*,2
+sh,cat,/usr/bin/cat /proc/989163/*,8
+sh,cat,/usr/bin/cat /proc/989164/*,4
+sh,cat,/usr/bin/cat /proc/989166/*,6
+sh,cat,/usr/bin/cat /proc/996033/*,6
+sh,cat,/usr/bin/cat /proc/996034/*,4
+sh,cat,/usr/bin/cat /proc/996738/*,4
+sh,cat,/usr/bin/cat /proc/996739/*,8
+sh,cat,/usr/bin/cat /proc/996740/*,2
+sh,cat,/usr/bin/cat /proc/996745/*,4
+sh,cat,/usr/bin/cat /proc/998388/*,4
+sh,cat,/usr/bin/cat /proc/998814/*,4
+sh,cat,/usr/bin/cat /proc/998815/*,4
+sh,cat,/usr/bin/cat /proc/998844/*,2
+sh,cat,/usr/bin/cat /proc/998845/*,2
+sh,cat,/usr/bin/cat /proc/998907/*,4
+sh,cat,/usr/bin/cat /proc/998910/*,4
+sh,cat,/usr/bin/cat /proc/999070/*,4
+sh,cat,/usr/bin/cat /proc/999072/*,2
+sh,cat,/usr/bin/cat /proc/999811/*,4
+sh,cat,/usr/bin/cat /proc/999812/*,6
+sh,cat,/usr/bin/cat /proc/999813/*,6
+sh,cat,/usr/bin/cat /proc/999814/*,4
+sh,cc1plus,/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -E.-quiet.-I./ssd2/liangyi/dropbox/vllm-gptq/flash-attention/csrc/*,2
+sh,cicc,/usr/local/cuda-12.3/nvvm/bin/cicc --c++17.--gnu_version=90400.--display_error_number.--orig_src_file_name./*,110
+sh,cnf-update-db,/usr/bin/python3.8 /usr/lib/*,30
+sh,cpuUsage.sh,/usr/bin/bash /home/local/ASUAD/lhuan139/.vscode-server/bin/*,584
 sh,cpuUsage.sh,/usr/bin/bash /home/local/ASUAD/zliu396/.vscode-server/bin/*,22384
-sh,debian-sa1,/usr/bin/dash /usr/lib/sysstat/*,95
-sh,dirname,/usr/bin/dirname /home/local/ASUAD/lhuan139/.vscode-server/bin/*,18
-sh,echo,/usr/bin/*,11
-sh,env,/usr/bin/env --lsbsysinit./etc/*,30
-sh,env,/usr/bin/env -i.PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/*,10
-sh,gdbus,/usr/bin/gdbus call.--system.--dest.org.freedesktop.PackageKit.--object-path./org/*,11
-sh,grep,/usr/bin/*,41354
-sh,id,/usr/bin/*,11
-sh,ls,/usr/bin/ls -l./proc/113448/fd/0./proc/113448/fd/1./proc/113448/fd/10./proc/113448/fd/*,9
+sh,cudafe++,/usr/local/cuda-12.3/bin/cudafe++ --c++17.--gnu_version=90400.--display_error_number.--orig_src_file_name./*,26
+sh,debian-sa1,/usr/bin/dash /usr/lib/sysstat/*,223
+sh,dirname,/usr/bin/dirname /home/local/ASUAD/lhuan139/.vscode-server/bin/*,22
+sh,echo,/usr/bin/*,30
+sh,env,/usr/bin/env --lsbsysinit./etc/*,81
+sh,env,/usr/bin/env -i.PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/*,27
+sh,fatbinary,/usr/local/cuda-12.3/bin/*,28
+sh,gcc,/usr/bin/*,92
+sh,gdbus,/usr/bin/gdbus call.--system.--dest.org.freedesktop.PackageKit.--object-path./org/*,30
+sh,grep,/usr/bin/*,41392
+sh,grep,/usr/bin/grep -G.^blacklist.*amdgpu[[:space:]]*$./etc/modprobe.d/alsa-base.conf./etc/*,26
+sh,grep,/usr/bin/grep -G.^blacklist.*amdgpu[[:space:]]*$./lib/modprobe.d/aliases.conf./lib/*,26
+sh,grep,/usr/bin/grep -G.^blacklist.*nouveau[[:space:]]*$./etc/modprobe.d/alsa-base.conf./etc/*,26
+sh,grep,/usr/bin/grep -G.^blacklist.*nouveau[[:space:]]*$./lib/modprobe.d/aliases.conf./lib/*,26
+sh,grep,/usr/bin/grep -G.^blacklist.*nvidia[[:space:]]*$./etc/modprobe.d/alsa-base.conf./etc/*,26
+sh,grep,/usr/bin/grep -G.^blacklist.*nvidia[[:space:]]*$./lib/modprobe.d/aliases.conf./lib/*,26
+sh,grep,/usr/bin/grep -G.^blacklist.*radeon[[:space:]]*$./etc/modprobe.d/alsa-base.conf./etc/*,26
+sh,grep,/usr/bin/grep -G.^blacklist.*radeon[[:space:]]*$./lib/modprobe.d/aliases.conf./lib/*,26
+sh,id,/usr/bin/*,30
+sh,locale,/usr/bin/*,34
+sh,ls,/usr/bin/ls -l./proc/113448/fd/0./proc/113448/fd/1./proc/113448/fd/10./proc/113448/fd/*,11
 sh,ls,/usr/bin/ls -l./proc/115015/fd/0./proc/115015/fd/1./proc/115015/fd/10./proc/115015/fd/*,20667
-sh,lsb_release,/usr/bin/python3.8 -Es./usr/bin/*,9
-sh,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node /home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
+sh,lsb_release,/usr/bin/python3.8 -Es./usr/bin/*,11
+sh,node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node /home/local/ASUAD/lhuan139/.vscode-server/bin/*,11
+sh,nvcc,/usr/local/cuda-12.3/bin/nvcc --generate-dependencies-with-compile.--dependency-output./tmp/*,16
+sh,nvcc,/usr/local/cuda-12.3/bin/nvcc -I/ssd2/liangyi/dropbox/vllm-gptq/flash-attention/csrc/flash_attn.-I/ssd2/*,10
 sh,popularity-cont,/usr/bin/dash /etc/cron.daily/*,3
-sh,ps,/usr/bin/*,43220
-sh,python,/ssd2/liangyi/miniconda/bin/python3.10 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-sh,python,/ssd2/liangyi/miniconda/envs/extractor/bin/python3.5 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-sh,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/python3.9 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-sh,python,/ssd2/liangyi/miniconda/envs/neo/bin/python3.11 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-sh,python,/ssd2/liangyi/miniconda/envs/py37/bin/python3.7 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-sh,python,/ssd2/liangyi/miniconda/envs/tabbyAPI/bin/python3.11 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-sh,python,/ssd2/liangyi/miniconda/envs/vllm/bin/python3.9 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,9
-sh,python,/usr/bin/python2.7 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,18
-sh,python,/usr/bin/python2.7 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,18
-sh,python3,/usr/bin/python3.8 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,18
-sh,readlink,/usr/bin/readlink -f./home/local/ASUAD/lhuan139/.vscode-server/bin/*,9
-sh,run-parts,/usr/bin/run-parts --lsbsysinit./etc/*,10
-sh,run-parts,/usr/bin/run-parts --report./etc/*,18
-sh,sed,/usr/bin/sed -n.s/^cpu\s//p./proc/*,1
-sh,systemctl,/usr/bin/*,11
-sh,test,/usr/bin/test -S./var/run/dbus/*,11
-sh,test,/usr/bin/test -e./usr/share/dbus-1/system-services/*,11
-sh,test,/usr/bin/test -w./var/cache/app-info.-a.-e./usr/bin/*,11
-sh,test,/usr/bin/test -w./var/lib/command-not-found/.-a.-e./usr/lib/*,11
-sh,touch,/usr/bin/touch /var/lib/apt/periodic/*,11
-sh,update-motd-upd,/usr/bin/dash -e./usr/lib/update-notifier/*,11
-sh,wget,/usr/bin/*,60
-sh,wget,/usr/bin/wget --connect-timeout=7.--tries=1.--dns-timeout=7.-q.-O.-.http://169.254.169.254/*,20
-sh,which,/usr/bin/dash /usr/bin/*,22548
-sshd,bash,/usr/bin/*,19
-sshd,sh,/usr/bin/dash -c./usr/bin/env -i PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/*,10
-sshd,sshd,/usr/sbin/*,17
+sh,ps,/usr/bin/*,43652
+sh,ptxas,/usr/local/cuda-12.3/bin/ptxas -arch=sm_80.-m64./tmp/*,14
+sh,ptxas,/usr/local/cuda-12.3/bin/ptxas -arch=sm_86.-m64./tmp/*,2
+sh,ptxas,/usr/local/cuda-12.3/bin/ptxas -arch=sm_86.-m64./tmp/tmpxft_000eecca_00000000-6_cache_kernels.ptx.-o./tmp/*,2
+sh,ptxas,/usr/local/cuda-12.3/bin/ptxas -arch=sm_86.-m64./tmp/tmpxft_000eee77_00000000-6_attention_kernels.ptx.-o./*,2
+sh,ptxas,/usr/local/cuda-12.3/bin/ptxas -arch=sm_86.-m64./tmp/tmpxft_000ef332_00000000-6_layernorm_kernels.ptx.-o./*,2
+sh,ptxas,/usr/local/cuda-12.3/bin/ptxas -arch=sm_86.-m64./tmp/tmpxft_000ef48d_00000000-6_activation_kernels.ptx.-o./*,2
+sh,ptxas,/usr/local/cuda-12.3/bin/ptxas -arch=sm_86.-m64./tmp/tmpxft_000ef6c0_00000000-6_gemm_kernels.ptx.-o./tmp/*,2
+sh,ptxas,/usr/local/cuda-12.3/bin/ptxas -arch=sm_86.-m64./tmp/tmpxft_000ef6c1_00000000-6_quant_cuda_kernel.ptx.-o./*,2
+sh,ptxas,/usr/local/cuda-12.3/bin/ptxas -arch=sm_86.-m64./tmp/tmpxft_000ef8d0_00000000-6_cuda_utils_kernels.ptx.-o./*,2
+sh,ptxas,/usr/local/cuda-12.3/bin/ptxas -arch=sm_90.-m64./tmp/*,14
+sh,python,/ssd2/liangyi/miniconda/bin/python3.10 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+sh,python,/ssd2/liangyi/miniconda/envs/extractor/bin/python3.5 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+sh,python,/ssd2/liangyi/miniconda/envs/gpupower/bin/python3.9 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+sh,python,/ssd2/liangyi/miniconda/envs/neo/bin/python3.11 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+sh,python,/ssd2/liangyi/miniconda/envs/py37/bin/python3.7 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+sh,python,/ssd2/liangyi/miniconda/envs/tabbyAPI/bin/python3.11 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+sh,python,/ssd2/liangyi/miniconda/envs/vllm/bin/python3.9 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,11
+sh,python,/usr/bin/python2.7 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,22
+sh,python,/usr/bin/python2.7 /home/local/ASUAD/lhuan139/.vscode-server/extensions/*,22
+sh,python3,/usr/bin/python3.8 -I./home/local/ASUAD/lhuan139/.vscode-server/extensions/*,22
+sh,readlink,/usr/bin/readlink -f./home/local/ASUAD/lhuan139/.vscode-server/bin/*,11
+sh,run-parts,/usr/bin/run-parts --lsbsysinit./etc/*,27
+sh,run-parts,/usr/bin/run-parts --report./etc/*,44
+sh,sed,/usr/bin/sed -n.s/^cpu\s//p./proc/*,37
+sh,sleep,/usr/bin/*,20
+sh,systemctl,/usr/bin/*,30
+sh,test,/usr/bin/test -S./var/run/dbus/*,30
+sh,test,/usr/bin/test -e./usr/share/dbus-1/system-services/*,30
+sh,test,/usr/bin/test -w./var/cache/app-info.-a.-e./usr/bin/*,30
+sh,test,/usr/bin/test -w./var/lib/command-not-found/.-a.-e./usr/lib/*,30
+sh,touch,/usr/bin/touch /var/lib/apt/periodic/*,30
+sh,update-motd-upd,/usr/bin/dash -e./usr/lib/update-notifier/*,30
+sh,wget,/usr/bin/*,72
+sh,wget,/usr/bin/wget --connect-timeout=7.--tries=1.--dns-timeout=7.-q.-O.-.http://169.254.169.254/*,24
+sh,which,/usr/bin/dash /usr/bin/*,22978
+sh,xkbcomp,/usr/bin/xkbcomp -w.1.-R/usr/share/X11/*,34
+sshd,bash,/usr/bin/*,38
+sshd,bash,/usr/bin/bash -c.while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/*,16
+sshd,sh,/usr/bin/dash -c./usr/bin/env -i PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/*,27
+sshd,sshd,/usr/sbin/*,34
+sudo,docker,/usr/bin/docker run.--restart=always.-it.--gpus=all.--net=host.--shm-size=1g.-v./ssd2/*,42
+sudo,nvtop,/usr/bin/*,15
 systemd,50-motd-news,/usr/bin/dash /etc/update-motd.d/*,11
-systemd,anacron,/usr/sbin/*,16
+systemd,anacron,/usr/sbin/*,47
 systemd,cpptools-srv,/home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-vscode.cpptools-1.18.5-linux-x64/bin/*,10
-systemd,packagekitd,/usr/lib/packagekit/*,11
-systemd,python3,/usr/bin/python3.8 /usr/lib/ubuntu-advantage/*,22
-update-motd-fsc,awk,/usr/bin/mawk $5 ~ /^ext(2|3|4)$/*,10
-update-motd-fsc,awk,/usr/bin/mawk {print $1}./proc/*,10
-update-motd-fsc,cat,/usr/bin/cat /var/lib/update-notifier/*,10
-update-motd-fsc,cut,/usr/bin/*,200
-update-motd-fsc,date,/usr/bin/*,60
-update-motd-fsc,dumpe2fs,/usr/sbin/dumpe2fs -h./dev/*,30
-update-motd-fsc,dumpe2fs,/usr/sbin/dumpe2fs -h./dev/mapper/*,10
-update-motd-fsc,grep,/usr/bin/*,160
-update-motd-fsc,id,/usr/bin/*,10
-update-motd-fsc,mount,/usr/bin/*,10
-update-motd-fsc,stat,/usr/bin/stat -c.%Y./var/lib/update-notifier/*,10
-update-motd-hwe,apt-config,/usr/bin/*,50
-update-motd-hwe,cat,/usr/bin/cat /var/lib/update-notifier/*,10
-update-motd-hwe,dirname,/usr/bin/dirname /var/lib/update-notifier/*,10
-update-motd-hwe,find,/usr/bin/find /var/lib/apt/lists/./etc/apt/sources.list.//var/lib/dpkg/*,10
-update-motd-hwe,id,/usr/bin/*,10
-update-motd-hwe,mktemp,/usr/bin/mktemp -p./var/lib/*,10
-update-motd-hwe,rm,/usr/bin/rm -f./var/lib/update-notifier/*,10
-update-motd-hwe,systemd-detect-,/usr/bin/*,10
-update-motd-reb,cat,/usr/bin/cat /var/run/*,10
-update-motd-upd,apt-check,/usr/bin/python3.8 /usr/lib/update-notifier/*,11
-update-motd-upd,apt-config,/usr/bin/*,55
-update-motd-upd,chmod,/usr/bin/chmod +r./var/lib/update-notifier/*,11
-update-motd-upd,dirname,/usr/bin/dirname /var/lib/update-notifier/*,11
-update-motd-upd,find,/usr/bin/find /var/lib/apt/lists/./etc/apt/sources.list.//var/lib/dpkg/*,11
-update-motd-upd,mktemp,/usr/bin/mktemp -p./var/lib/*,11
+systemd,gpu-manager,/usr/bin/gpu-manager --log./var/log/*,13
+systemd,lightdm,/usr/sbin/*,13
+systemd,lightdm-gtk-gre,/usr/sbin/*,68
+systemd,nm-dispatcher,/usr/lib/NetworkManager/*,2
+systemd,packagekitd,/usr/lib/packagekit/*,30
+systemd,python3,/usr/bin/python3.8 /usr/lib/ubuntu-advantage/*,60
+systemd,rm,/usr/bin/rm -rf./var/lib/lightdm-data/*,13
+systemd,sh,"/usr/bin/dash -c.[ ""$(basename $(cat /etc/X11/default-display-manager 2>/dev/*",13
+udisksd,dumpe2fs,/usr/sbin/dumpe2fs -h./dev/*,24
+udisksd,udisksd,/usr/lib/udisks2/udisksd -h./dev/*,60
+update-motd-fsc,awk,/usr/bin/mawk $5 ~ /^ext(2|3|4)$/*,25
+update-motd-fsc,awk,/usr/bin/mawk {print $1}./proc/*,27
+update-motd-fsc,cat,/usr/bin/cat /var/lib/update-notifier/*,27
+update-motd-fsc,cut,/usr/bin/*,500
+update-motd-fsc,date,/usr/bin/*,154
+update-motd-fsc,dumpe2fs,/usr/sbin/dumpe2fs -h./dev/*,75
+update-motd-fsc,dumpe2fs,/usr/sbin/dumpe2fs -h./dev/mapper/*,25
+update-motd-fsc,grep,/usr/bin/*,400
+update-motd-fsc,id,/usr/bin/*,27
+update-motd-fsc,mount,/usr/bin/*,25
+update-motd-fsc,stat,/usr/bin/stat -c.%Y./var/lib/update-notifier/*,27
+update-motd-hwe,apt-config,/usr/bin/*,135
+update-motd-hwe,cat,/usr/bin/cat /var/lib/update-notifier/*,27
+update-motd-hwe,dirname,/usr/bin/dirname /var/lib/update-notifier/*,27
+update-motd-hwe,find,/usr/bin/find /var/lib/apt/lists/./etc/apt/sources.list.//var/lib/dpkg/*,27
+update-motd-hwe,hwe-support-sta,/usr/bin/python3.8 /usr/bin/*,13
+update-motd-hwe,id,/usr/bin/*,27
+update-motd-hwe,mktemp,/usr/bin/mktemp -p./var/lib/*,27
+update-motd-hwe,mv,/usr/bin/mv /var/lib/update-notifier/tmp.ug7nk7OpXh./var/lib/update-notifier/*,13
+update-motd-hwe,rm,/usr/bin/rm -f./var/lib/update-notifier/*,27
+update-motd-hwe,systemd-detect-,/usr/bin/*,27
+update-motd-reb,cat,/usr/bin/cat /var/run/*,27
+update-motd-upd,apt-check,/usr/bin/python3.8 /usr/lib/update-notifier/*,30
+update-motd-upd,apt-config,/usr/bin/*,150
+update-motd-upd,chmod,/usr/bin/chmod +r./var/lib/update-notifier/*,30
+update-motd-upd,dirname,/usr/bin/dirname /var/lib/update-notifier/*,30
+update-motd-upd,find,/usr/bin/find /var/lib/apt/lists/./etc/apt/sources.list.//var/lib/dpkg/*,30
+update-motd-upd,mktemp,/usr/bin/mktemp -p./var/lib/*,30
 update-motd-upd,mv,/usr/bin/mv /var/lib/update-notifier/tmp.Rhl4j86Iw0./var/lib/update-notifier/*,11
-update-motd-upd,rm,/usr/bin/rm -f./var/lib/update-notifier/*,11
+update-motd-upd,mv,/usr/bin/mv /var/lib/update-notifier/tmp.kId25nawz1./var/lib/update-notifier/*,19
+update-motd-upd,rm,/usr/bin/rm -f./var/lib/update-notifier/*,30
+xubuntu-numlock,grep,/usr/bin/*,51
+xubuntu-numlock,laptop-detect,/usr/bin/dash -e./usr/bin/*,17
+xubuntu-numlock,numlockx,/usr/bin/*,17
+xubuntu-numlock,udevadm,/usr/bin/*,17
+xubuntu-numlock,udevadm,/usr/bin/udevadm info.--query=env.--path=/sys/devices/pci0000:e6/0000:e6:03.1/0000:e7:00.0/*,51

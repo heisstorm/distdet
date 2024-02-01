@@ -1,2 +1,4 @@
 source,sink,freq
 mv,"oldpath=/var/lib/update-notifier/tmp.Rhl4j86Iw0 newdirfd=-100(AT_FDCWD), newpath=/var/lib/update-notifier/*",11
+mv,"oldpath=/var/lib/update-notifier/tmp.kId25nawz1 newdirfd=-100(AT_FDCWD), newpath=/var/lib/update-notifier/*",19
+mv,"oldpath=/var/lib/update-notifier/tmp.ug7nk7OpXh newdirfd=-100(AT_FDCWD), newpath=/var/lib/update-notifier/*",13
