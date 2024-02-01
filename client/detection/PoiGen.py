@@ -4,6 +4,8 @@
 import re
 import sqlite3
 import pandas as pd
+import sys
+sys.path.append("../../")
 from decimal import Decimal
 from client.common.mask import mask_ip
 from client.common.mask import mask_path
