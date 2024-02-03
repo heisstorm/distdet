@@ -20,7 +20,7 @@ model_f_rename = set()
 model_n_listen = set()
 model_n_connect = set()
 
-evict_to_database = False
+evict_to_database = True
 db = set()
 
 
@@ -267,7 +267,7 @@ def event_caching():
 
 if __name__ == '__main__':
     # log_file_path = sys.argv[1]
-    log_file_path = "system_log1.txt"
+    log_file_path = "system_log0130.txt"
     with open(log_file_path, "r") as file:
         log_lines = file.readlines()
         for line in log_lines:
