@@ -23,6 +23,9 @@ model_n_connect = set()
 evict_to_database = True
 db = set()
 
+# 在detection阶段，因为要考虑forward的影响，所以不能只考虑write，也要考虑read
+model_f_read = set()
+model_n_read = set()
 
 def process_log_line(line):
     parts = line.split()
@@ -30,9 +33,9 @@ def process_log_line(line):
     unprocessed_counter = 0
     if event_action in ['execve']:
         process_p_model(line)
-    if event_action in ['openat', 'write', 'writev', 'unlinkat', 'renameat2']:
+    if event_action in ['openat', 'write', 'writev', 'unlinkat', 'renameat2', 'read', 'readv']:
         process_f_model(line)
-    if event_action in ['listen', 'sendto', 'sendmsg']:
+    if event_action in ['listen', 'sendto', 'sendmsg', 'read', 'readv', 'recvmsg', 'recvfrom']:
         process_n_model(line)
     else:
         unprocessed_counter += 1
@@ -79,7 +82,7 @@ def process_f_model(line):
     # create file
     if event_action == 'openat':
         if event_direction == '<':
-            if re.search(r'\|O_CREAT\|', line):
+            if re.search(r'\|O_CREAT\|', line) and re.search(r'\(<f>(.*?)\)', line):
                 attr_token_bag = re.findall(r'\(<f>(.*?)\)', line)[0]
                 mytuple = (
                     caculte_start_time(parts[1], latency) + '->' + parts[1], process_name, attr_token_bag,
@@ -92,7 +95,10 @@ def process_f_model(line):
             bidrect_process[parts[1]] = line
         else:
             start_time = caculte_start_time(parts[1], latency)
-            start_line = bidrect_process.pop(start_time)
+            if start_time in bidrect_process:
+                start_line = bidrect_process.pop(start_time)
+            else:
+                return
             if re.search(r'fd=\d+\(<f>', start_line):
                 attr_token_bag = re.findall(r'\(<f>(.*?)\)', start_line)[0]
                 mytuple = (start_time + '->' + parts[1], process_name, attr_token_bag, attr_token_bag)
@@ -117,6 +123,23 @@ def process_f_model(line):
                 attr_token_bag)
             model_f_rename.add(mytuple)
 
+    # read from file, forward analysis
+    if event_action in ['read', 'readv']:
+        if event_direction == '>':
+            # time: line
+            bidrect_process[parts[1]] = line
+        else:
+            start_time = caculte_start_time(parts[1], latency)
+            if start_time in bidrect_process:
+                start_line = bidrect_process[start_time]
+            else:
+                return
+            if re.search(r'fd=\d+\(<f>', start_line):
+                bidrect_process.pop(start_time)
+                attr_token_bag = re.findall(r'\(<f>(.*?)\)', start_line)[0]
+                mytuple = (start_time + '->' + parts[1], attr_token_bag, process_name, attr_token_bag)
+                model_f_read.add(mytuple)
+
 
 def process_n_model(line):
     parts = line.split()
@@ -128,7 +151,10 @@ def process_n_model(line):
             bidrect_process[parts[1]] = line
         else:
             start_time = caculte_start_time(parts[1], latency)
-            start_line = bidrect_process.pop(start_time)
+            if start_time in bidrect_process:
+                start_line = bidrect_process.pop(start_time)
+            else:
+                return
             iffind = True
             if re.search(r'fd=\d+\(<4t>(.*?)\)', start_line):
                 ip_port = re.findall(r'fd=\d+\(<4t>(.*?)\)', start_line)[0]
@@ -148,7 +174,10 @@ def process_n_model(line):
             bidrect_process[parts[1]] = line
         else:
             start_time = caculte_start_time(parts[1], latency)
-            start_line = bidrect_process.pop(start_time)
+            if start_time in bidrect_process:
+                start_line = bidrect_process.pop(start_time)
+            else:
+                return
             iffind = True
             if re.search(r'fd=\d+\(<4t>(.*?)\)', start_line):
                 ip_port = re.findall(r'fd=\d+\(<4t>(.*?)\)', start_line)[0]
@@ -164,6 +193,31 @@ def process_n_model(line):
             if iffind and ip_port != '':
                 mytuple = (start_time + '->' + parts[1], parts[3], ip_port, ip_port)
                 model_n_connect.add(mytuple)
+
+    if event_action in ['read', 'readv', 'recvmsg', 'recvfrom']:
+        if event_direction == '>':
+            bidrect_process[parts[1]] = line
+        else:
+            start_time = caculte_start_time(parts[1], latency)
+            if start_time in bidrect_process:
+                start_line = bidrect_process.pop(start_time)
+            else:
+                return
+            iffind = True
+            if re.search(r'fd=\d+\(<4t>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4t>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<4>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<6t>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<6t>(.*?)\)', start_line)[0]
+            elif re.search(r'fd=\d+\(<4u>(.*?)\)', start_line):
+                ip_port = re.findall(r'fd=\d+\(<4u>(.*?)\)', start_line)[0]
+            else:
+                ip_port = ''
+                iffind = False
+            if iffind and ip_port != '':
+                mytuple = (start_time + '->' + parts[1], ip_port, parts[3], ip_port)
+                model_n_read.add(mytuple)
 
 def match_and_find():
     # 逆向读入pandas然后对比, 粗粒度
@@ -261,6 +315,9 @@ def event_caching():
     cursor.executemany('INSERT OR IGNORE INTO events (time, source, sink, attr) VALUES (?, ?, ?, ?)', model_f_modify)
     cursor.executemany('INSERT OR IGNORE INTO events (time, source, sink, attr) VALUES (?, ?, ?, ?)', model_n_listen)
     cursor.executemany('INSERT OR IGNORE INTO events (time, source, sink, attr) VALUES (?, ?, ?, ?)', model_n_connect)
+
+    cursor.executemany('INSERT OR IGNORE INTO events (time, source, sink, attr) VALUES (?, ?, ?, ?)', model_f_read)
+    cursor.executemany('INSERT OR IGNORE INTO events (time, source, sink, attr) VALUES (?, ?, ?, ?)', model_n_read)
     connection.commit()
     connection.close()
 

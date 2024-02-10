@@ -8,8 +8,13 @@ import graphviz
 conn = sqlite3.connect('event_caching.db')
 cursor = conn.cursor()
 
-ASG = set()
+ASG = {}
 
+def add(ASG, element):
+    if element in ASG:
+        ASG[element] += 1
+    else:
+        ASG[element] = 1
 
 def backward(poi, x):
     bfsqueue = Queue(0)
@@ -30,7 +35,7 @@ def backward(poi, x):
         cur_time = cur[1]
         cur_task_source = cur[2]
         cur_task_sink = cur[3]
-        ASG.add(cur_task_source + " -> " + cur_task_sink)
+        add(ASG, cur_task_source + " -> " + cur_task_sink)
         print(cur_task_source + "--------->" + cur_task_sink)
         if x == 0:
             break
@@ -81,7 +86,7 @@ def forward(poi, x):
         cur_time = cur[1]
         cur_task_source = cur[2]
         cur_task_sink = cur[3]
-        ASG.add(cur_task_source + " -> " + cur_task_sink)
+        add(ASG, cur_task_source + " -> " + cur_task_sink)
         print(cur_task_source + "--------->" + cur_task_sink)
         if x == 0:
             break
@@ -101,11 +106,11 @@ def forward(poi, x):
 def visualize_hierarchy(process_relationships, output_filename='ASG'):
     dot = graphviz.Digraph(comment='ASG')
 
-    for relationship in process_relationships:
+    for relationship, frequency in process_relationships.items():
         parent, child = relationship.split(" -> ")
         dot.node(parent.strip())
         dot.node(child.strip())
-        dot.edge(parent.strip(), child.strip())
+        dot.edge(parent.strip(), child.strip(), label=str(frequency))
 
     # Save the DOT source to a file
     dot.save(output_filename + '.dot')
@@ -119,8 +124,10 @@ if __name__ == '__main__':
     with open('poi.txt', 'r') as file:
         pois = [line.strip() for line in file]
     x = 9
+    n = len(pois)
     for poi in pois:
         backward(poi, x)
-        print("----------------------")
+        print("-----------%s-----------" % n)
         forward(poi, x)
+        n = n-1
     visualize_hierarchy(ASG)
