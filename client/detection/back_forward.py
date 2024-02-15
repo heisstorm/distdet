@@ -1,14 +1,31 @@
 # -* - coding: UTF-8 -* -
 # ! /usr/bin/python
+import json
+import os
 import sqlite3
-from decimal import Decimal
-from queue import Queue
-import graphviz
+import shutil
 
 conn = sqlite3.connect('event_caching.db')
 cursor = conn.cursor()
 
 ASG = {}
+
+class Process_Lineage:
+    def __init__(self, name):
+        self.name = name
+        self.children = []
+
+    def add_child(self, child):
+        self.children.append(child)
+
+    def to_dict(self):
+        result = {
+            "name": self.name,
+        }
+        if self.children:
+            result["children"] = [child.to_dict() for child in self.children]
+        return result
+
 
 def add(ASG, element):
     if element in ASG:
@@ -16,118 +33,78 @@ def add(ASG, element):
     else:
         ASG[element] = 1
 
-def backward(poi, x):
-    bfsqueue = Queue(0)
+
+def backward(root_f, x):
+    stack = [(root_f, 0)]
+    current_node = ""
+    while stack:
+        # 取出第一个
+        current_node, level = stack.pop()
+        name = current_node.name
+        if level >= x:
+            break
+        sql_query = "SELECT * FROM events WHERE sink=? AND source LIKE ?"
+        parameters = (name.replace('\'', ''), '% | %')
+        cursor.execute(sql_query, parameters)
+        results = cursor.fetchall()
+        if not results:
+            break
+        id, time, source, sink, attr = results[0]
+        source_node = Process_Lineage(source)
+        source_node.children = [current_node]
+        stack.append([source_node, level+1])
+    return current_node
+
+def forward(poi, y):
     poi = poi.lstrip('(').rstrip(')')
-    time = poi.split(",")[0].strip()
     source = poi.split(",")[1].strip()
     sink = poi.split(",")[2].strip()
-    sql_query = "SELECT * FROM events WHERE time=%s AND source=%s AND sink=%s" % (time, source, sink)
-    cursor.execute(sql_query)
-    results = cursor.fetchall()
-    for row in results:
-        # 应该考虑到很多条
-        id, time, source, sink, attr = row
-        bfsqueue.put([id, time, source, sink, attr])
-    while not bfsqueue.empty():
-        # 取出第一个
-        cur = bfsqueue.get()
-        cur_time = cur[1]
-        cur_task_source = cur[2]
-        cur_task_sink = cur[3]
-        add(ASG, cur_task_source + " -> " + cur_task_sink)
-        print(cur_task_source + "--------->" + cur_task_sink)
-        if x == 0:
-            break
-        x = x - 1
-
-        cur_task_time = cur[1]
-        sql_query = "SELECT * FROM events WHERE sink='%s'" % (cur_task_source)
-        cursor.execute(sql_query)
-        results = cursor.fetchall()
-        for row in results:
-            id, time, source, sink , attr = row
-            if time != cur_time:
-                if time_compare(time.split('->')[0], cur_task_time.split('->')[1]):
-                    bfsqueue.put([id, time, source, sink, attr])
-
-
-def time_compare(t1, t2):
-    # true if t1<t2
-    t1_int = Decimal(t1.split('.')[0])
-    t1_dec = Decimal(t1.split('.')[1])
-    t2_int = Decimal(t2.split('.')[0])
-    t2_dec = Decimal(t2.split('.')[1])
-    if t1_int < t2_int:
-        return True
-    elif t1_int == t2_int:
-        if t1_dec < t2_dec:
-            return True
+    if ' | ' in sink:
+        root = Process_Lineage(sink)
     else:
-        return False
-
-
-def forward(poi, x):
-    bfsqueue = Queue(0)
-    poi = poi.lstrip('(').rstrip(')')
-    time = poi.split(",")[0].strip()
-    source = poi.split(",")[1].strip()
-    sink = poi.split(",")[2].strip()
-    sql_query = "SELECT * FROM events WHERE time=%s AND source=%s AND sink=%s" % (time, source, sink)
-    cursor.execute(sql_query)
-    results = cursor.fetchall()
-    for row in results:
-        # 应该考虑到很多条
-        id, time, source, sink, attr = row
-        bfsqueue.put([id, time, source, sink, attr])
-    while not bfsqueue.empty():
-        # 取出第一个
-        cur = bfsqueue.get()
-        cur_time = cur[1]
-        cur_task_source = cur[2]
-        cur_task_sink = cur[3]
-        add(ASG, cur_task_source + " -> " + cur_task_sink)
-        print(cur_task_source + "--------->" + cur_task_sink)
-        if x == 0:
+        root = Process_Lineage(source)
+    stack = [(root, 0)]
+    while stack:
+        current_node, level = stack.pop()
+        name = current_node.name
+        if level > y:
             break
-        x = x - 1
-
-        cur_task_time = cur[1]
-        sql_query = "SELECT * FROM events WHERE source='%s'" % (cur_task_sink)
-        cursor.execute(sql_query)
+        sql_query = "SELECT * FROM events WHERE source=? AND sink LIKE ?"
+        parameters = (name.replace('\'', ''), '% | %')
+        cursor.execute(sql_query, parameters)
         results = cursor.fetchall()
+        sink_set = set()
         for row in results:
             id, time, source, sink, attr = row
-            if time != cur_time:
-                if time_compare(time.split('->')[1], cur_task_time.split('->')[0]):
-                    bfsqueue.put([id, time, source, sink, attr])
+            sink_set.add(sink)
+        children = []
+        for i in list(sink_set):
+            children.append(Process_Lineage(i))
+        current_node.children = children
 
-
-def visualize_hierarchy(process_relationships, output_filename='ASG'):
-    dot = graphviz.Digraph(comment='ASG')
-
-    for relationship, frequency in process_relationships.items():
-        parent, child = relationship.split(" -> ")
-        dot.node(parent.strip())
-        dot.node(child.strip())
-        dot.edge(parent.strip(), child.strip(), label=str(frequency))
-
-    # Save the DOT source to a file
-    dot.save(output_filename + '.dot')
-
-    # Generate a PNG image
-    dot.render(output_filename, format='png', cleanup=True)
+        stack.extend((child, level + 1) for child in reversed(current_node.children))
+    return root
 
 
 if __name__ == '__main__':
+    # 每个poi对应一个ASG，放在ASG文件夹下
+    shutil.rmtree('ASG')
+    os.mkdir('ASG')
     # 字符串的 list
     with open('poi.txt', 'r') as file:
         pois = [line.strip() for line in file]
-    x = 9
-    n = len(pois)
+
+    x = 12
+    y = 2
+    n = 15
+    ASG_count = 1
     for poi in pois:
-        backward(poi, x)
-        print("-----------%s-----------" % n)
-        forward(poi, x)
-        n = n-1
-    visualize_hierarchy(ASG)
+        ASG.clear()
+        root_f = forward(poi, y)
+        root = backward(root_f, x)
+        process_tree_dict = root.to_dict()
+        with open('ASG/ASG%s.json' % ASG_count, 'w') as file:
+            json.dump(process_tree_dict, file, indent=2)
+        print("-----------%s-----------" % ASG_count)
+        ASG_count = ASG_count + 1
+    pass

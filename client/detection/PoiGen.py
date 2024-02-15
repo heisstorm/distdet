@@ -20,8 +20,7 @@ model_f_rename = set()
 model_n_listen = set()
 model_n_connect = set()
 
-evict_to_database = True
-db = set()
+evict_to_database = False
 
 # 在detection阶段，因为要考虑forward的影响，所以不能只考虑write，也要考虑read
 model_f_read = set()
@@ -297,6 +296,18 @@ def match_and_find():
                     model_p_execve_c['sink'].astype(str) == sink.split('|')[0].strip())
             if not condition.any():
                 poi.add((time, source, sink))
+
+    # 至始至终没有提到time的事，所以应该省略掉time，而关注次数
+    poi_b = {}
+    for p in poi:
+        if (p[1], p[2]) in poi_b:
+            poi_b[(p[1], p[2])] = poi_b[(p[1], p[2])]+1
+        else:
+            poi_b[(p[1], p[2])] = 1
+
+    poi.clear()
+    for key, value in poi_b.items():
+        poi.add((value,) + key)
 
     with open('poi.txt', 'w') as file:
         for value in poi:
