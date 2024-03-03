@@ -1,0 +1,499 @@
+source,sink,freq
+/bin/appstreamcli,refresh-cache.,11
+/bin/apt-config,shell.*.,836
+/bin/apt-config,shell.TRUSTEDFILE.Dir::Etc::Trusted/f.,66
+/bin/apt-config,shell.TRUSTEDPARTS.Dir::Etc::TrustedParts/d.,66
+/bin/bash,*-*/local/ASUAD/lhuan139/.vscode-server/*...,2
+/bin/bash,-c.bash.,9
+/bin/bash,/home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/brew.sh.shellenv.,1
+/bin/cat,/etc/apt/*.,30
+/bin/cat,/etc/apt/trusted.gpg.d/*.,24
+/bin/cat,/etc/apt/trusted.gpg.d/ubuntu-*-archive.gpg.,18
+/bin/chmod,+r./var/lib/update-notifier/updates-available.,11
+/bin/chmod,700./tmp/apt-key-*.,13
+/bin/cmp,--silent.--bytes=1.-./etc/apt/*.,30
+/bin/cmp,--silent.--bytes=1.-./etc/apt/trusted.gpg.d/*.,24
+/bin/cmp,--silent.--bytes=1.-./etc/apt/trusted.gpg.d/ubuntu-*-archive.gpg.,18
+/bin/cp,-a./tmp/apt-key-*/pubring.gpg./tmp/apt-key-*...,6
+/bin/dirname,/var/lib/update-notifier/updates-available.,11
+/bin/find,/etc/apt/trusted.gpg.d.-mindepth.1.-maxdepth.1.(.-name.*.gpg.-o.-name.*.asc.).,66
+/bin/find,/var/lib/apt/lists/./etc/apt/sources.list.//var/lib/dpkg/status.-type.f.-newe...,11
+/bin/gpgconf,--kill.all.,143
+/bin/gpgv,--homedir./tmp/apt-****,12
+/bin/gpgv,--homedir./tmp/apt-*-**...,9
+/bin/gpgv,--homedir./tmp/apt-key-*/apt-key-*...,6
+/bin/gpgv,--homedir./tmp/apt-key-gpghome.*/share/keyrings/*...,4
+/bin/id,-u.,11
+/bin/lsb_release,-Es./bin/lsb_release.-c.-s.,121
+/bin/mktemp,--directory.--tmpdir.apt-key-gpghome.XXXXXXXXXX.,143
+/bin/mktemp,-p./var/lib/update-notifier.,11
+/bin/mv,/var/lib/update-notifier/tmp.Rhl4j86Iw0./var/lib/update-notifier/updates-avai...,11
+/bin/ps,-p.520438.-c.-o.comm=.,1
+/bin/python,*/local/ASUAD/lhuan139/.vscode-server/extensions/ms-*...,2
+/bin/python3,-I./home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-python.python-2023...,9
+/bin/readlink,-f./etc/apt/trusted.gpg.d/.,66
+/bin/readlink,-f./tmp/apt-key-*.,6
+/bin/rm,*/apt-key-gpghome.0PVzEAIDqm/*.,7
+/bin/rm,-f./tmp/apt-key-*/pubring.gpg.,5
+/bin/rm,-f./var/lib/update-notifier/tmp.Rhl4j86Iw0.,11
+/bin/rm,-rf./tmp/apt-key-*.,12
+/bin/run-parts,--report./etc/cron.hourly.,18
+/bin/sed,"-e.s#'#'""'""'#g.",286
+/bin/sh,*/*-I/home/local/ASUAD/lhuan139/.vscode-server/extensions/*-*...,7
+/bin/sh,-c.   cd / && run-parts --report /etc/cron.hourly.,18
+/bin/sh,-c.   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularit...,3
+/bin/sh,"-c.""/home/local/ASUAD/*-server/*...",3369
+/bin/sh,-c./ssd2/liangyi/miniconda/envs/*/bin/python-I/home/local/ASUAD/*...,6
+/bin/sh,-c./usr/bin/env -i PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sb...,10
+/bin/sh,"-c./usr/bin/ps -ax -o pid=,ppid=,pcpu=,pmem=,command=.",22550
+/bin/sh,-c./usr/bin/test -e /usr/share/dbus-1/system-services/org.freedesktop.Package...,11
+/bin/sh,-c./usr/lib/update-notifier/update-motd-updates-available 2>/dev/null || true.,11
+/bin/sh,-c.[ ! -e /run/systemd/system ] || [ $(id -u) -ne 0 ] || systemctl start --no...,11
+/bin/sh,-c.[ ! -f /var/run/dbus/system_bus_socket ] || /usr/bin/dbus-send --system --...,11
+/bin/sh,-c.[ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/s...,17
+/bin/sh,-c.command -v debian-sa1 > /dev/null && debian-sa1 1 1.,95
+/bin/sh,-c.if /usr/bin/test -w /var/cache/app-info -a -e /usr/bin/appstreamcli; then ...,11
+/bin/sh,-c.if /usr/bin/test -w /var/lib/command-not-found/ -a -e /usr/lib/cnf-update-...,11
+/bin/sh,-c.ls -l /proc/[0-9]*/fd/[0-9]* | grep socket:.,20687
+/bin/sh,-c.lsb_release -a.,9
+/bin/sh,-c.ps -F -A -l | grep root.,20674
+/bin/sh,-c.touch /var/lib/apt/periodic/update-success-stamp 2>/dev/null || true.,11
+/bin/sh,-c.wget --version > /dev/null.if [ $? -eq 0 ].then..wget --connect-timeout=7 ...,41
+/bin/sh,-c.which ps.,22548
+/bin/systemctl,start.--no-block.apt-news.service.esm-cache.service.,11
+/bin/touch,/tmp/apt-key-*/pubring.gpg.,6
+/bin/touch,/var/lib/apt/periodic/update-success-stamp.,11
+/etc/cron.daily/popularity-contest,/etc/cron.daily/popularity-contest.--crond.,3
+/etc/update-motd.d/00-header,/etc/update-motd.d/00-header.,10
+/etc/update-motd.d/10-help-text,/etc/update-motd.d/10-help-text.,10
+/etc/update-motd.d/50-landscape-sysinfo,/etc/update-motd.d/50-landscape-sysinfo.,10
+/etc/update-motd.d/50-motd-news,/etc/update-***.,7
+/etc/update-motd.d/85-fwupd,/etc/update-motd.d/85-fwupd.,10
+/etc/update-motd.d/90-updates-available,/etc/update-motd.d/90-updates-available.,10
+/etc/update-motd.d/91-contract-ua-esm-status,/etc/update-motd.d/91-contract-ua-esm-status.,10
+/etc/update-motd.d/91-release-upgrade,/etc/update-motd.d/91-release-upgrade.,10
+/etc/update-motd.d/92-unattended-upgrades,/etc/update-motd.d/92-unattended-upgrades.,10
+/etc/update-motd.d/95-hwe-eol,/etc/update-motd.d/95-hwe-eol.,10
+/etc/update-motd.d/98-fsck-at-reboot,/etc/update-motd.d/98-fsck-at-reboot.,10
+/etc/update-motd.d/98-reboot-required,/etc/update-motd.d/98-reboot-required.,10
+/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/bin/jenv,bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/bin/*.,3
+/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/***.,8
+/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv,bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv.--vers...,1
+/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv---version,bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv---vers...,1
+/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-commands,bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-comman...,1
+/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-hooks,bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-hooks....,1
+/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-init,bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-init.-.,1
+/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-refresh-plugins,bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-refres...,1
+/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-rehash,bash./home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-rehash.,1
+/home/linuxbrew/.linuxbrew/bin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/*/*.,9
+/home/linuxbrew/.linuxbrew/bin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-refresh-plu...,1
+/home/linuxbrew/.linuxbrew/bin/brew,/home/linuxbrew/.linuxbrew/bin/brew.shellenv.,1
+/home/linuxbrew/.linuxbrew/bin/git,--version.,3
+/home/linuxbrew/.linuxbrew/bin/git,config.--get.commit.template.,6
+/home/linuxbrew/.linuxbrew/bin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,6
+/home/linuxbrew/.linuxbrew/bin/git,rev-parse.--git-dir.--git-common-dir.,3
+/home/linuxbrew/.linuxbrew/bin/git,rev-parse.--show-toplevel.,66
+/home/linuxbrew/.linuxbrew/bin/git,status.-z.-uall.,6
+/home/linuxbrew/.linuxbrew/bin/jenv,/home/linuxbrew/.linuxbrew/bin/*.,3
+/home/linuxbrew/.linuxbrew/sbin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/*/*.,9
+/home/linuxbrew/.linuxbrew/sbin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-refresh-plu...,1
+/home/linuxbrew/.linuxbrew/sbin/git,--version.,3
+/home/linuxbrew/.linuxbrew/sbin/git,config.--get.commit.template.,6
+/home/linuxbrew/.linuxbrew/sbin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,6
+/home/linuxbrew/.linuxbrew/sbin/git,rev-parse.--git-dir.--git-common-dir.,3
+/home/linuxbrew/.linuxbrew/sbin/git,rev-parse.--show-toplevel.,66
+/home/linuxbrew/.linuxbrew/sbin/git,status.-z.-uall.,6
+/home/local/ASUAD/lhuan139/.local/bin/bash,-c.condarun-n*--no-capture-outputpython/home/local/ASUAD/*...,8
+/home/local/ASUAD/lhuan139/.local/bin/conda,info.--json.,9
+/home/local/ASUAD/lhuan139/.local/bin/dpkg-query,-f.${Version} ${Provides}..-W.lsb-core.lsb-cxx.lsb-graphics.lsb-desktop.lsb-l...,37
+/home/local/ASUAD/lhuan139/.local/bin/git,--version.,9
+/home/local/ASUAD/lhuan139/.local/bin/git,config.--get.commit.template.,330
+/home/local/ASUAD/lhuan139/.local/bin/git,fetch.,294
+/home/local/ASUAD/lhuan139/.local/bin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,330
+/home/local/ASUAD/lhuan139/.local/bin/git,rev-parse.--git-dir.--git-common-dir.,18
+/home/local/ASUAD/lhuan139/.local/bin/git,rev-parse.--show-toplevel.,1062
+/home/local/ASUAD/lhuan139/.local/bin/git,status.-z.-uall.,330
+/home/local/ASUAD/lhuan139/.local/bin/ip,-f.inet.addr.,28
+/home/local/ASUAD/lhuan139/.local/bin/lsb_release,-a.,18
+/home/local/ASUAD/lhuan139/.local/bin/ps,"-A.-o.ppid,pid.",8
+/home/local/ASUAD/lhuan139/.local/bin/python,/home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-python.vscode-pylance...,96
+/home/local/ASUAD/lhuan139/.local/bin/python3,"-c.import os, os.path, sys; normalize = lambda p: os.path.normcase(os.path.no...",30
+/home/local/ASUAD/lhuan139/.local/bin/uname,-p.,37
+/home/local/ASUAD/lhuan139/.local/bin/uname,-rs.,19
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/code-server,sh./home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce36...,9
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/bash,-c.condarun-n*--no-capture-outputpython/home/local/ASUAD/*...,8
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/conda,info.--json.,9
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/dpkg-query,-f.${Version} ${Provides}..-W.lsb-core.lsb-cxx.lsb-graphics.lsb-desktop.lsb-l...,37
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/git,--version.,9
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/git,config.--get.commit.template.,330
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/git,fetch.,294
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,330
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/git,rev-parse.--git-dir.--git-common-dir.,18
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/git,rev-parse.--show-toplevel.,1062
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/git,status.-z.-uall.,330
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/ip,-f.inet.addr.,28
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/lsb_release,-a.,18
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/ps,"-A.-o.ppid,pid.",8
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/python,/home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-python.vscode-pylance...,96
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/python3,"-c.import os, os.path, sys; normalize = lambda p: os.path.normcase(os.path.no...",30
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/uname,-p.,37
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/bin/remote-cli/uname,-rs.,19
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node,"-p.""dfdea4fe5913"" + JSON.stringify(process.env) + ""dfdea4fe5913"".",9
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba...,45
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node,/home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-python.vscode-pylance...,9
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/node_modules/@vscode/ripgrep/bin/rg,--files.--hidden.--case-sensitive.--no-require-****...,2
+/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba185c49794/out/vs/base/node/cpuUsage.sh,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba...,166
+/home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-vscode.cpptools-1.18.5-linux-x64/bin/cpptools-srv,497298.{D6F77B13-547A-488A-A30F-2BE3728E990E}.,10
+/home/local/ASUAD/zliu396/.jenv/bin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/*/*.,9
+/home/local/ASUAD/zliu396/.jenv/bin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-refresh-plu...,1
+/home/local/ASUAD/zliu396/.jenv/bin/git,--version.,4
+/home/local/ASUAD/zliu396/.jenv/bin/git,config.--get.commit.template.,8
+/home/local/ASUAD/zliu396/.jenv/bin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,8
+/home/local/ASUAD/zliu396/.jenv/bin/git,rev-parse.--git-dir.--git-common-dir.,4
+/home/local/ASUAD/zliu396/.jenv/bin/git,rev-parse.--show-toplevel.,88
+/home/local/ASUAD/zliu396/.jenv/bin/git,status.-z.-uall.,8
+/home/local/ASUAD/zliu396/.jenv/shims/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/*/***.,6
+/home/local/ASUAD/zliu396/.jenv/shims/git,--version.,4
+/home/local/ASUAD/zliu396/.jenv/shims/git,config.--get.commit.template.,8
+/home/local/ASUAD/zliu396/.jenv/shims/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,8
+/home/local/ASUAD/zliu396/.jenv/shims/git,rev-parse.--git-dir.--git-common-dir.,4
+/home/local/ASUAD/zliu396/.jenv/shims/git,rev-parse.--show-toplevel.,88
+/home/local/ASUAD/zliu396/.jenv/shims/git,status.-z.-uall.,8
+/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli/git,--version.,1
+/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli/git,config.--get.commit.template.,2
+/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,2
+/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli/git,rev-parse.--git-dir.--git-common-dir.,1
+/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli/git,rev-parse.--show-toplevel.,22
+/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli/git,status.-z.-uall.,2
+/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node,--dns-result-order=ipv4first./home/local/ASUAD/zliu396/.vscode-server/bin/1a5...,2
+/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf...,1
+/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node_modules/@vscode/ripgrep/bin/rg,--files.--hidden.--case-sensitive.--no-require-*....,5
+/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node_modules/@vscode/ripgrep/bin/rg,--files.--hidden.--case-sensitive.--no-require-git.-g.**/.copilotignore.-g.!*...,1
+/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/out/vs/base/node/cpuUsage.sh,/home/local/ASUAD/zliu396/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf...,22386
+/home/local/ASUAD/zliu396/anaconda3/bin/git,--version.,1
+/home/local/ASUAD/zliu396/anaconda3/bin/git,config.--get.commit.template.,2
+/home/local/ASUAD/zliu396/anaconda3/bin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,2
+/home/local/ASUAD/zliu396/anaconda3/bin/git,rev-parse.--git-dir.--git-common-dir.,1
+/home/local/ASUAD/zliu396/anaconda3/bin/git,rev-parse.--show-toplevel.,22
+/home/local/ASUAD/zliu396/anaconda3/bin/git,status.-z.-uall.,2
+/home/local/ASUAD/zliu396/anaconda3/condabin/git,--version.,1
+/home/local/ASUAD/zliu396/anaconda3/condabin/git,config.--get.commit.template.,2
+/home/local/ASUAD/zliu396/anaconda3/condabin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,2
+/home/local/ASUAD/zliu396/anaconda3/condabin/git,rev-parse.--git-dir.--git-common-dir.,1
+/home/local/ASUAD/zliu396/anaconda3/condabin/git,rev-parse.--show-toplevel.,22
+/home/local/ASUAD/zliu396/anaconda3/condabin/git,status.-z.-uall.,2
+/sbin/ldconfig,/sbin/ldconfig.-p.,10
+/sbin/ldconfig.real,-p.,10
+/ssd2/liangyi/miniconda/bin/bash,-c.condarun-n*--no-capture-outputpython/home/local/ASUAD/*...,8
+/ssd2/liangyi/miniconda/bin/conda,/ssd2/liangyi/****,29
+/ssd2/liangyi/miniconda/bin/conda,/ssd2/liangyi/miniconda/bin/*.,17
+/ssd2/liangyi/miniconda/bin/conda,/ssd2/liangyi/miniconda/bin/conda.shell.posix.activate./ssd2/liangyi/minicond...,56
+/ssd2/liangyi/miniconda/bin/dpkg-query,-f.${Version} ${Provides}..-W.lsb-core.lsb-cxx.lsb-graphics.lsb-desktop.lsb-l...,9
+/ssd2/liangyi/miniconda/bin/git,--version.,9
+/ssd2/liangyi/miniconda/bin/git,config.--get.commit.template.,330
+/ssd2/liangyi/miniconda/bin/git,fetch.,294
+/ssd2/liangyi/miniconda/bin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,330
+/ssd2/liangyi/miniconda/bin/git,rev-parse.--git-dir.--git-common-dir.,18
+/ssd2/liangyi/miniconda/bin/git,rev-parse.--show-toplevel.,1062
+/ssd2/liangyi/miniconda/bin/git,status.-z.-uall.,330
+/ssd2/liangyi/miniconda/bin/ps,"-A.-o.ppid,pid.",8
+/ssd2/liangyi/miniconda/bin/python,*/local/ASUAD/lhuan139/.vscode-server/extensions/ms-*...,11
+/ssd2/liangyi/miniconda/bin/python,-c.from multiprocessing.resource_tracker import main;main(5).,9
+/ssd2/liangyi/miniconda/bin/python,"-c.from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=6, pip...",9
+/ssd2/liangyi/miniconda/bin/python3,"-c.import os, os.path, sys; normalize = lambda p: os.path.normcase(os.path.no...",30
+/ssd2/liangyi/miniconda/bin/uname,-p.,9
+/ssd2/liangyi/miniconda/condabin/bash,-c.condarun-n*--no-capture-outputpython/home/local/ASUAD/*...,8
+/ssd2/liangyi/miniconda/condabin/dpkg-query,-f.${Version} ${Provides}..-W.lsb-core.lsb-cxx.lsb-graphics.lsb-desktop.lsb-l...,37
+/ssd2/liangyi/miniconda/condabin/git,--version.,9
+/ssd2/liangyi/miniconda/condabin/git,config.--get.commit.template.,330
+/ssd2/liangyi/miniconda/condabin/git,fetch.,294
+/ssd2/liangyi/miniconda/condabin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,330
+/ssd2/liangyi/miniconda/condabin/git,rev-parse.--git-dir.--git-common-dir.,18
+/ssd2/liangyi/miniconda/condabin/git,rev-parse.--show-toplevel.,1062
+/ssd2/liangyi/miniconda/condabin/git,status.-z.-uall.,330
+/ssd2/liangyi/miniconda/condabin/ip,-f.inet.addr.,28
+/ssd2/liangyi/miniconda/condabin/lsb_release,-a.,18
+/ssd2/liangyi/miniconda/condabin/ps,"-A.-o.ppid,pid.",8
+/ssd2/liangyi/miniconda/condabin/uname,-p.,37
+/ssd2/liangyi/miniconda/condabin/uname,-rs.,19
+/ssd2/liangyi/miniconda/envs/extractor/bin/python,-I./home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-python.python-2023...,9
+/ssd2/liangyi/miniconda/envs/gpupower/bin/dpkg-query,-f.${Version} ${Provides}..-W.lsb-core.lsb-cxx.lsb-graphics.lsb-desktop.lsb-l...,38
+/ssd2/liangyi/miniconda/envs/gpupower/bin/ip,-f.inet.addr.,38
+/ssd2/liangyi/miniconda/envs/gpupower/bin/lsb_release,-a.,18
+/ssd2/liangyi/miniconda/envs/gpupower/bin/python,*/local/ASUAD/lhuan139/.vscode-server/extensions/ms-**,23
+/ssd2/liangyi/miniconda/envs/gpupower/bin/python,"-c.import ipykernel; print(ipykernel.__version__); print(""5dc3a68c-e34e-4080-...",19
+/ssd2/liangyi/miniconda/envs/gpupower/bin/python,"-c.import os, os.path, sys; normalize = lambda p: os.path.normcase(os.path.no...",162
+/ssd2/liangyi/miniconda/envs/gpupower/bin/python,-m.ipykernel_launcher.--ip=127.0.0.1.--stdin=9003.--control=9001.--hb=9000.--...,10
+/ssd2/liangyi/miniconda/envs/gpupower/bin/python,-m.ipykernel_launcher.--ip=127.0.0.1.--stdin=9011.--control=9009.--hb=9008.--...,9
+/ssd2/liangyi/miniconda/envs/gpupower/bin/python,-m.pip.list.,19
+/ssd2/liangyi/miniconda/envs/gpupower/bin/uname,-p.,38
+/ssd2/liangyi/miniconda/envs/gpupower/bin/uname,-rs.,20
+/ssd2/liangyi/miniconda/envs/neo/bin/python,-I./home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-python.python-2023...,9
+/ssd2/liangyi/miniconda/envs/py37/bin/python,-I./home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-python.python-2023...,9
+/ssd2/liangyi/miniconda/envs/tabbyAPI/bin/python,-I./home/local/ASUAD/lhuan139/.vscode-server/extensions/ms-python.python-2023...,9
+/ssd2/liangyi/miniconda/envs/vllm/bin/dpkg-query,-f.${Version} ${Provides}..-W.lsb-core.lsb-cxx.lsb-graphics.lsb-desktop.lsb-l...,18
+/ssd2/liangyi/miniconda/envs/vllm/bin/ip,-f.inet.addr.,18
+/ssd2/liangyi/miniconda/envs/vllm/bin/lsb_release,-a.,18
+/ssd2/liangyi/miniconda/envs/vllm/bin/python,*/local/ASUAD/lhuan139/.vscode-server/extensions/ms-*...,17
+/ssd2/liangyi/miniconda/envs/vllm/bin/python,"-c.import ipykernel; print(ipykernel.__version__); print(""5dc3a68c-e34e-4080-...",9
+/ssd2/liangyi/miniconda/envs/vllm/bin/python,"-c.import os, os.path, sys; normalize = lambda p: os.path.normcase(os.path.no...",132
+/ssd2/liangyi/miniconda/envs/vllm/bin/python,-m.ipykernel_launcher.--ip=127.0.0.1.--stdin=9003.--control=9001.--hb=9000.--...,9
+/ssd2/liangyi/miniconda/envs/vllm/bin/python,-m.pip.list.,9
+/ssd2/liangyi/miniconda/envs/vllm/bin/uname,-p.,18
+/ssd2/liangyi/miniconda/envs/vllm/bin/uname,-rs.,18
+/usr/bin/apt-config,shell.*.,182
+/usr/bin/apt-config,shell.TRUSTEDFILE.Dir::Etc::Trusted/f.,22
+/usr/bin/apt-config,shell.TRUSTEDPARTS.Dir::Etc::TrustedParts/d.,22
+/usr/bin/apt-get,-q.update.,11
+/usr/bin/apt-key,/usr/bin/*****,31
+/usr/bin/awk,$5 ~ /^ext(2|3|4)$/ { print $1 }.,10
+/usr/bin/awk,{print $1}./proc/uptime.,10
+/usr/bin/basename,/usr/bin/lesspipe.,18
+/usr/bin/bash,-c.condarun-n*--no-capture-outputpython/home/local/ASUAD/*...,8
+/usr/bin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/*/*.,9
+/usr/bin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-refresh-plu...,1
+/usr/bin/bash,/tmp/*.,6
+/usr/bin/cat,*/stat.,13436
+/usr/bin/cat,/etc/os-release.,10
+/usr/bin/cat,/home/local/ASUAD/*-*...,85
+/usr/bin/cat,/home/local/ASUAD/zliu396/.jenv/jenv.version.,1
+/usr/bin/cat,/lib/x86_64-linux-gnu/libstdc++.so.6./lib/i386-linux-gnu/libstdc++.so.6.,10
+/usr/bin/cat,/run/motd.d/85-fwupd.,10
+/usr/bin/cat,/var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d/ubuntu-advantage-esm-...,22
+/usr/bin/cat,/var/lib/ubuntu-release-upgrader/release-upgrade-available.,10
+/usr/bin/cat,/var/lib/update-notifier/*-*-*.,6
+/usr/bin/cat,/var/run/reboot-required.,10
+/usr/bin/chmod,0700./home/local/ASUAD/lhuan139/.vscode-server/.6c3e3dba23e8fadc360aed75ce363...,9
+/usr/bin/chmod,700./tmp/apt-key-*.*.,2
+/usr/bin/cmp,--silent.--bytes=1.-./var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d/...,22
+/usr/bin/cp,-a./tmp/apt-key-***/pubring.gpg./tmp/apt-key-***...,2
+/usr/bin/cut,-d .-f4.,10
+/usr/bin/cut,-d(.-f.1.,40
+/usr/bin/cut,-d:.-f.2-.,160
+/usr/bin/cut,-f1.-d. ./proc/loadavg.,10
+/usr/bin/date,+%*,48
+/usr/bin/date,-d..+%s.,40
+/usr/bin/date,-d.now-*seconds.+%s.,10
+/usr/bin/df,-l.,1788
+/usr/bin/dircolors,-b.,18
+/usr/bin/dirname,../Homebrew/bin/brew.,1
+/usr/bin/dirname,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba...,18
+/usr/bin/dirname,/ssd2/liangyi/miniconda/bin.,18
+/usr/bin/dirname,/usr/bin/lesspipe.,18
+/usr/bin/dirname,/var/lib/update-notifier/hwe-eol.,10
+/usr/bin/dpkg,--print-foreign-architectures.,1513
+/usr/bin/dpkg-query,-f.${Version} ${Provides}..-W.lsb-core.lsb-cxx.lsb-graphics.lsb-desktop.lsb-l...,37
+/usr/bin/env,-i.HOME=/home/local/ASUAD/zliu396.SHELL=/bin/bash.PATH=/usr/bin:/bin:/usr/sbi...,1
+/usr/bin/env,-i.PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin.run-part...,10
+/usr/bin/expr,1706651309.+.86400.,10
+/usr/bin/find,/var/lib/apt/lists/./etc/apt/sources.list.//var/lib/dpkg/status.-type.f.-newe...,10
+/usr/bin/find,/var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d.-mindepth.1.-maxdepth...,22
+/usr/bin/find,/var/lib/update-notifier/updates-available.-newermt.now-7 days.,10
+/usr/bin/flock,-u.99.,12
+/usr/bin/flock,-xn.99.,12
+/usr/bin/gcc,-dumpmachine.,10
+/usr/bin/gcc,-std=*/null.,2
+/usr/bin/gcc,-x.c++.-E.-dM./dev/null.,10
+/usr/bin/gdbus,call.--system.--dest.org.freedesktop.PackageKit.--object-path./org/freedeskto...,11
+/usr/bin/getconf,LONG_BIT.,10
+/usr/bin/git,--version.,10
+/usr/bin/git,config.--get.commit.template.,332
+/usr/bin/git,describe.--tags.HEAD.,1
+/usr/bin/git,fetch.,294
+/usr/bin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,332
+/usr/bin/git,rev-parse.--git-dir.--git-common-dir.,19
+/usr/bin/git,rev-parse.--show-toplevel.,1084
+/usr/bin/git,status.-z.-uall.,332
+/usr/bin/gpg-connect-agent,--no-*.*.,30
+/usr/bin/gpg-connect-agent,-s.--no-autostart.GETINFO scd_running./if ${! $?}.scd killscd./end.,165
+/usr/bin/gpgconf,--kill.all.,22
+/usr/bin/gpgv,--homedir./tmp/apt-*-key-***...,4
+/usr/bin/gpgv,--homedir./tmp/apt-key-***/apt-key-***...,2
+/usr/bin/grep,*-9a-f-]+.,4
+/usr/bin/grep,-a.-E.Extension host agent listening on .+.,64
+/usr/bin/grep,-a.-E.Web UI available at.,10
+/usr/bin/grep,-a.-E.^ID=.,10
+/usr/bin/grep,-a.-o.-E.GLIBCXX_[[:digit:]]+\.[[:digit:]]+\.([[:digit:]]+)?.,10
+/usr/bin/grep,-c.^processor./proc/cpuinfo.,10
+/usr/bin/grep,-q.-m.1...,10
+/usr/bin/grep,-v.grep.,74
+/usr/bin/grep,/home/local/ASUAD/*-server/*...,10
+/usr/bin/grep,^Check interval:.,40
+/usr/bin/grep,^Maximum mount count:.,40
+/usr/bin/grep,^Mount count:.,40
+/usr/bin/grep,^Next check after:.,40
+/usr/bin/grep,^\s*270417\s.,9
+/usr/bin/grep,^\s*374354\s.,1
+/usr/bin/grep,libstdc++.,10
+/usr/bin/grep,root.,20683
+/usr/bin/grep,socket:.,20684
+/usr/bin/head,-1.,8
+/usr/bin/head,-n1.,10
+/usr/bin/head,-v.-n.2./proc/stat./proc/version./proc/uptime./proc/loadavg./proc/sys/fs/file...,1795
+/usr/bin/head,-v.-n.8./proc/meminfo.,1795
+/usr/bin/id,-u.,30
+/usr/bin/landscape-package-reporter,/usr/bin/landscape-package-reporter.--quiet.,33
+/usr/bin/landscape-sysinfo,/usr/bin/landscape-sysinfo.,10
+/usr/bin/ldd,/usr/bin/ldd.--version.,10
+/usr/bin/lesspipe,/usr/bin/lesspipe.,18
+/usr/bin/locale-check,C.UTF-8.,10
+/usr/bin/ls,-1.-t./home/local/ASUAD/*-server/bin.,10
+/usr/bin/ls,-l./proc/113448/fd/0./proc/113448/fd/1./proc/113448/fd/10./proc/113448/fd/101...,9
+/usr/bin/ls,-l./proc/115015/fd/0./proc/115015/fd/1./proc/115015/fd/10./proc/115015/fd/11....,20666
+/usr/bin/lsb_release,-Es./usr/bin/*.,5
+/usr/bin/mkdir,-p./home/local/ASUAD/zliu396/.jenv/shims.,1
+/usr/bin/mkdir,-p./home/local/ASUAD/zliu396/.jenv/shims./home/local/ASUAD/zliu396/.jenv/plug...,1
+/usr/bin/mktemp,--directory.--tmpdir.apt-key-gpghome.XXXXXXXXXX.,22
+/usr/bin/mktemp,-p./var/lib/update-notifier.,10
+/usr/bin/ps,"-A.-o.ppid,pid.",8
+/usr/bin/ps,-F.-A.-l.,20683
+/usr/bin/ps,"-ax.-o.pid=,ppid=,pcpu=,pmem=,command=.",22549
+/usr/bin/ps,-p.520438.-o.args=.,1
+/usr/bin/ps,ax.,10
+/usr/bin/python,*/local/ASUAD/lhuan139/.vscode-server/extensions/ms-*...,2
+/usr/bin/python3,*/local/ASUAD/lhuan139/.vscode-server/extensions/ms-*...,15
+/usr/bin/python3,-Es./usr/bin/lsb_release.-a.,10
+/usr/bin/python3,"-c.import os, os.path, sys; normalize = lambda p: os.path.normcase(os.path.no...",123
+/usr/bin/python3,"-c.import site;print(""USER_BASE_VALUE"");print(site.USER_BASE);print(""USER_BAS...",9
+/usr/bin/python3,-m.pip.list.,9
+/usr/bin/python3,/usr/lib/***.,6
+/usr/bin/python3,/usr/lib/ubuntu-**.,4
+/usr/bin/readlink,-f./home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce36...,9
+/usr/bin/readlink,-f./tmp/apt-key-*.,22
+/usr/bin/readlink,-f./var/lib/ubuntu-advantage/apt-esm/etc/apt/trusted.gpg.d/.,22
+/usr/bin/readlink,/home/linuxbrew/.linuxbrew/bin/brew.,1
+/usr/bin/readlink,jenv-init.,1
+/usr/bin/readlink,jenv.,7
+/usr/bin/rm,**-key-gpghome.TFvtMSXeex.,4
+/usr/bin/rm,*/apt-key-gpghome.TFvtMSXeex/*.,3
+/usr/bin/rm,*/local/ASUAD/lhuan139/.vscode-*/*...,3
+/usr/bin/rm,-f./tmp/apt-key-*.*/pubring.gpg.,3
+/usr/bin/rm,-f./var/lib/update-notifier/**,10
+/usr/bin/rm,-rf./tmp/apt-key-gpghome.dD7c4q5VJ5.,10
+/usr/bin/run-parts,--lsbsysinit./etc/update-motd.d.,10
+/usr/bin/sed,"-e.s#'#'""'""'#g.",44
+/usr/bin/sed,-n.s/^cpu\s//p./proc/stat.,45102
+/usr/bin/sed,"s/""//g.",10
+/usr/bin/sed,s/Extension host agent listening on //.,64
+/usr/bin/sed,s/GLIBCXX_//gi.,10
+/usr/bin/sed,s/^.* => //i.,10
+/usr/bin/sed,s/^/    /.,9
+/usr/bin/sed,s/^[Ii][Dd]=//g.,10
+/usr/bin/sh,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba...,9
+/usr/bin/sleep,.03.,45
+/usr/bin/sleep,1.,24339
+/usr/bin/sleep,180.,172
+/usr/bin/stat,-c.%Y./var/lib/ubuntu-release-upgrader/release-upgrade-available.,10
+/usr/bin/stat,-c.%Y./var/lib/update-notifier/fsck-at-reboot.,10
+/usr/bin/systemd-detect-virt,-q.-c.,10
+/usr/bin/tail,-n.+6.,10
+/usr/bin/tail,-v.-n.16./proc/net/dev.,1795
+/usr/bin/test,-S./var/run/dbus/system_bus_socket.,11
+/usr/bin/test,-e./usr/share/dbus-1/system-services/org.freedesktop.PackageKit.service.,11
+/usr/bin/test,-w./var/cache/app-info.-a.-e./usr/bin/appstreamcli.,11
+/usr/bin/test,-w./var/lib/command-not-found/.-a.-e./usr/lib/cnf-update-db.,11
+/usr/bin/touch,/home/local/ASUAD/lhuan139/.vscode-server/.6c3e3dba23e8fadc360aed75ce363ba185...,9
+/usr/bin/touch,/tmp/apt-*.,4
+/usr/bin/touch,/tmp/apt-key-*.*/pubring.gpg.,2
+/usr/bin/tr,-d.[:space:].,10
+/usr/bin/ubuntu-distro-info,--series.focal.-yeol.,11
+/usr/bin/ubuntu-distro-info,--supported-esm.,11
+/usr/bin/uname,-m.,21
+/usr/bin/uname,-o.,10
+/usr/bin/uname,-p.,111
+/usr/bin/uname,-r.,10
+/usr/bin/uname,-rs.,19
+/usr/bin/uname,-rsv.,1
+/usr/bin/uname,-s.,20
+/usr/bin/wc,-l.,10
+/usr/bin/wget,--connect-timeout=7.--tries=1.--dns-timeout=7.-q.--header=Metadata-*:**,5
+/usr/bin/wget,--connect-timeout=7.--tries=1.--dns-timeout=7.-q.-O.-.http://169.254.169.254/...,21
+/usr/bin/wget,--no-proxy.-nv.-O.-.http://127.0.0.1:34103/delay-shutdown.,1
+/usr/bin/wget,--version.,45
+/usr/bin/which,/usr/bin/which.ps.,22549
+/usr/bin/who,-q.,10
+/usr/lib/cnf-update-db,/usr/lib/cnf-update-db.,11
+/usr/lib/gcc/x86_64-linux-gnu/9/cc1,-E.-quiet.-imultiarch.x86_64-linux-gnu.-v./dev/null.-m64.-mtune=generic.-marc...,10
+/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus,-E.-quiet.-imultiarch.x86_64-linux-gnu.-D_GNU_SOURCE.-v./dev/null.-m64.-mtune...,10
+/usr/lib/gcc/x86_64-linux-gnu/9/cc1plus,-E.-quiet.-imultiarch.x86_64-linux-gnu.-D_GNU_SOURCE./dev/null.-mtune=generic...,10
+/usr/lib/git-core/git,gc.--auto.,294
+/usr/lib/git-core/git,rev-list.--objects.--stdin.--not.--all.--quiet.--alternate-refs.,588
+/usr/lib/git-core/git-remote-https,origin.https://github.com/jackaduma/ThreatReportExtractor.git.,294
+/usr/lib/postfix/sbin/pickup,-l.-t.unix.-u.-c.,7
+/usr/lib/sysstat/debian-sa1,/usr/lib/sysstat/debian-sa1.1.1.,95
+/usr/lib/ubuntu-release-upgrader/release-upgrade-motd,-e./usr/lib/ubuntu-release-upgrader/release-upgrade-motd.,10
+/usr/lib/update-notifier/apt-check,/usr/lib/update-notifier/apt-check.--human-readable.,11
+/usr/lib/update-notifier/update-motd-fsck-at-reboot,/usr/lib/update-notifier/update-motd-fsck-at-reboot.,10
+/usr/lib/update-notifier/update-motd-hwe-eol,-e./usr/lib/update-notifier/update-motd-hwe-eol.,10
+/usr/lib/update-notifier/update-motd-reboot-required,-e./usr/lib/update-notifier/update-motd-reboot-required.,10
+/usr/lib/update-notifier/update-motd-updates-available,-e./usr/lib/update-notifier/update-motd-updates-available.,11
+/usr/local/bin/bash,-c.condarun-n*--no-capture-outputpython/home/local/ASUAD/*...,8
+/usr/local/bin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/*/*.,9
+/usr/local/bin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-refresh-plu...,1
+/usr/local/bin/dpkg-query,-f.${Version} ${Provides}..-W.lsb-core.lsb-cxx.lsb-graphics.lsb-desktop.lsb-l...,37
+/usr/local/bin/git,--version.,10
+/usr/local/bin/git,config.--get.commit.template.,332
+/usr/local/bin/git,fetch.,294
+/usr/local/bin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,332
+/usr/local/bin/git,rev-parse.--git-dir.--git-common-dir.,19
+/usr/local/bin/git,rev-parse.--show-toplevel.,1084
+/usr/local/bin/git,status.-z.-uall.,332
+/usr/local/bin/ip,-f.inet.addr.,28
+/usr/local/bin/lsb_release,-a.,18
+/usr/local/bin/ps,"-A.-o.ppid,pid.",8
+/usr/local/bin/run-parts,--lsbsysinit./etc/update-motd.d.,10
+/usr/local/bin/sh,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba...,9
+/usr/local/bin/uname,-p.,102
+/usr/local/bin/uname,-rs.,19
+/usr/local/bin/who,-q.,10
+/usr/local/cuda-12.3/bin/git,--version.,1
+/usr/local/cuda-12.3/bin/git,config.--get.commit.template.,2
+/usr/local/cuda-12.3/bin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,2
+/usr/local/cuda-12.3/bin/git,rev-parse.--git-dir.--git-common-dir.,1
+/usr/local/cuda-12.3/bin/git,rev-parse.--show-toplevel.,22
+/usr/local/cuda-12.3/bin/git,status.-z.-uall.,2
+/usr/local/sbin/bash,-c.condarun-n*--no-capture-outputpython/home/local/ASUAD/*...,8
+/usr/local/sbin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/*/*.,9
+/usr/local/sbin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-refresh-plu...,1
+/usr/local/sbin/dpkg-query,-f.${Version} ${Provides}..-W.lsb-core.lsb-cxx.lsb-graphics.lsb-desktop.lsb-l...,37
+/usr/local/sbin/git,--version.,10
+/usr/local/sbin/git,config.--get.commit.template.,332
+/usr/local/sbin/git,fetch.,294
+/usr/local/sbin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,332
+/usr/local/sbin/git,rev-parse.--git-dir.--git-common-dir.,19
+/usr/local/sbin/git,rev-parse.--show-toplevel.,1084
+/usr/local/sbin/git,status.-z.-uall.,332
+/usr/local/sbin/ip,-f.inet.addr.,28
+/usr/local/sbin/lsb_release,-a.,18
+/usr/local/sbin/ps,"-A.-o.ppid,pid.",8
+/usr/local/sbin/run-parts,--lsbsysinit./etc/update-motd.d.,10
+/usr/local/sbin/sh,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba...,9
+/usr/local/sbin/uname,-p.,102
+/usr/local/sbin/uname,-rs.,19
+/usr/local/sbin/who,-q.,10
+/usr/sbin/anacron,-d.-q.-s.,16
+/usr/sbin/bash,-c.condarun-n*--no-capture-outputpython/home/local/ASUAD/*...,8
+/usr/sbin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/*/*.,9
+/usr/sbin/bash,/home/linuxbrew/.linuxbrew/Cellar/jenv/0.5.6/libexec/libexec/jenv-refresh-plu...,1
+/usr/sbin/dpkg-query,-f.${Version} ${Provides}..-W.lsb-core.lsb-cxx.lsb-graphics.lsb-desktop.lsb-l...,37
+/usr/sbin/dumpe2fs,-h./dev/*.,6
+/usr/sbin/dumpe2fs,-h./dev/mapper/crypt-root.,10
+/usr/sbin/git,--version.,10
+/usr/sbin/git,config.--get.commit.template.,332
+/usr/sbin/git,fetch.,294
+/usr/sbin/git,for-each-ref.--format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upst...,332
+/usr/sbin/git,rev-parse.--git-dir.--git-common-dir.,19
+/usr/sbin/git,rev-parse.--show-toplevel.,1084
+/usr/sbin/git,status.-z.-uall.,332
+/usr/sbin/ip,-f.inet.addr.,28
+/usr/sbin/lsb_release,-a.,18
+/usr/sbin/ps,"-A.-o.ppid,pid.",8
+/usr/sbin/run-parts,--lsbsysinit./etc/update-motd.d.,10
+/usr/sbin/sh,/home/local/ASUAD/lhuan139/.vscode-server/bin/6c3e3dba23e8fadc360aed75ce363ba...,9
+/usr/sbin/sshd,-D.-R.,17
+/usr/sbin/uname,-p.,102
+/usr/sbin/uname,-rs.,19
+/usr/sbin/who,-q.,10
+/usr/share/unattended-upgrades/update-motd-unattended-upgrades,/usr/share/unattended-upgrades/update-motd-unattended-upgrades.,10
+cat,*/stat.,2
+ls,-l./proc/115015/fd/0./proc/115015/fd/1./proc/115015/fd/10./proc/115015/fd/11....,1

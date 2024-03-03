@@ -13,7 +13,7 @@ import csv
 
 # sysdig -p"%evt.num %evt.rawtime.s.%evt.rawtime.ns %evt.cpu %proc.name (%proc.pid) %evt.dir %evt.type cwd=%proc.cwd %evt.args latency=%evt.latency" -s 200 evt.type!=switch and proc.name!=sysdig > system_log.txt
 # sysdig -p"%evt.num %evt.rawtime.s.%evt.rawtime.ns %evt.cpu %proc.name (%proc.pid) %evt.dir %evt.type cwd=%proc.cwd %evt.args latency=%evt.latency" -s 200 evt.type!=switch and proc.name!=sysdig -A -w system_log.txt -G 60
-
+# sysdig_command = 'nohup sysdig -p"%evt.num %evt.rawtime.s.%evt.rawtime.ns %evt.cpu %proc.name (%proc.pid) %evt.dir %evt.type cwd=%proc.cwd %evt.args latency=%evt.latency" -s 200 evt.type!=switch and proc.name!=sysdig -A -w system_log.scap -G 60 &'
 
 # proc_path, attr, freq
 model_proc = set()
@@ -59,6 +59,8 @@ def process_p_model(line):
     latency = re.findall(r'latency=(\d+)', line)[0]
     object_process_name = parts[3] + " | " + parts[4].lstrip('(').rstrip(')')
     if event_direction == '>':
+        # 这里因为log split有个bug，如果split的话很可能split不到这个变量里面了，上一段已经结束了
+        # 应该使用一个文件储存上一段的>log，再pop出来，不会占用太多内存
         bidrect_process[parts[1]] = line
     else:
         start_time = caculte_start_time(parts[1], latency)
@@ -310,14 +312,11 @@ def perf_info_calculation():
 
 
 if __name__ == '__main__':
-    # import sys
-    # log_file_path = sys.argv[1]
-    # log_file_path = "../detection/system_log1.txt"
     for root, dirs, files in os.walk('logs'):
         for file in files:
             log_file_path = 'logs/' + file
             with open(log_file_path, "r") as file:
-                print(log_file_path)
+                # print(log_file_path)
                 log_lines = file.readlines()
                 for line in log_lines:
                     try:
@@ -327,5 +326,6 @@ if __name__ == '__main__':
 
                 # 1, 后处理，将字典其储存在csv格式的本地文件中，释放内存
                 post_processing_pandas()
+                os.remove(log_file_path)
     # 2, 性能统计，让HST知道什么时候应该停下来
     perf_info_calculation()
