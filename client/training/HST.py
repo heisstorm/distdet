@@ -16,13 +16,9 @@ import csv
 
 
 # proc_path, attr, freq
-model_p_execve = set()
-model_f_create = set()
-model_f_modify = set()
-model_f_delete = set()
-model_f_rename = set()
-model_n_listen = set()
-model_n_connect = set()
+model_proc = set()
+model_file = set()
+model_net = set()
 
 # log proc_path from execve, since execve initiate the process(name)
 # path has only 1, but name can be even more, so use key to find path is faster
@@ -80,11 +76,11 @@ def process_p_model(line):
             m = re.search(p, line)
             if m:
                 s = m.group(1)
-                set_append(model_p_execve, 2, (exe_path, s))
-            else:
-                print(line)
-        else:
-            print(start_line)
+                set_append(model_proc, 2, (exe_path, s))
+        #     else:
+        #         print(line)
+        # else:
+        #     print(start_line)
 
 
 def caculte_start_time(end_time, latency):
@@ -119,27 +115,27 @@ def process_f_model(line):
                         ss = ms.group(1)
                     else:
                         ss = s
-                set_append(model_f_create, 2, (source, ss))
+                set_append(model_file, 2, (source, ss))
     # modify file
     if event_action in ['write', 'writev']:
         if event_direction == '>':
             if re.search(r'fd=\d+\(<f>', line):
                 attr_token_bag = re.findall(r'\(<f>(.*?)\)', line)[0]
-                set_append(model_f_modify, 2, (source, attr_token_bag))
+                set_append(model_file, 2, (source, attr_token_bag))
 
     # delete file
     if event_action == 'unlinkat':
         if event_direction == '<':
             if re.search(r'name=[^\s]+?\((.*?)\)', line):
                 attr_token_bag = re.findall(r'name=[^\s]+?\((.*?)\)', line)[0]
-                set_append(model_f_delete, 2, (source, attr_token_bag))
+                set_append(model_file, 2, (source, attr_token_bag))
 
     # rename file
     if event_action == 'renameat2':
         if event_direction == '<':
             attr_token_bag = "oldpath=" + re.findall(r'oldpath=(.*?\))', line)[0] + ", newpath=" + \
                              re.findall(r'newpath=(.*?\))', line)[0]
-            set_append(model_f_rename, 2, (source, attr_token_bag))
+            set_append(model_file, 2, (source, attr_token_bag))
 
 
 def process_n_model(line):
@@ -186,9 +182,9 @@ def process_n_model(line):
 
         if iffind and ip_port != '':
             if event_action == 'listen':
-                set_append(model_n_listen, 2, (source, ip_port))
+                set_append(model_net, 2, (source, ip_port))
             if event_action in ['sendto', 'write', 'writev', 'sendmsg']:
-                set_append(model_n_connect, 2, (source, mask_ip(ip_port, 1)))
+                set_append(model_net, 2, (source, mask_ip(ip_port, 1)))
 
 
 def merge_or_create_csv(file_name_client, pandas_dataframe):
@@ -211,19 +207,15 @@ def merge_or_create_csv(file_name_client, pandas_dataframe):
 
 def post_processing_pandas():
     model_sets = {
-        "model_p_execve": model_p_execve,
-        "model_f_create": model_f_create,
-        "model_f_modify": model_f_modify,
-        "model_f_delete": model_f_delete,
-        "model_f_rename": model_f_rename,
-        "model_n_listen": model_n_listen,
-        "model_n_connect": model_n_connect
+        "model_proc": model_proc,
+        "model_file": model_file,
+        "model_net": model_net
     }
     for var_name, var in model_sets.items():
         file_name = '%s_c.csv' % var_name
         merge_or_create_csv(file_name, pd.DataFrame(var, columns=["source", "sink", "freq"]))
         if use_NLP_merge:
-            if var_name not in ["model_n_listen", "model_n_connect"]:
+            if var_name not in ["model_net"]:
                 NLP_merge(file_name)
 
 
@@ -311,13 +303,10 @@ def save_2d_dict_to_csv(log_frequencies, filename):
             for sink, frequency in sinks.items():
                 writer.writerow([source, sink, frequency])
 
+
 def perf_info_calculation():
-    execve = os.path.getsize('model_p_execve_c.csv') / 1024
-    file = (os.path.getsize('model_f_rename_c.csv') + os.path.getsize('model_f_delete_c.csv') + os.path.getsize(
-        'model_f_modify_c.csv') + os.path.getsize('model_f_create_c.csv')) / 1024
-    net = (os.path.getsize('model_n_connect_c.csv') + os.path.getsize('model_n_listen_c.csv')) / 1024
     with open("perf.txt", "a") as p:
-        p.write("%s, %s, %s\n" % (execve, file, net))
+        p.write("%s, %s, %s\n" % (os.path.getsize('model_proc_c.csv') / 1024, os.path.getsize('model_file_c.csv') / 1024, os.path.getsize('model_net_c.csv') / 1024))
 
 
 if __name__ == '__main__':
