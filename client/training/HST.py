@@ -27,7 +27,7 @@ procname_path = {}
 # use Spicy NLP to merge the similar sink attributes and add the frequency, execve and 4 file models
 # will greatly reduce the model size and must set the NLP to be true when detection.
 use_NLP_merge = True
-NLP_threshold = 0.66
+NLP_threshold = 0.88
 
 def process_log_line(line):
     parts = line.split()
@@ -326,6 +326,6 @@ if __name__ == '__main__':
 
                 # 1, 后处理，将字典其储存在csv格式的本地文件中，释放内存
                 post_processing_pandas()
-                os.remove(log_file_path)
+                # os.remove(log_file_path)
     # 2, 性能统计，让HST知道什么时候应该停下来
     perf_info_calculation()

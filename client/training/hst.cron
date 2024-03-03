@@ -1,0 +1,5 @@
+0 2 * * * /usr/bin/killall sysdig; /usr/bin/sysdig -p"\%evt.num \%evt.rawtime.s.\%evt.rawtime.ns \%evt.cpu \%proc.name (\%proc.pid) \%evt.dir \%evt.type cwd=\%proc.cwd \%evt.args latency=\%evt.latency" -s 200 evt.type!=switch and proc.name!=sysdig > /mnt/HDD1/shijielu2/distdet/client/training/system_log.txt
+
+0 0 * * * python3 /mnt/HDD1/shijielu2/distdet/client/common/log_split.py /mnt/HDD1/shijielu2/distdet/client/training/system_log.txt /mnt/HDD1/shijielu2/distdet/client/training/logs
+
+0 4 * * * cd /mnt/HDD1/shijielu2/distdet/client/training/ && python3 HST.py
