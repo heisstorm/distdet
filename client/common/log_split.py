@@ -36,5 +36,7 @@ def split_file(input_file, output_prefix, chunk_size_gb=5):
 if __name__ == '__main__':
     input_file_path = sys.argv[1]
     out_file_path = sys.argv[2]
+    if not os.path.exists(out_file_path):
+        os.makedirs(out_file_path)
     output_file_prefix = os.path.join(out_file_path, "log_split")
     split_file(input_file_path, output_file_prefix)
