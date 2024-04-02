@@ -24,7 +24,6 @@ class Process_Lineage:
         self.children = []
         self.label = 0
         self.freq = 0
-        self.exe_path = ""
         self.p2p = []
         self.p2f = []
         self.p2n = []
