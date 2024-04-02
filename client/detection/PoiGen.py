@@ -19,6 +19,7 @@ from client.training.HST import model_net
 from client.training.HST import model_file_proc
 from client.training.HST import model_net_proc
 from client.training.HST import model_proc_proc
+from client.training.HST import proc_proc
 from collections import Counter
 import math
 
@@ -275,6 +276,7 @@ def event_caching():
     cursor.executemany('INSERT OR IGNORE INTO p2f (source, sink, freq) VALUES (?, ?, ?)', model_file)
     cursor.executemany('INSERT OR IGNORE INTO p2n (source, sink, freq) VALUES (?, ?, ?)', model_net)
     cursor.executemany('INSERT OR IGNORE INTO p2p (source, sink, freq) VALUES (?, ?, ?)', model_proc)
+    cursor.executemany('INSERT OR IGNORE INTO proc (source, sink, sink_path, freq) VALUES (?, ?, ?, ?)', proc_proc)
     connection.commit()
     connection.close()
 

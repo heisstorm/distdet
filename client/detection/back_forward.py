@@ -156,7 +156,7 @@ def findNoutedges(root, n):
             else:
                 sink.label = 0
                 # update benign freq from model
-                # sink.freq = benign_set_p2f[sink.name]
+                sink.freq = benign_set_p2f.get(sink.name, (None, 1))[1]
             current_node.add_p2f(sink)
         sql_query = "SELECT * FROM p2n WHERE source =? LIMIT ?"
         cursor.execute(sql_query, parameters)
@@ -169,7 +169,7 @@ def findNoutedges(root, n):
                 sink.label = 1
             else:
                 sink.label = 0
-                sink.freq = benign_set_p2n[sink.name]
+                sink.freq = benign_set_p2n.get(sink.name, (None, 1))[1]
             current_node.add_p2n(sink)
         sql_query = "SELECT * FROM p2p WHERE source =? LIMIT ?"
         cursor.execute(sql_query, parameters)
@@ -182,7 +182,7 @@ def findNoutedges(root, n):
                 sink.label = 1
             else:
                 sink.label = 0
-                sink.freq = benign_set_p2p[sink.name]
+                sink.freq = benign_set_p2p.get(sink.name, (None, 1))[1]
             current_node.add_p2p(sink)
         # Add children of current node to the stack
         stack.extend(current_node.children)
@@ -205,11 +205,11 @@ if __name__ == '__main__':
     for i in benign:
         i = list(eval(i.strip()))
         if i[2] == 'p2f':
-            benign_set_p2f[i[1]] = i[3]
+            benign_set_p2f[i[1]] = [i[3], i[4]]
         if i[2] == 'p2p':
-            benign_set_p2p[i[1]] = i[3]
+            benign_set_p2p[i[1]] = [i[3], i[4]]
         if i[2] == 'p2n':
-            benign_set_p2n[i[1]] = i[3]
+            benign_set_p2n[i[1]] = [i[3], i[4]]
     # 一个进程pid为一个起点，把不同的子节点/频率合并起来
     result = {}
     for i in pois:
@@ -223,8 +223,7 @@ if __name__ == '__main__':
         sink.label = 1
         sink.freq = freq
         poi_set.add(sink_name)
-        if source not in poi_set:
-            poi_set.add(source)
+        if source not in result:
             root = Process_Lineage(source)
             root.freq = freq
             root.label = 1
