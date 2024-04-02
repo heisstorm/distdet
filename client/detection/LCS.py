@@ -55,6 +55,6 @@ if __name__ == '__main__':
         for l in f.readlines():
             lines.append(l.strip().lstrip('(').rstrip(')'))
     reduced_list = lcs_merge_cycle(lines)
-    with open('poi_LCS1.txt', 'w') as file:
+    with open('poi_LCS.txt', 'w') as file:
         for value in reduced_list:
             file.write(value + '\n')

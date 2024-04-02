@@ -7,6 +7,8 @@ import shutil
 
 conn = sqlite3.connect('event_caching.db')
 cursor = conn.cursor()
+
+
 class Process_Lineage:
 
     # label 0 代表 上下文关联的事件，一般视作普通事件
@@ -105,10 +107,10 @@ def forward(poi, y):
             # 要么添加叶子节点，要么添加普通节点
             # 编辑距离在此处添加，节点的编辑距离?
             if sink in sink_dict.keys():
-                sink_dict[sink] = sink_dict[sink]+int(freq)
+                sink_dict[sink] = sink_dict[sink] + int(freq)
             else:
                 sink_dict[sink] = int(freq)
-        #上下文节点，良性节点
+        # 上下文节点，良性节点
         for name, freq in sink_dict.items():
             c = Process_Lineage(name)
             c.frequency = int(freq)
@@ -153,6 +155,8 @@ def findNoutedges(root, n):
                 sink.label = 1
             else:
                 sink.label = 0
+                # update benign freq from model
+                # sink.freq = benign_set_p2f[sink.name]
             current_node.add_p2f(sink)
         sql_query = "SELECT * FROM p2n WHERE source =? LIMIT ?"
         cursor.execute(sql_query, parameters)
@@ -165,6 +169,7 @@ def findNoutedges(root, n):
                 sink.label = 1
             else:
                 sink.label = 0
+                sink.freq = benign_set_p2n[sink.name]
             current_node.add_p2n(sink)
         sql_query = "SELECT * FROM p2p WHERE source =? LIMIT ?"
         cursor.execute(sql_query, parameters)
@@ -177,13 +182,17 @@ def findNoutedges(root, n):
                 sink.label = 1
             else:
                 sink.label = 0
+                sink.freq = benign_set_p2p[sink.name]
             current_node.add_p2p(sink)
         # Add children of current node to the stack
         stack.extend(current_node.children)
     return root_ori
 
-poi_set = set()
 
+poi_set = set()
+benign_set_p2f = {}
+benign_set_p2n = {}
+benign_set_p2p = {}
 if __name__ == '__main__':
     # 每个poi对应一个ASG，放在ASG文件夹下
     shutil.rmtree('ASG')
@@ -191,7 +200,16 @@ if __name__ == '__main__':
     # 字符串的 list
     with open('poi.txt', 'r') as file:
         pois = [line.strip() for line in file]
-
+    with open('benign.txt', 'r') as file:
+        benign = [line.strip() for line in file]
+    for i in benign:
+        i = list(eval(i.strip()))
+        if i[2] == 'p2f':
+            benign_set_p2f[i[1]] = i[3]
+        if i[2] == 'p2p':
+            benign_set_p2p[i[1]] = i[3]
+        if i[2] == 'p2n':
+            benign_set_p2n[i[1]] = i[3]
     # 一个进程pid为一个起点，把不同的子节点/频率合并起来
     result = {}
     for i in pois:
@@ -199,12 +217,12 @@ if __name__ == '__main__':
         s = i.lstrip('(').rstrip(')').split(",")
         freq = int(s[0])
         source = s[1].replace("\'", "").strip()
-        sink = s[2].replace("\'", "").strip()
+        sink_name = s[2].replace("\'", "").strip()
         type = s[3].replace("\'", "").strip()
-        sink = Process_Lineage(sink)
+        sink = Process_Lineage(sink_name)
         sink.label = 1
         sink.freq = freq
-        poi_set.add(sink)
+        poi_set.add(sink_name)
         if source not in poi_set:
             poi_set.add(source)
             root = Process_Lineage(source)
