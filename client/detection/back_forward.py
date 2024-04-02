@@ -113,8 +113,11 @@ def forward(poi, y):
         # 上下文节点，良性节点
         for name, freq in sink_dict.items():
             c = Process_Lineage(name)
-            c.frequency = int(freq)
-            c.label = 0
+            c.freq = freq
+            if c.name in poi_set:
+                c.label = 1
+            else:
+                c.label = 0
             current_node.add_child(c)
             current_node.freq += int(freq)
         stack.extend((child, level + 1) for child in reversed(current_node.children))
@@ -147,8 +150,14 @@ def findNoutedges(root, n):
         parameters = (path, n)
         cursor.execute(sql_query, parameters)
         results = cursor.fetchall()
+        p2f_dict = {}
         for r in results:
             id, source, sink, freq = r
+            # 如果存在之前的记录中，不必算两次，因为之前是一个set，已经清除过重复了，不存在重复行
+            if sink in p2f_dict:
+                continue
+            else:
+                p2f_dict[sink] = 1
             sink = Process_Lineage(sink)
             sink.freq = int(freq)
             if sink.name in poi_set:
@@ -161,8 +170,14 @@ def findNoutedges(root, n):
         sql_query = "SELECT * FROM p2n WHERE source =? LIMIT ?"
         cursor.execute(sql_query, parameters)
         results = cursor.fetchall()
+        p2n_dict = {}
         for r in results:
             id, source, sink, freq = r
+            # 如果存在之前的记录中，不必算两次，因为之前是一个set，已经清除过重复了，不存在重复行
+            if sink in p2n_dict:
+                continue
+            else:
+                p2n_dict[sink] = 1
             sink = Process_Lineage(sink)
             sink.freq = int(freq)
             if sink.name in poi_set:
@@ -174,8 +189,14 @@ def findNoutedges(root, n):
         sql_query = "SELECT * FROM p2p WHERE source =? LIMIT ?"
         cursor.execute(sql_query, parameters)
         results = cursor.fetchall()
+        p2p_dict = {}
         for r in results:
             id, source, sink, freq = r
+            # 如果存在之前的记录中，不必算两次，因为之前是一个set，已经清除过重复了，不存在重复行
+            if sink in p2p_dict:
+                continue
+            else:
+                p2p_dict[sink] = 1
             sink = Process_Lineage(sink)
             sink.freq = int(freq)
             if sink.name in poi_set:
@@ -223,27 +244,14 @@ if __name__ == '__main__':
         sink.label = 1
         sink.freq = freq
         poi_set.add(sink_name)
+        poi_set.add(source)
         if source not in result:
             root = Process_Lineage(source)
             root.freq = freq
             root.label = 1
-            # add child 是一个node 不是字符串
-            if type == 'p2f':
-                root.add_p2f(sink)
-            elif type == 'p2p':
-                root.add_p2p(sink)
-            else:
-                root.add_p2n(sink)
             result[source] = root
         else:
             current_root = result[source]
-            if type == 'p2f':
-                current_root.add_p2f(sink)
-            elif type == 'p2p':
-                current_root.add_p2p(sink)
-            else:
-                current_root.add_p2n(sink)
-            current_root.freq += freq
 
     x = 12
     y = 2
