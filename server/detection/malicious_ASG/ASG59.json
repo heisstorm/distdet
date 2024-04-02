@@ -1,0 +1,26 @@
+{
+    "name": "systemd | 1",
+    "label": 0,
+    "freq": 0,
+    "children": [
+        {
+            "name": "fwupd | 26162",
+            "label": 1,
+            "freq": 1,
+            "p2p": [
+                {
+                    "name": "",
+                    "label": 1,
+                    "freq": 1
+                }
+            ],
+            "p2f": [
+                {
+                    "name": "/run/motd.d/85-fwupd.V1KDL2",
+                    "label": 1,
+                    "freq": 1
+                }
+            ]
+        }
+    ]
+}

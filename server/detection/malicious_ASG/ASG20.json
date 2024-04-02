@@ -1,0 +1,12 @@
+{
+    "name": "snapd",
+    "label": 1,
+    "freq": 1,
+    "p2f": [
+        {
+            "name": "/var/lib/snapd/state.json.MQ9CrwQ6lS2N~",
+            "label": 1,
+            "freq": 1
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "systemd-journal",
+    "label": 1,
+    "freq": 2,
+    "p2f": [
+        {
+            "name": "/run/systemd/journal/streams/.#8:100306OsYu1D",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/run/systemd/journal/streams/.#8:1002886Xa6Nm",
+            "label": 1,
+            "freq": 1
+        }
+    ]
+}

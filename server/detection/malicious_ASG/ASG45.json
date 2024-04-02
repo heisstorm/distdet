@@ -1,0 +1,65 @@
+{
+    "name": "update-notifier | 1747",
+    "label": 0,
+    "freq": 0,
+    "children": [
+        {
+            "name": "package-system- | 23428",
+            "label": 0,
+            "freq": 1,
+            "children": [
+                {
+                    "name": "fuser | 23440",
+                    "label": 1,
+                    "freq": 1,
+                    "p2p": [
+                        {
+                            "name": "/var/lib/apt/lists/lock.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "/var/cache/apt/archives/lock.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "/var/lib/dpkg/lock.",
+                            "label": 0,
+                            "freq": 1
+                        },
+                        {
+                            "name": "/var/lib/apt/lists/lock.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/run/unattended-upgrades.lock.",
+                            "label": 0,
+                            "freq": 1
+                        },
+                        {
+                            "name": "/var/cache/apt/archives/lock.",
+                            "label": 1,
+                            "freq": 2
+                        }
+                    ]
+                }
+            ],
+            "p2p": [
+                {
+                    "name": "/usr/lib/update-notifier/package-system-locked.",
+                    "label": 0,
+                    "freq": 1
+                }
+            ]
+        }
+    ],
+    "p2p": [
+        {
+            "name": "/usr/lib/update-notifier/package-system-locked.",
+            "label": 0,
+            "freq": 1
+        }
+    ]
+}

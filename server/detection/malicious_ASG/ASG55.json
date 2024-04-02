@@ -1,0 +1,17 @@
+{
+    "name": "systemd-logind",
+    "label": 1,
+    "freq": 2,
+    "p2f": [
+        {
+            "name": "/run/systemd/inhibit/.#10vqaED3",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/run/systemd/inhibit/.#11MlWf8q",
+            "label": 1,
+            "freq": 1
+        }
+    ]
+}

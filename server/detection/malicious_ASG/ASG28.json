@@ -1,0 +1,331 @@
+{
+    "name": "bash | 18368",
+    "label": 0,
+    "freq": 0,
+    "children": [
+        {
+            "name": "python3 | 20414",
+            "label": 0,
+            "freq": 1,
+            "children": [
+                {
+                    "name": "python3 | 20427",
+                    "label": 1,
+                    "freq": 1,
+                    "p2p": [
+                        {
+                            "name": "-c.1.facebook.com.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.1.amazon.com.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.1.twitter.com.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.1.google.com.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.1.youtube.com.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.1.apple.com.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.1.zhihu.com.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.1.quora.com.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.1.yahoo.com.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.1.baidu.com.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case7/malicious.py.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/write_random_to_cwd.py.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "case1.py.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case6/malicious.py.",
+                            "label": 1,
+                            "freq": 3
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/write_home.py.",
+                            "label": 1,
+                            "freq": 6
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/python_write_random_data.py.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "/home/pxf109/Reptracker/sysrep_case_scripts/case5/read_exp_data.py.",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ],
+                    "p2f": [
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/92.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/3.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/52.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/63.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/47.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/29.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/66.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/50.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/97.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/28.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/33.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/61.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/49.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/23.fake",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "/home/pxf109/sysrep_test_temp/case1/48.fake",
+                            "label": 1,
+                            "freq": 2
+                        }
+                    ]
+                }
+            ],
+            "p2p": [
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/call_others.py?dl=0.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case7/malicious.py.",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/write_random_to_cwd.py.",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "case1.py.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case6/malicious.py.",
+                    "label": 1,
+                    "freq": 3
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/write_home.py.",
+                    "label": 1,
+                    "freq": 6
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/python_write_random_data.py.",
+                    "label": 1,
+                    "freq": 4
+                },
+                {
+                    "name": "/home/pxf109/Reptracker/sysrep_case_scripts/case5/read_exp_data.py.",
+                    "label": 1,
+                    "freq": 1
+                }
+            ],
+            "p2f": [
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/92.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/3.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/52.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/63.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/47.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/29.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/66.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/50.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/97.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/28.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/33.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/61.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/49.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/23.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/48.fake",
+                    "label": 1,
+                    "freq": 2
+                }
+            ]
+        }
+    ],
+    "p2p": [
+        {
+            "name": "/home/pxf109/sysrep_test_temp/case7/ping_others.sh.",
+            "label": 1,
+            "freq": 2
+        },
+        {
+            "name": "-c.while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat...",
+            "label": 0,
+            "freq": 1055
+        },
+        {
+            "name": "/home/pxf109/sysrep_test_temp/case6/ping_others.sh.",
+            "label": 1,
+            "freq": 3
+        }
+    ],
+    "p2f": [
+        {
+            "name": "/dev/pts/4",
+            "label": 1,
+            "freq": 1
+        }
+    ]
+}

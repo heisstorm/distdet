@@ -1,0 +1,143 @@
+{
+    "name": "bash | 18368",
+    "label": 0,
+    "freq": 0,
+    "children": [
+        {
+            "name": "apt | 21039",
+            "label": 1,
+            "freq": 1,
+            "children": [
+                {
+                    "name": "dpkg | 21102",
+                    "label": 0,
+                    "freq": 1,
+                    "children": [
+                        {
+                            "name": "dpkg-split | 21103",
+                            "label": 1,
+                            "freq": 1,
+                            "p2p": [
+                                {
+                                    "name": "-Qao./var/lib/dpkg/reassemble.deb./var/cache/apt/archives/curl_7.81.0-1ubuntu...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "-Qao./var/lib/dpkg/reassemble.deb./var/cache/apt/archives/dos2unix_7.4.2-2_am...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "-Qao./var/lib/dpkg/reassemble.deb./var/cache/apt/archives/dos2unix_7.4.2-2_am...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "-Qao./var/lib/dpkg/reassemble.deb./var/cache/apt/archives/curl_7.81.0-1ubuntu...",
+                                    "label": 1,
+                                    "freq": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                }
+            ],
+            "p2p": [
+                {
+                    "name": "install.dos2unix.",
+                    "label": 1,
+                    "freq": 1
+                }
+            ],
+            "p2f": [
+                {
+                    "name": "/var/log/apt/eipp.log.xz",
+                    "label": 1,
+                    "freq": 17
+                },
+                {
+                    "name": "/dev/null",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/log/apt/history.log",
+                    "label": 1,
+                    "freq": 3
+                },
+                {
+                    "name": "/var/lib/apt/extended_states.zf8PRC",
+                    "label": 1,
+                    "freq": 6713
+                },
+                {
+                    "name": "/var/cache/apt/pkgcache.bin.HvRVVl",
+                    "label": 1,
+                    "freq": 3
+                },
+                {
+                    "name": "/var/cache/apt/archives/partial/.apt-acquire-privs-test.cylSjv",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/log/apt/term.log",
+                    "label": 1,
+                    "freq": 38
+                },
+                {
+                    "name": "/dev/pts/4",
+                    "label": 1,
+                    "freq": 83
+                }
+            ]
+        }
+    ],
+    "p2p": [
+        {
+            "name": "/home/pxf109/sysrep_test_temp/case7/ping_others.sh.",
+            "label": 1,
+            "freq": 2
+        },
+        {
+            "name": "-c.while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat...",
+            "label": 0,
+            "freq": 1055
+        },
+        {
+            "name": "/home/pxf109/sysrep_test_temp/case6/ping_others.sh.",
+            "label": 1,
+            "freq": 3
+        }
+    ],
+    "p2f": [
+        {
+            "name": "/dev/pts/4",
+            "label": 1,
+            "freq": 1
+        }
+    ]
+}

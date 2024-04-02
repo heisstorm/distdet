@@ -1,0 +1,32 @@
+{
+    "name": "NetworkManager",
+    "label": 1,
+    "freq": 5,
+    "p2f": [
+        {
+            "name": "/var/lib/NetworkManager/timestamps.0D9DL2",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/var/lib/NetworkManager/timestamps.7X8DL2",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/var/lib/NetworkManager/timestamps.398DL2",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/var/lib/NetworkManager/timestamps.K97DL2",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/var/lib/NetworkManager/timestamps.188DL2",
+            "label": 1,
+            "freq": 1
+        }
+    ]
+}

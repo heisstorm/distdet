@@ -1,0 +1,17 @@
+{
+    "name": "sudo",
+    "label": 1,
+    "freq": 2,
+    "p2f": [
+        {
+            "name": "/dev/ptmx",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/dev/tty",
+            "label": 1,
+            "freq": 1
+        }
+    ]
+}

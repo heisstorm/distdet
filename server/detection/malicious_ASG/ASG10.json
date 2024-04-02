@@ -1,0 +1,397 @@
+{
+    "name": "bash | 18368",
+    "label": 0,
+    "freq": 0,
+    "children": [
+        {
+            "name": "python3 | 20414",
+            "label": 0,
+            "freq": 1,
+            "children": [
+                {
+                    "name": "sh | 20499",
+                    "label": 1,
+                    "freq": 1,
+                    "children": [
+                        {
+                            "name": "mv | 20500",
+                            "label": 0,
+                            "freq": 0,
+                            "p2p": [
+                                {
+                                    "name": "/home/pxf109/sysrep_test_temp/case2/sysrep_random_data?dl=0./home/pxf109/sysr...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "/var/lib/update-notifier/tmp.X8oM9UsBEg./var/lib/update-notifier/updates-avai...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "/home/pxf109/sysrep_test_temp/case3/sysrep_random_data?dl=0./home/pxf109/sysr...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "call_others.py?dl=0./home/pxf109/sysrep_test_temp.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "/home/pxf109/sysrep_test_temp/case4/hide_file.txt./root/.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "/home/pxf109/sysrep_test_temp/case7/call_others2.py?dl=0./home/pxf109/sysrep_...",
+                                    "label": 1,
+                                    "freq": 2
+                                },
+                                {
+                                    "name": "/var/lib/update-notifier/tmp.gLCsbVmf96./var/lib/update-notifier/updates-avai...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "/home/pxf109/sysrep_test_temp/case7/sysrep_random./home/pxf109/sysrep_test_te...",
+                                    "label": 1,
+                                    "freq": 2
+                                },
+                                {
+                                    "name": "/home/pxf109/sysrep_test_temp/case4/sysrep_random_data?dl=0./home/pxf109/sysr...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "/home/pxf109/sysrep_test_temp/case6/call_others.py?dl=0./home/pxf109/sysrep_t...",
+                                    "label": 1,
+                                    "freq": 3
+                                }
+                            ],
+                            "p2f": [
+                                {
+                                    "name": "oldpath=/var/lib/update-notifier/tmp.X8oM9UsBEg newdirfd=-100(AT_FDCWD), newpath=/var/lib/update-notifier/updates-available flags=1(RENAME_NOREPLACE)",
+                                    "label": 0,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "oldpath=call_others.py?dl=0(call_others.py?dl=0), newpath=/home/pxf109/sysrep_test_temp/call_others.py?dl=0 flags=1(RENAME_NOREPLACE)",
+                                    "label": 0,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "oldpath=/home/pxf109/sysrep_test_temp/case3/sysrep_random_data?dl=0 newdirfd=-100(AT_FDCWD), newpath=/home/pxf109/sysrep_test_temp/case3/hide_file.txt flags=1(RENAME_NOREPLACE)",
+                                    "label": 0,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "oldpath=/home/pxf109/sysrep_test_temp/case2/sysrep_random_data?dl=0 newdirfd=-100(AT_FDCWD), newpath=/home/pxf109/sysrep_test_temp/case2/hide_file.txt flags=1(RENAME_NOREPLACE)",
+                                    "label": 0,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "oldpath=/home/pxf109/sysrep_test_temp/case6/call_others.py?dl=0 newdirfd=-100(AT_FDCWD), newpath=/home/pxf109/sysrep_test_temp/case6/malicious.py flags=1(RENAME_NOREPLACE)",
+                                    "label": 0,
+                                    "freq": 3
+                                },
+                                {
+                                    "name": "oldpath=/home/pxf109/sysrep_test_temp/case7/call_others2.py?dl=0 newdirfd=-100(AT_FDCWD), newpath=/home/pxf109/sysrep_test_temp/case7/malicious.py flags=1(RENAME_NOREPLACE)",
+                                    "label": 0,
+                                    "freq": 2
+                                },
+                                {
+                                    "name": "oldpath=call_others.py?dl=0(call_others.py?dl=0), newpath=/home/pxf109/sysrep_test_temp flags=1(RENAME_NOREPLACE)",
+                                    "label": 0,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "oldpath=/home/pxf109/sysrep_test_temp/case4/sysrep_random_data?dl=0 newdirfd=-100(AT_FDCWD), newpath=/home/pxf109/sysrep_test_temp/case4/hide_file.txt flags=1(RENAME_NOREPLACE)",
+                                    "label": 0,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "oldpath=/home/pxf109/sysrep_test_temp/case7/sysrep_random newdirfd=-100(AT_FDCWD), newpath=/home/pxf109/sysrep_test_temp/case7/pxf109/case7.txt flags=1(RENAME_NOREPLACE)",
+                                    "label": 0,
+                                    "freq": 2
+                                },
+                                {
+                                    "name": "/dev/pts/4",
+                                    "label": 1,
+                                    "freq": 8
+                                },
+                                {
+                                    "name": "oldpath=/var/lib/update-notifier/tmp.gLCsbVmf96 newdirfd=-100(AT_FDCWD), newpath=/var/lib/update-notifier/updates-available flags=1(RENAME_NOREPLACE)",
+                                    "label": 0,
+                                    "freq": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "p2p": [
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/python_write_random_data.py.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_random_to_cwd.py.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.whiptail --version >/dev/null 2>&1.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.mv call_others.py?dl=0 /home/pxf109/sysrep_test_temp.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c./usr/sbin/dpkg-preconfigure --apt || true.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_home.py.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.[ ! -f /usr/bin/snap ] || /usr/bin/snap advise-snap --from-apt 2>/dev/null...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.stty -a 2>/dev/null.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.wget https://www.dropbox.com/s/xmfeu6gj7ekcrh1/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c./usr/sbin/dpkg-preconfigure --apt || true.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c./usr/bin/test -e /usr/share/dbus-1/system-services/org.freedesktop.Package...",
+                            "label": 0,
+                            "freq": 3827
+                        },
+                        {
+                            "name": "-c.mv call_others.py?dl=0 /home/pxf109/sysrep_test_temp.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/python_write_random_data.py.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_home.py.",
+                            "label": 1,
+                            "freq": 6
+                        },
+                        {
+                            "name": "-c.if [ -d /var/lib/update-notifier ]; then touch /var/lib/update-notifier/dp...",
+                            "label": 0,
+                            "freq": 1858
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.wget https://www.dropbox.com/s/xmfeu6gj7ekcrh1/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.stty -a 2>/dev/null.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "-c.whiptail --version >/dev/null 2>&1.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_random_to_cwd.py.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c.[ ! -f /usr/bin/snap ] || /usr/bin/snap advise-snap --from-apt 2>/dev/null...",
+                            "label": 1,
+                            "freq": 4
+                        }
+                    ],
+                    "p2f": [
+                        {
+                            "name": "/dev/null",
+                            "label": 1,
+                            "freq": 16
+                        }
+                    ]
+                }
+            ],
+            "p2p": [
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/call_others.py?dl=0.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case7/malicious.py.",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/write_random_to_cwd.py.",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "case1.py.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case6/malicious.py.",
+                    "label": 1,
+                    "freq": 3
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/write_home.py.",
+                    "label": 1,
+                    "freq": 6
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/python_write_random_data.py.",
+                    "label": 1,
+                    "freq": 4
+                },
+                {
+                    "name": "/home/pxf109/Reptracker/sysrep_case_scripts/case5/read_exp_data.py.",
+                    "label": 1,
+                    "freq": 1
+                }
+            ],
+            "p2f": [
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/92.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/3.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/52.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/63.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/47.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/29.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/66.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/50.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/97.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/28.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/33.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/61.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/49.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/23.fake",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "/home/pxf109/sysrep_test_temp/case1/48.fake",
+                    "label": 1,
+                    "freq": 2
+                }
+            ]
+        }
+    ],
+    "p2p": [
+        {
+            "name": "/home/pxf109/sysrep_test_temp/case7/ping_others.sh.",
+            "label": 1,
+            "freq": 2
+        },
+        {
+            "name": "-c.while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat...",
+            "label": 0,
+            "freq": 1055
+        },
+        {
+            "name": "/home/pxf109/sysrep_test_temp/case6/ping_others.sh.",
+            "label": 1,
+            "freq": 3
+        }
+    ],
+    "p2f": [
+        {
+            "name": "/dev/pts/4",
+            "label": 1,
+            "freq": 1
+        }
+    ]
+}

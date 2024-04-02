@@ -1,0 +1,156 @@
+{
+    "name": "apt | 21124",
+    "label": 0,
+    "freq": 0,
+    "children": [
+        {
+            "name": "sh | 21125",
+            "label": 0,
+            "freq": 1,
+            "children": [
+                {
+                    "name": "echo | 21131",
+                    "label": 1,
+                    "freq": 1,
+                    "p2p": [
+                        {
+                            "name": "",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "",
+                            "label": 1,
+                            "freq": 2
+                        }
+                    ],
+                    "p2f": [
+                        {
+                            "name": "/dev/null",
+                            "label": 1,
+                            "freq": 2
+                        }
+                    ]
+                }
+            ],
+            "p2p": [
+                {
+                    "name": "-c./usr/sbin/dpkg-preconfigure --apt || true.",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "-c./usr/bin/test -e /usr/share/dbus-1/system-services/org.freedesktop.Package...",
+                    "label": 0,
+                    "freq": 3827
+                },
+                {
+                    "name": "-c.mv call_others.py?dl=0 /home/pxf109/sysrep_test_temp.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "-c.python3 /home/pxf109/sysrep_test_temp/python_write_random_data.py.",
+                    "label": 1,
+                    "freq": 4
+                },
+                {
+                    "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_home.py.",
+                    "label": 1,
+                    "freq": 6
+                },
+                {
+                    "name": "-c.if [ -d /var/lib/update-notifier ]; then touch /var/lib/update-notifier/dp...",
+                    "label": 0,
+                    "freq": 1858
+                },
+                {
+                    "name": "-c.python3 /home/pxf109/sysrep_test_temp/call_others.py?dl=0.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "-c.wget https://www.dropbox.com/s/xmfeu6gj7ekcrh1/call_others.py?dl=0.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "-c.stty -a 2>/dev/null.",
+                    "label": 1,
+                    "freq": 4
+                },
+                {
+                    "name": "-c.whiptail --version >/dev/null 2>&1.",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_random_to_cwd.py.",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "-c.[ ! -f /usr/bin/snap ] || /usr/bin/snap advise-snap --from-apt 2>/dev/null...",
+                    "label": 1,
+                    "freq": 4
+                }
+            ],
+            "p2f": [
+                {
+                    "name": "/dev/null",
+                    "label": 1,
+                    "freq": 16
+                }
+            ]
+        }
+    ],
+    "p2p": [
+        {
+            "name": "install.dos2unix.",
+            "label": 1,
+            "freq": 1
+        }
+    ],
+    "p2f": [
+        {
+            "name": "/var/log/apt/eipp.log.xz",
+            "label": 1,
+            "freq": 17
+        },
+        {
+            "name": "/dev/null",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/var/log/apt/history.log",
+            "label": 1,
+            "freq": 3
+        },
+        {
+            "name": "/var/lib/apt/extended_states.zf8PRC",
+            "label": 1,
+            "freq": 6713
+        },
+        {
+            "name": "/var/cache/apt/pkgcache.bin.HvRVVl",
+            "label": 1,
+            "freq": 3
+        },
+        {
+            "name": "/var/cache/apt/archives/partial/.apt-acquire-privs-test.cylSjv",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/var/log/apt/term.log",
+            "label": 1,
+            "freq": 38
+        },
+        {
+            "name": "/dev/pts/4",
+            "label": 1,
+            "freq": 83
+        }
+    ]
+}

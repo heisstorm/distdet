@@ -1,0 +1,136 @@
+{
+    "name": "dpkg-preconfigu | 22236",
+    "label": 0,
+    "freq": 0,
+    "children": [
+        {
+            "name": "apt-extracttemp | 22237",
+            "label": 1,
+            "freq": 1,
+            "children": [
+                {
+                    "name": "dpkg | 22240",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "dpkg | 22238",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "dpkg | 22239",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                }
+            ],
+            "p2p": [
+                {
+                    "name": "/var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                    "label": 1,
+                    "freq": 1
+                }
+            ],
+            "p2f": [
+                {
+                    "name": "/dev/null",
+                    "label": 1,
+                    "freq": 2
+                }
+            ]
+        }
+    ],
+    "p2p": [
+        {
+            "name": "/var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+            "label": 1,
+            "freq": 1
+        }
+    ]
+}

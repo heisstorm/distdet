@@ -1,0 +1,31 @@
+{
+    "name": "update-notifier | 1747",
+    "label": 0,
+    "freq": 0,
+    "children": [
+        {
+            "name": "nice | 23310",
+            "label": 1,
+            "freq": 1,
+            "p2p": [
+                {
+                    "name": "/usr/bin/ionice.-c3./usr/lib/update-notifier/apt-check.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/usr/bin/ionice.-c3./usr/lib/update-notifier/apt-check.",
+                    "label": 1,
+                    "freq": 2
+                }
+            ]
+        }
+    ],
+    "p2p": [
+        {
+            "name": "/usr/lib/update-notifier/package-system-locked.",
+            "label": 0,
+            "freq": 1
+        }
+    ]
+}

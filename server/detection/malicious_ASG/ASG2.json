@@ -1,0 +1,588 @@
+{
+    "name": "apt-get | 22265",
+    "label": 0,
+    "freq": 0,
+    "children": [
+        {
+            "name": "sh | 22273",
+            "label": 0,
+            "freq": 1,
+            "children": [
+                {
+                    "name": "update-motd-upd | 22275",
+                    "label": 0,
+                    "freq": 1,
+                    "children": [
+                        {
+                            "name": "apt-config | 22278",
+                            "label": 0,
+                            "freq": 1,
+                            "children": [
+                                {
+                                    "name": "dpkg | 22279",
+                                    "label": 1,
+                                    "freq": 1,
+                                    "p2p": [
+                                        {
+                                            "name": "--assert-multi-arch.",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "--assert-protected-field.",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "--status-fd.55.--no-triggers.--unpack.--auto-deconfigure./var/cache/apt/archi...",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "--status-fd.55.--configure.--pending.",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                                            "label": 1,
+                                            "freq": 1
+                                        }
+                                    ],
+                                    "p2f": [
+                                        {
+                                            "name": "/usr/share/man/man1/curl.1.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/vi/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/ru/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/README.txt.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/dos2unix.txt.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/sr/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/man/uk/man1/dos2unix.1.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/var/lib/dpkg/status-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/de/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/ja/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/man/pl/man1/dos2unix.1.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/dev/pts/5",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/bin/unix2dos.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/pt_BR/dos2unix.htm.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/man/es/man1/dos2unix.1.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/fur/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/bin/curl.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/man/nl/man1/dos2unix.1.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/uk/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/man/pt_BR/man1/dos2unix.1.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/es/dos2unix.txt.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/fr/dos2unix.htm.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/es/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/BUGS.txt.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/zh_CN/dos2unix.txt.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/copyright.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/de/dos2unix.txt.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/pl/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/NEWS.txt.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/var/lib/dpkg/lock",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/da/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/uk/dos2unix.txt.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/var/lib/dpkg/info/dos2unix.list-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/sv/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/bin/dos2unix.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/var/lib/dpkg/updates/tmp.i",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/dos2unix.htm.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/changelog.Debian.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/pt_BR/dos2unix.txt.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/es/dos2unix.htm.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/man/sv/man1/dos2unix.1.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/curl/copyright.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/man/zh_CN/man1/dos2unix.1.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/nl/dos2unix.txt.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/eo/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/uk/dos2unix.htm.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/TODO.txt.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/zh_TW/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/nl/dos2unix.htm.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/nl/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/var/lib/dpkg/info/curl.list-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/zh_CN/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/zh_CN/dos2unix.htm.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/man/de/man1/dos2unix.1.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/nb/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/var/lib/dpkg/triggers/Lock",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/pl/dos2unix.txt.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/sv/dos2unix.txt.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/zsh/vendor-completions/_curl.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/man/man1/dos2unix.1.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/sv/dos2unix.htm.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/fr/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/fr/dos2unix.txt.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/de/dos2unix.htm.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/man/fr/man1/dos2unix.1.gz.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/doc/dos2unix/pl/dos2unix.htm.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/pt_BR/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "/usr/share/locale/hu/LC_MESSAGES/dos2unix.mo.dpkg-new",
+                                            "label": 1,
+                                            "freq": 1
+                                        }
+                                    ]
+                                }
+                            ],
+                            "p2p": [
+                                {
+                                    "name": "shell.SourceList.Dir::Etc::sourcelist.",
+                                    "label": 1,
+                                    "freq": 2
+                                },
+                                {
+                                    "name": "shell.EtcDir.Dir::Etc.",
+                                    "label": 1,
+                                    "freq": 2
+                                },
+                                {
+                                    "name": "shell.ListDir.Dir::State::Lists.",
+                                    "label": 1,
+                                    "freq": 2
+                                },
+                                {
+                                    "name": "shell.StateDir.Dir::State.",
+                                    "label": 1,
+                                    "freq": 2
+                                },
+                                {
+                                    "name": "shell.DpkgStatus.Dir::State::status.",
+                                    "label": 1,
+                                    "freq": 2
+                                }
+                            ],
+                            "p2f": [
+                                {
+                                    "name": "/dev/null",
+                                    "label": 1,
+                                    "freq": 10
+                                }
+                            ]
+                        }
+                    ],
+                    "p2p": [
+                        {
+                            "name": "-e./usr/lib/update-notifier/update-motd-updates-available.",
+                            "label": 0,
+                            "freq": 3827
+                        }
+                    ],
+                    "p2f": [
+                        {
+                            "name": "/var/lib/update-notifier/tmp.gLCsbVmf96",
+                            "label": 1,
+                            "freq": 3
+                        },
+                        {
+                            "name": "/var/lib/update-notifier/tmp.X8oM9UsBEg",
+                            "label": 1,
+                            "freq": 3
+                        }
+                    ]
+                }
+            ],
+            "p2p": [
+                {
+                    "name": "-c./usr/sbin/dpkg-preconfigure --apt || true.",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "-c./usr/bin/test -e /usr/share/dbus-1/system-services/org.freedesktop.Package...",
+                    "label": 0,
+                    "freq": 3827
+                },
+                {
+                    "name": "-c.mv call_others.py?dl=0 /home/pxf109/sysrep_test_temp.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "-c.python3 /home/pxf109/sysrep_test_temp/python_write_random_data.py.",
+                    "label": 1,
+                    "freq": 4
+                },
+                {
+                    "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_home.py.",
+                    "label": 1,
+                    "freq": 6
+                },
+                {
+                    "name": "-c.if [ -d /var/lib/update-notifier ]; then touch /var/lib/update-notifier/dp...",
+                    "label": 0,
+                    "freq": 1858
+                },
+                {
+                    "name": "-c.python3 /home/pxf109/sysrep_test_temp/call_others.py?dl=0.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "-c.wget https://www.dropbox.com/s/xmfeu6gj7ekcrh1/call_others.py?dl=0.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "-c.stty -a 2>/dev/null.",
+                    "label": 1,
+                    "freq": 4
+                },
+                {
+                    "name": "-c.whiptail --version >/dev/null 2>&1.",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_random_to_cwd.py.",
+                    "label": 1,
+                    "freq": 2
+                },
+                {
+                    "name": "-c.[ ! -f /usr/bin/snap ] || /usr/bin/snap advise-snap --from-apt 2>/dev/null...",
+                    "label": 1,
+                    "freq": 4
+                }
+            ],
+            "p2f": [
+                {
+                    "name": "/dev/null",
+                    "label": 1,
+                    "freq": 16
+                }
+            ]
+        }
+    ],
+    "p2p": [
+        {
+            "name": "install.curl.",
+            "label": 1,
+            "freq": 1
+        }
+    ],
+    "p2f": [
+        {
+            "name": "/var/cache/apt/archives/partial/.apt-acquire-privs-test.t3LTXI",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/var/log/apt/term.log",
+            "label": 1,
+            "freq": 37
+        },
+        {
+            "name": "/dev/pts/4",
+            "label": 1,
+            "freq": 64
+        },
+        {
+            "name": "/var/log/apt/eipp.log.xz",
+            "label": 1,
+            "freq": 17
+        },
+        {
+            "name": "/var/lib/apt/extended_states.wQBfWp",
+            "label": 1,
+            "freq": 6713
+        },
+        {
+            "name": "/dev/null",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/var/log/apt/history.log",
+            "label": 1,
+            "freq": 3
+        },
+        {
+            "name": "/var/cache/apt/pkgcache.bin.elclk9",
+            "label": 1,
+            "freq": 3
+        }
+    ]
+}

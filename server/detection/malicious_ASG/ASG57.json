@@ -1,0 +1,17 @@
+{
+    "name": "rs:main",
+    "label": 1,
+    "freq": 2,
+    "p2f": [
+        {
+            "name": "/var/log/auth.log",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/var/log/syslog",
+            "label": 1,
+            "freq": 1
+        }
+    ]
+}

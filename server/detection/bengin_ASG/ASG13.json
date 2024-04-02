@@ -1,0 +1,97 @@
+{
+    "name": "systemd",
+    "label": 1,
+    "freq": 18,
+    "p2f": [
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd-refresh.service/cgroup.subtree_control",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd.service/memory.high",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd.service/memory.swap.max",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd-refresh.service/memory.high",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd-refresh.service/memory.swap.max",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd.service/memory.oom.group",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd-refresh.service/memory.oom.group",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd.service/cgroup.procs",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd.service/cgroup.subtree_control",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd.service/memory.max",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd-refresh.service/memory.max",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd-refresh.service/pids.max",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd-refresh.service/memory.min",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd.service/memory.min",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd.service/memory.low",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd.service/pids.max",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd-refresh.service/memory.low",
+            "label": 1,
+            "freq": 1
+        },
+        {
+            "name": "/sys/fs/cgroup/system.slice/fwupd-refresh.service/cgroup.procs",
+            "label": 1,
+            "freq": 1
+        }
+    ]
+}

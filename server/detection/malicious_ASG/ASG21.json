@@ -1,0 +1,1070 @@
+{
+    "name": "bash | 18368",
+    "label": 0,
+    "freq": 0,
+    "children": [
+        {
+            "name": "apt | 21039",
+            "label": 1,
+            "freq": 1,
+            "children": [
+                {
+                    "name": "http | 21079",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "",
+                            "label": 1,
+                            "freq": 4
+                        }
+                    ],
+                    "p2f": [
+                        {
+                            "name": "/var/cache/apt/archives/partial/dos2unix_7.4.2-2_amd64.deb",
+                            "label": 1,
+                            "freq": 168
+                        },
+                        {
+                            "name": "/var/cache/apt/archives/partial/curl_7.81.0-1ubuntu1.15_amd64.deb",
+                            "label": 1,
+                            "freq": 81
+                        }
+                    ],
+                    "p2n": [
+                        {
+                            "name": "127.0.0.1:*->127.0.0.53:*",
+                            "label": 1,
+                            "freq": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "dpkg | 21100",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "dpkg | 21102",
+                    "label": 0,
+                    "freq": 8,
+                    "children": [
+                        {
+                            "name": "rm | 21117",
+                            "label": 0,
+                            "freq": 0,
+                            "p2p": [
+                                {
+                                    "name": "-rf.--./var/lib/dpkg/tmp.ci.",
+                                    "label": 0,
+                                    "freq": 1682
+                                },
+                                {
+                                    "name": "-f./var/lib/update-notifier/tmp.X8oM9UsBEg.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "-f./var/lib/update-notifier/tmp.gLCsbVmf96.",
+                                    "label": 1,
+                                    "freq": 1
+                                }
+                            ],
+                            "p2f": [
+                                {
+                                    "name": "/var/lib/dpkg/tmp.ci/control",
+                                    "label": 1,
+                                    "freq": 2
+                                }
+                            ]
+                        },
+                        {
+                            "name": "dpkg | 21117",
+                            "label": 0,
+                            "freq": 0,
+                            "p2p": [
+                                {
+                                    "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                                    "label": 1,
+                                    "freq": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "dpkg | 21103",
+                            "label": 0,
+                            "freq": 0,
+                            "p2p": [
+                                {
+                                    "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                                    "label": 1,
+                                    "freq": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "dpkg | 21104",
+                            "label": 0,
+                            "freq": 0,
+                            "p2p": [
+                                {
+                                    "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                                    "label": 1,
+                                    "freq": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "dpkg | 21114",
+                            "label": 0,
+                            "freq": 0,
+                            "p2p": [
+                                {
+                                    "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                                    "label": 1,
+                                    "freq": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "dpkg-split | 21103",
+                            "label": 1,
+                            "freq": 0,
+                            "p2p": [
+                                {
+                                    "name": "-Qao./var/lib/dpkg/reassemble.deb./var/cache/apt/archives/dos2unix_7.4.2-2_am...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "-Qao./var/lib/dpkg/reassemble.deb./var/cache/apt/archives/curl_7.81.0-1ubuntu...",
+                                    "label": 1,
+                                    "freq": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "dpkg-deb | 21114",
+                            "label": 0,
+                            "freq": 0,
+                            "p2p": [
+                                {
+                                    "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                                    "label": 1,
+                                    "freq": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "dpkg-deb | 21104",
+                            "label": 1,
+                            "freq": 2,
+                            "children": [
+                                {
+                                    "name": "tar | 21107",
+                                    "label": 1,
+                                    "freq": 0,
+                                    "p2p": [
+                                        {
+                                            "name": "-x.-f.-.--warning=no-timestamp.",
+                                            "label": 0,
+                                            "freq": 1682
+                                        }
+                                    ],
+                                    "p2f": [
+                                        {
+                                            "name": "/var/lib/dpkg/tmp.ci/md5sums",
+                                            "label": 1,
+                                            "freq": 4
+                                        },
+                                        {
+                                            "name": "/var/lib/dpkg/tmp.ci/control",
+                                            "label": 1,
+                                            "freq": 4
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "dpkg-deb | 21107",
+                                    "label": 0,
+                                    "freq": 0,
+                                    "p2p": [
+                                        {
+                                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                                            "label": 1,
+                                            "freq": 1
+                                        },
+                                        {
+                                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                                            "label": 1,
+                                            "freq": 1
+                                        }
+                                    ]
+                                }
+                            ],
+                            "p2p": [
+                                {
+                                    "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                                    "label": 1,
+                                    "freq": 1
+                                },
+                                {
+                                    "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                                    "label": 1,
+                                    "freq": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "sh | 21269",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "-c./usr/sbin/dpkg-preconfigure --apt || true.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c./usr/bin/test -e /usr/share/dbus-1/system-services/org.freedesktop.Package...",
+                            "label": 0,
+                            "freq": 3827
+                        },
+                        {
+                            "name": "-c.mv call_others.py?dl=0 /home/pxf109/sysrep_test_temp.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/python_write_random_data.py.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_home.py.",
+                            "label": 1,
+                            "freq": 6
+                        },
+                        {
+                            "name": "-c.if [ -d /var/lib/update-notifier ]; then touch /var/lib/update-notifier/dp...",
+                            "label": 0,
+                            "freq": 1858
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.wget https://www.dropbox.com/s/xmfeu6gj7ekcrh1/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.stty -a 2>/dev/null.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "-c.whiptail --version >/dev/null 2>&1.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_random_to_cwd.py.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c.[ ! -f /usr/bin/snap ] || /usr/bin/snap advise-snap --from-apt 2>/dev/null...",
+                            "label": 1,
+                            "freq": 4
+                        }
+                    ],
+                    "p2f": [
+                        {
+                            "name": "/dev/null",
+                            "label": 1,
+                            "freq": 16
+                        }
+                    ]
+                },
+                {
+                    "name": "dpkg | 21041",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "dpkg | 21122",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "dpkg | 21123",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "http | 21058",
+                    "label": 1,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "",
+                            "label": 1,
+                            "freq": 4
+                        }
+                    ],
+                    "p2f": [
+                        {
+                            "name": "/var/cache/apt/archives/partial/dos2unix_7.4.2-2_amd64.deb",
+                            "label": 1,
+                            "freq": 168
+                        },
+                        {
+                            "name": "/var/cache/apt/archives/partial/curl_7.81.0-1ubuntu1.15_amd64.deb",
+                            "label": 1,
+                            "freq": 81
+                        }
+                    ],
+                    "p2n": [
+                        {
+                            "name": "127.0.0.1:*->127.0.0.53:*",
+                            "label": 1,
+                            "freq": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "sh | 21086",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "-c./usr/sbin/dpkg-preconfigure --apt || true.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c./usr/bin/test -e /usr/share/dbus-1/system-services/org.freedesktop.Package...",
+                            "label": 0,
+                            "freq": 3827
+                        },
+                        {
+                            "name": "-c.mv call_others.py?dl=0 /home/pxf109/sysrep_test_temp.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/python_write_random_data.py.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_home.py.",
+                            "label": 1,
+                            "freq": 6
+                        },
+                        {
+                            "name": "-c.if [ -d /var/lib/update-notifier ]; then touch /var/lib/update-notifier/dp...",
+                            "label": 0,
+                            "freq": 1858
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.wget https://www.dropbox.com/s/xmfeu6gj7ekcrh1/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.stty -a 2>/dev/null.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "-c.whiptail --version >/dev/null 2>&1.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_random_to_cwd.py.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c.[ ! -f /usr/bin/snap ] || /usr/bin/snap advise-snap --from-apt 2>/dev/null...",
+                            "label": 1,
+                            "freq": 4
+                        }
+                    ],
+                    "p2f": [
+                        {
+                            "name": "/dev/null",
+                            "label": 1,
+                            "freq": 16
+                        }
+                    ]
+                },
+                {
+                    "name": "dpkg | 21101",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "sh | 21069",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "-c./usr/sbin/dpkg-preconfigure --apt || true.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c./usr/bin/test -e /usr/share/dbus-1/system-services/org.freedesktop.Package...",
+                            "label": 0,
+                            "freq": 3827
+                        },
+                        {
+                            "name": "-c.mv call_others.py?dl=0 /home/pxf109/sysrep_test_temp.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/python_write_random_data.py.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_home.py.",
+                            "label": 1,
+                            "freq": 6
+                        },
+                        {
+                            "name": "-c.if [ -d /var/lib/update-notifier ]; then touch /var/lib/update-notifier/dp...",
+                            "label": 0,
+                            "freq": 1858
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.wget https://www.dropbox.com/s/xmfeu6gj7ekcrh1/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.stty -a 2>/dev/null.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "-c.whiptail --version >/dev/null 2>&1.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_random_to_cwd.py.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c.[ ! -f /usr/bin/snap ] || /usr/bin/snap advise-snap --from-apt 2>/dev/null...",
+                            "label": 1,
+                            "freq": 4
+                        }
+                    ],
+                    "p2f": [
+                        {
+                            "name": "/dev/null",
+                            "label": 1,
+                            "freq": 16
+                        }
+                    ]
+                },
+                {
+                    "name": "dpkg | 21121",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "dpkg | 21040",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "dpkg | 21118",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/curl_7.81.0-1ubuntu1.15_amd64.deb./var/lib/...",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--fsys-tarfile./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "--control./var/cache/apt/archives/dos2unix_7.4.2-2_amd64.deb./var/lib/dpkg/tm...",
+                            "label": 1,
+                            "freq": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "sh | 21048",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "-c./usr/sbin/dpkg-preconfigure --apt || true.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c./usr/bin/test -e /usr/share/dbus-1/system-services/org.freedesktop.Package...",
+                            "label": 0,
+                            "freq": 3827
+                        },
+                        {
+                            "name": "-c.mv call_others.py?dl=0 /home/pxf109/sysrep_test_temp.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/python_write_random_data.py.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_home.py.",
+                            "label": 1,
+                            "freq": 6
+                        },
+                        {
+                            "name": "-c.if [ -d /var/lib/update-notifier ]; then touch /var/lib/update-notifier/dp...",
+                            "label": 0,
+                            "freq": 1858
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.wget https://www.dropbox.com/s/xmfeu6gj7ekcrh1/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.stty -a 2>/dev/null.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "-c.whiptail --version >/dev/null 2>&1.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_random_to_cwd.py.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c.[ ! -f /usr/bin/snap ] || /usr/bin/snap advise-snap --from-apt 2>/dev/null...",
+                            "label": 1,
+                            "freq": 4
+                        }
+                    ],
+                    "p2f": [
+                        {
+                            "name": "/dev/null",
+                            "label": 1,
+                            "freq": 16
+                        }
+                    ]
+                },
+                {
+                    "name": "sh | 21059",
+                    "label": 0,
+                    "freq": 0,
+                    "p2p": [
+                        {
+                            "name": "-c./usr/sbin/dpkg-preconfigure --apt || true.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c./usr/bin/test -e /usr/share/dbus-1/system-services/org.freedesktop.Package...",
+                            "label": 0,
+                            "freq": 3827
+                        },
+                        {
+                            "name": "-c.mv call_others.py?dl=0 /home/pxf109/sysrep_test_temp.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/python_write_random_data.py.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_home.py.",
+                            "label": 1,
+                            "freq": 6
+                        },
+                        {
+                            "name": "-c.if [ -d /var/lib/update-notifier ]; then touch /var/lib/update-notifier/dp...",
+                            "label": 0,
+                            "freq": 1858
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.wget https://www.dropbox.com/s/xmfeu6gj7ekcrh1/call_others.py?dl=0.",
+                            "label": 1,
+                            "freq": 1
+                        },
+                        {
+                            "name": "-c.stty -a 2>/dev/null.",
+                            "label": 1,
+                            "freq": 4
+                        },
+                        {
+                            "name": "-c.whiptail --version >/dev/null 2>&1.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c.python3 /home/pxf109/sysrep_test_temp/write_random_to_cwd.py.",
+                            "label": 1,
+                            "freq": 2
+                        },
+                        {
+                            "name": "-c.[ ! -f /usr/bin/snap ] || /usr/bin/snap advise-snap --from-apt 2>/dev/null...",
+                            "label": 1,
+                            "freq": 4
+                        }
+                    ],
+                    "p2f": [
+                        {
+                            "name": "/dev/null",
+                            "label": 1,
+                            "freq": 16
+                        }
+                    ]
+                }
+            ],
+            "p2p": [
+                {
+                    "name": "install.dos2unix.",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "install.dos2unix.",
+                    "label": 1,
+                    "freq": 1
+                }
+            ],
+            "p2f": [
+                {
+                    "name": "/var/cache/apt/pkgcache.bin.HvRVVl",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/log/apt/term.log",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/lib/apt/extended_states.zf8PRC",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/dev/null",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/dev/pts/4",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/log/apt/history.log",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/cache/apt/archives/partial/.apt-acquire-privs-test.cylSjv",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/log/apt/eipp.log.xz",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/log/apt/eipp.log.xz",
+                    "label": 1,
+                    "freq": 17
+                },
+                {
+                    "name": "/dev/null",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/log/apt/history.log",
+                    "label": 1,
+                    "freq": 3
+                },
+                {
+                    "name": "/var/lib/apt/extended_states.zf8PRC",
+                    "label": 1,
+                    "freq": 6713
+                },
+                {
+                    "name": "/var/cache/apt/pkgcache.bin.HvRVVl",
+                    "label": 1,
+                    "freq": 3
+                },
+                {
+                    "name": "/var/cache/apt/archives/partial/.apt-acquire-privs-test.cylSjv",
+                    "label": 1,
+                    "freq": 1
+                },
+                {
+                    "name": "/var/log/apt/term.log",
+                    "label": 1,
+                    "freq": 38
+                },
+                {
+                    "name": "/dev/pts/4",
+                    "label": 1,
+                    "freq": 83
+                }
+            ]
+        }
+    ],
+    "p2p": [
+        {
+            "name": "/home/pxf109/sysrep_test_temp/case7/ping_others.sh.",
+            "label": 1,
+            "freq": 2
+        },
+        {
+            "name": "-c.while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat...",
+            "label": 0,
+            "freq": 1055
+        },
+        {
+            "name": "/home/pxf109/sysrep_test_temp/case6/ping_others.sh.",
+            "label": 1,
+            "freq": 3
+        }
+    ],
+    "p2f": [
+        {
+            "name": "/dev/pts/4",
+            "label": 1,
+            "freq": 1
+        }
+    ]
+}
