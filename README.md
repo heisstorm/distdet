@@ -1,1 +1,4 @@
-![Image text](https://github.com/heisstorm/distdet/blob/master/img/distdetFeb20.jpg)
+Before:
+![Image text](img/distdetFeb20.jpg)
+New Client-server architecture:
+![Image text](img/Fedml_16x.png)
