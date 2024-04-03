@@ -1,1 +1,1 @@
-![Image text](https://raw.github.com/yourName/repositpry/master/yourprojectName/img-folder/test.jpg)
+![Image text](https://github.com/heisstorm/distdet/blob/master/img/distdetFeb20.jpg)
